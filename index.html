@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>이름의 온도</title>
+    <style>
+      body {
+        font-family:
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          "Noto Sans KR",
+          sans-serif;
+        margin: 24px;
+        max-width: 720px;
+      }
+      .row {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-bottom: 12px;
+      }
+      label {
+        font-weight: 600;
+      }
+      input,
+      select,
+      button {
+        padding: 10px 12px;
+        font-size: 14px;
+      }
+      .tags button {
+        border: 1px solid #ddd;
+        background: #fff;
+        border-radius: 999px;
+        cursor: pointer;
+      }
+      .tags button.active {
+        border-color: #111;
+      }
+      .card {
+        border: 1px solid #eee;
+        border-radius: 12px;
+        padding: 12px 14px;
+        margin: 10px 0;
+      }
+      .muted {
+        color: #666;
+        font-size: 13px;
+      }
+      .title {
+        font-size: 22px;
+        font-weight: 800;
+        margin-bottom: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="title">아이이름짓기</div>
+    <div class="muted">의미/사주/한자 기반이 아닌, “느낌” 기반 추천입니다.</div>
+
+    <hr style="margin: 18px 0" />
+
+    <div class="row">
+      <div>
+        <label>성(필수)</label><br />
+        <input id="surname" placeholder="예: 김" maxlength="2" />
+      </div>
+      <div>
+        <label>성별</label><br />
+        <select id="gender">
+          <option value="any">상관없음</option>
+          <option value="female">여아</option>
+          <option value="male">남아</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <label>느낌 (최대 3개)</label><br />
+        <div class="tags" id="tagButtons"></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <button id="btn">이름 받아보기</button>
+    </div>
+
+    <div id="result"></div>
+
+    <hr style="margin: 18px 0" />
+    <div class="muted">
+      참고용 도구입니다. 특정 이름이 더 “좋다”는 의미가 아닙니다.
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

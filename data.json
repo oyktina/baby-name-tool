@@ -1,0 +1,49 @@
+{
+  "tags": [
+    { "id": "warm", "label": "따뜻한" },
+    { "id": "soft", "label": "부드러운" },
+    { "id": "bright", "label": "밝은" },
+    { "id": "calm", "label": "조용한" },
+    { "id": "solid", "label": "단단한" },
+    { "id": "poetic", "label": "감성적인" },
+    { "id": "nature", "label": "자연" }
+  ],
+  "surnameProfiles": [
+    { "s": "김", "tags": ["solid"] },
+    { "s": "이", "tags": ["soft"] },
+    { "s": "박", "tags": ["solid"] },
+    { "s": "최", "tags": ["solid"] },
+    { "s": "정", "tags": ["calm"] },
+    { "s": "오", "tags": ["soft"] },
+    { "s": "서", "tags": ["soft"] }
+  ],
+  "firstSyllable": [
+    { "t": "서", "tags": ["soft", "calm"] },
+    { "t": "하", "tags": ["bright", "soft"] },
+    { "t": "지", "tags": ["calm"] },
+    { "t": "윤", "tags": ["warm"] },
+    { "t": "도", "tags": ["solid"] },
+    { "t": "로", "tags": ["poetic"] },
+    { "t": "나", "tags": ["bright", "poetic"] },
+    { "t": "민", "tags": ["solid", "calm"] }
+  ],
+  "secondSyllable": [
+    { "t": "윤", "tags": ["warm"] },
+    { "t": "린", "tags": ["soft"] },
+    { "t": "안", "tags": ["calm"] },
+    { "t": "온", "tags": ["calm", "nature"] },
+    { "t": "현", "tags": ["solid"] },
+    { "t": "아", "tags": ["soft", "poetic"] },
+    { "t": "율", "tags": ["bright"] },
+    { "t": "호", "tags": ["solid", "bright"] }
+  ],
+  "englishByTag": {
+    "soft": ["Aria", "Hannah", "Lily", "Mina"],
+    "warm": ["Eleanor", "Nora", "Claire"],
+    "solid": ["Daniel", "Ethan", "Henry", "Leo"],
+    "calm": ["Noah", "Julian", "Miles"],
+    "bright": ["Ella", "Chloe", "Evan"],
+    "poetic": ["Luna", "Iris", "Sage"],
+    "nature": ["River", "Sky", "Hazel"]
+  }
+}
