@@ -18,17 +18,31 @@ function renderTags(tags) {
   wrap.innerHTML = "";
   tags.forEach((tag) => {
     const btn = document.createElement("button");
-    btn.textContent = tag.label;
     btn.onclick = () => {
+      const hint = document.getElementById("tagHint");
+
+      // 이미 선택된 태그면 해제
       if (selectedTags.has(tag.id)) {
         selectedTags.delete(tag.id);
         btn.classList.remove("active");
-      } else {
-        if (selectedTags.size >= 3) return;
-        selectedTags.add(tag.id);
-        btn.classList.add("active");
+        if (hint) hint.textContent = `선택됨: ${selectedTags.size}개`;
+        return;
       }
+
+      // 2개 초과 선택 방지
+      if (selectedTags.size >= 2) {
+        if (hint)
+          hint.textContent =
+            "느낌은 최대 2개까지 추천합니다. 다른 느낌을 빼고 선택해 주세요.";
+        return;
+      }
+
+      // 선택
+      selectedTags.add(tag.id);
+      btn.classList.add("active");
+      if (hint) hint.textContent = `선택됨: ${selectedTags.size}개`;
     };
+
     wrap.appendChild(btn);
   });
 }
@@ -53,9 +67,19 @@ function scoreName(surnameTags, nameTags, userTags) {
   let score = 0;
 
   // 사용자 태그 일치
-  userTags.forEach((t) => {
-    if (nameTags.includes(t)) score += 5;
-  });
+  // 주 느낌만 강하게 반영
+  if (userTags.length > 0) {
+    if (nameTags.includes(userTags[0])) {
+      score += 5;
+    }
+  }
+
+  // 보조 느낌은 약하게
+  if (userTags.length > 1) {
+    if (nameTags.includes(userTags[1])) {
+      score += 2;
+    }
+  }
 
   // 성씨 태그와 이름 태그 조화(아주 단순)
   surnameTags.forEach((st) => {
@@ -63,6 +87,11 @@ function scoreName(surnameTags, nameTags, userTags) {
     if (st === "soft" && nameTags.includes("solid")) score += 2;
     if (st === "calm" && nameTags.includes("poetic")) score += 2;
   });
+
+  // 한국 이름 기본 안정 영역 보정
+  if (nameTags.includes("calm") || nameTags.includes("soft")) {
+    score += 1;
+  }
 
   return score;
 }
