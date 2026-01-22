@@ -1,5 +1,39 @@
 console.log("APP VERSION: FINAL CLEAN REBUILD");
 
+// 생성 금지 이름 목록
+const BLOCKED_GIVEN_NAMES = [
+  "도린",
+  "윤온",
+  "결온",
+
+  "이민",
+  "연안",
+  "이하",
+  "선린",
+  "아우",
+  "윤린",
+  "우오",
+  "우은",
+  "연윤",
+  "지린",
+  "선서",
+  "아호",
+  "선율",
+  "준윤",
+  "시이",
+  "시서",
+  "이오",
+  "연현",
+  "선원",
+  "현안",
+  "현린",
+  "윤율",
+  "은린",
+  "주윤",
+  "준린",
+  "지준",
+];
+
 // =====================
 // Global state
 // =====================
@@ -252,7 +286,7 @@ async function main() {
   DATA = await loadData();
 
   // 차단 + 인기 rank 준비
-  DATA._blockedSet = new Set(DATA.blockedGivenNames || []);
+  DATA._blockedSet = new Set(BLOCKED_GIVEN_NAMES);
   DATA._popularRank = new Map();
   (DATA.popularGivenNames?.nationwideTop || []).forEach((nm, i) => {
     DATA._popularRank.set(nm, i + 1);
