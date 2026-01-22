@@ -18,6 +18,7 @@ function renderTags(tags) {
   wrap.innerHTML = "";
   tags.forEach((tag) => {
     const btn = document.createElement("button");
+    btn.textContent = tag.label;
     btn.onclick = () => {
       const hint = document.getElementById("tagHint");
 
