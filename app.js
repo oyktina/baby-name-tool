@@ -1,8 +1,17 @@
-console.log("APP VERSION: 2026-01-22 UX MAX2");
+console.log("APP VERSION: FINAL CLEAN REBUILD");
 
+// =====================
+// Global state
+// =====================
 let DATA = null;
 let selectedTags = new Set();
 
+// 느낌 조합별 최근 결과 기억 (중복 체감 완화)
+const recentByTagKey = new Map(); // key: "bright|warm" → Set(["이현", ...])
+
+// =====================
+// Utils
+// =====================
 function pickOne(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 }
@@ -11,19 +20,31 @@ function uniq(arr) {
   return [...new Set(arr)];
 }
 
+function tagKey() {
+  return [...selectedTags].sort().join("|");
+}
+
 async function loadData() {
   const res = await fetch("./data.json");
-  if (!res.ok) throw new Error(`Failed to load data.json: ${res.status}`);
+  if (!res.ok) throw new Error("Failed to load data.json");
   return res.json();
 }
 
+// =====================
+// UI helpers
+// =====================
 function setHint(msg) {
-  const hint = document.getElementById("tagHint");
-  if (hint) hint.textContent = msg || "";
+  const el = document.getElementById("tagHint");
+  if (el) el.textContent = msg;
 }
 
 function updateHint() {
-  setHint(`선택됨: ${selectedTags.size}개 (최대 2개)`);
+  const n = selectedTags.size;
+  if (n === 0) {
+    setHint("선택됨: 0개 (선택하지 않으면 무난한 이름 위주로 추천)");
+  } else {
+    setHint(`선택됨: ${n}개 → ${[...selectedTags].join(", ")} (최대 2개)`);
+  }
 }
 
 function resetTagsUI() {
@@ -35,30 +56,20 @@ function resetTagsUI() {
   updateHint();
 }
 
+// =====================
+// Render tags
+// =====================
 function renderTags(tags) {
   const wrap = document.getElementById("tagButtons");
   wrap.innerHTML = "";
 
-  // 데이터 sanity check (원인 추적용)
-  const ids = tags.map((t) => t?.id);
-  console.log("TAGS LENGTH:", tags.length);
-  console.log("UNIQUE IDS:", new Set(ids).size);
-
   tags.forEach((tag) => {
     const btn = document.createElement("button");
     btn.type = "button";
-    btn.textContent = tag.label ?? tag.id ?? "(태그)";
-    btn.setAttribute("data-tag-id", tag.id);
+    btn.textContent = tag.label;
     btn.setAttribute("aria-pressed", "false");
 
     btn.onclick = () => {
-      // 안전장치: id가 없으면 선택 로직이 꼬일 수 있으니 막음
-      if (!tag.id) {
-        setHint("태그 데이터(id)가 비어 있어 선택할 수 없습니다.");
-        return;
-      }
-
-      // 이미 선택된 태그면 해제
       if (selectedTags.has(tag.id)) {
         selectedTags.delete(tag.id);
         btn.classList.remove("active");
@@ -67,15 +78,11 @@ function renderTags(tags) {
         return;
       }
 
-      // 2개 초과 방지 (핵심)
       if (selectedTags.size >= 2) {
-        setHint(
-          "느낌은 최대 2개까지 선택할 수 있어요. 다른 느낌을 먼저 해제해 주세요.",
-        );
+        setHint("느낌은 최대 2개까지 선택할 수 있어요.");
         return;
       }
 
-      // 선택
       selectedTags.add(tag.id);
       btn.classList.add("active");
       btn.setAttribute("aria-pressed", "true");
@@ -88,14 +95,18 @@ function renderTags(tags) {
   updateHint();
 }
 
+// =====================
+// Naming logic
+// =====================
 function getSurnameTags(surname) {
-  const p = DATA.surnameProfiles?.find((x) => x.s === surname);
+  const p = DATA.surnameProfiles.find((x) => x.s === surname);
   return p ? p.tags : [];
 }
 
 function isBadCombo(surname, first, second) {
-  const lastChar = surname[surname.length - 1];
-  if (lastChar === first) return true;
+  // 성과 이름 첫 글자 동일 (이이안)
+  if (surname[surname.length - 1] === first) return true;
+  // 음절 반복 (하하)
   if (first === second) return true;
   return false;
 }
@@ -103,137 +114,164 @@ function isBadCombo(surname, first, second) {
 function scoreName(surnameTags, nameTags, userTags) {
   let score = 0;
 
-  // 주 느낌(첫 번째 선택) 강하게
-  if (userTags.length > 0 && nameTags.includes(userTags[0])) score += 5;
+  // ✅ 느낌 게이트: 느낌 선택 시 최소 1개 매칭 필수
+  if (userTags.length > 0) {
+    const ok = userTags.some((t) => nameTags.includes(t));
+    if (!ok) return -9999;
+  }
 
-  // 보조 느낌(두 번째 선택) 약하게
-  if (userTags.length > 1 && nameTags.includes(userTags[1])) score += 2;
+  // 주 느낌
+  if (userTags[0] && nameTags.includes(userTags[0])) score += 6;
+  // 보조 느낌
+  if (userTags[1] && nameTags.includes(userTags[1])) score += 3;
 
-  // 성씨 태그와 조화(단순 규칙)
+  // 성씨 조화
   surnameTags.forEach((st) => {
     if (st === "solid" && nameTags.includes("soft")) score += 2;
     if (st === "soft" && nameTags.includes("solid")) score += 2;
     if (st === "calm" && nameTags.includes("poetic")) score += 2;
   });
 
-  // 한국 이름 안정 영역 보정
-  if (nameTags.includes("calm") || nameTags.includes("soft")) score += 1;
+  // 느낌 미선택 시 무난 보정
+  if (userTags.length === 0) {
+    if (nameTags.includes("soft") || nameTags.includes("calm")) score += 1;
+  }
 
   return score;
 }
 
-function toneComment(surnameTags, nameTags) {
-  if (surnameTags.includes("solid") && nameTags.includes("soft"))
-    return "단단함과 부드러움이 균형을 이루는 조합";
-  if (surnameTags.includes("soft") && nameTags.includes("solid"))
-    return "부드러운 성에 중심이 잡힌 이름이 어울리는 조합";
-  if (nameTags.includes("poetic") && nameTags.includes("calm"))
-    return "차분한 분위기에 여백이 느껴지는 조합";
-  if (nameTags.includes("bright")) return "밝고 또렷한 인상을 주는 조합";
-  if (nameTags.includes("warm")) return "다정하고 온화한 인상을 주는 조합";
-  return "부르는 소리가 편안한 인상을 주는 조합";
+function popularBonus(rank) {
+  if (!rank) return 0;
+  const bucket = Math.floor((rank - 1) / 2); // 0~9
+  return Math.max(2, 10 - bucket);
 }
 
-function chooseEnglish(nameTags) {
-  const tag = nameTags.find((t) => DATA.englishByTag?.[t]);
-  if (!tag) return "Eden";
-  return pickOne(DATA.englishByTag[tag]);
+function toneComment(nameTags, rank) {
+  if (rank) return `요즘 많이 쓰이는 이름 (전국 상위 ${rank}위권)`;
+  if (nameTags.includes("bright")) return "밝고 또렷한 인상";
+  if (nameTags.includes("warm")) return "다정하고 온화한 인상";
+  if (nameTags.includes("poetic")) return "차분하고 감성적인 인상";
+  return "부르는 소리가 편안한 인상";
 }
 
-function generateCandidates(surname, gender, userTagsArr) {
+// =====================
+// Generate names
+// =====================
+function generateNames(surname, gender, userTags) {
   const surnameTags = getSurnameTags(surname);
+  const blocked = DATA._blockedSet;
+  const popRank = DATA._popularRank;
+
+  const key = tagKey();
+  if (!recentByTagKey.has(key)) recentByTagKey.set(key, new Set());
+  const recent = recentByTagKey.get(key);
 
   const candidates = [];
-  for (const f of DATA.firstSyllable || []) {
-    for (const s of DATA.secondSyllable || []) {
+
+  for (const f of DATA.firstSyllable) {
+    for (const s of DATA.secondSyllable) {
       const first = f.t;
       const second = s.t;
-      if (!first || !second) continue;
+
       if (isBadCombo(surname, first, second)) continue;
 
-      // gender는 MVP에서는 비필터(확장 포인트)
-      if (gender !== "any") {
-        // 추후: f.gender / s.gender 기준으로 걸러도 됨
-      }
-
       const given = first + second;
-      const full = surname + given;
+      if (blocked.has(given)) continue;
 
       const nameTags = uniq([...(f.tags || []), ...(s.tags || [])]);
-      const score = scoreName(surnameTags, nameTags, userTagsArr);
+      let score = scoreName(surnameTags, nameTags, userTags);
+      if (score < -1000) continue;
+
+      const rank = popRank.get(given);
+      score += popularBonus(rank);
+
+      if (recent.has(given)) score -= 3;
 
       candidates.push({
-        fullName: full,
-        givenName: given,
+        full: surname + given,
+        given,
         tags: nameTags,
         score,
-        comment: toneComment(surnameTags, nameTags),
-        en: chooseEnglish(nameTags),
+        rank,
+        comment: toneComment(nameTags, rank),
+        en: pickOne(DATA.englishByTag[nameTags[0]] || ["Eden"]),
       });
     }
   }
 
   candidates.sort((a, b) => b.score - a.score);
 
-  // 상위 80개 중 5개 랜덤(좀 더 무난한 결과 확보)
-  const top = candidates.slice(0, 80);
-  const picked = [];
-  while (picked.length < 5 && top.length > 0) {
-    const idx = Math.floor(Math.random() * top.length);
-    picked.push(top.splice(idx, 1)[0]);
+  const pool = candidates.slice(0, 80);
+  const result = [];
+  const used = new Set();
+
+  while (result.length < 5 && pool.length > 0) {
+    const idx = Math.floor(Math.random() * pool.length);
+    const item = pool.splice(idx, 1)[0];
+    if (used.has(item.given)) continue;
+    used.add(item.given);
+    result.push(item);
   }
-  return picked;
+
+  result.forEach((r) => recent.add(r.given));
+  if (recent.size > 60) {
+    [...recent].slice(0, 20).forEach((x) => recent.delete(x));
+  }
+
+  return result;
 }
 
+// =====================
+// Render result
+// =====================
 function renderResult(items) {
   const wrap = document.getElementById("result");
   wrap.innerHTML = "";
 
-  if (!items || items.length === 0) {
-    wrap.innerHTML =
-      "<div class='muted'>추천 결과가 없습니다. 다른 느낌을 선택해보세요.</div>";
+  if (items.length === 0) {
+    wrap.innerHTML = "<div class='muted'>추천 결과가 없습니다.</div>";
     return;
   }
 
   items.forEach((it) => {
-    const card = document.createElement("div");
-    card.className = "card";
-    card.innerHTML = `
-      <div style="font-weight:800; font-size:18px;">${it.fullName}</div>
+    const div = document.createElement("div");
+    div.className = "card";
+    div.innerHTML = `
+      <div class="name">${it.full}</div>
       <div class="muted">– ${it.comment}</div>
       <div class="muted">English name: <b>${it.en}</b></div>
     `;
-    wrap.appendChild(card);
+    wrap.appendChild(div);
   });
 }
 
+// =====================
+// Init
+// =====================
 async function main() {
-  try {
-    DATA = await loadData();
-    renderTags(DATA.tags || []);
+  DATA = await loadData();
 
-    document.getElementById("btn").onclick = () => {
-      const surname = (document.getElementById("surname").value || "").trim();
-      const gender = document.getElementById("gender").value;
-      const userTagsArr = [...selectedTags];
+  // 차단 + 인기 rank 준비
+  DATA._blockedSet = new Set(DATA.blockedGivenNames || []);
+  DATA._popularRank = new Map();
+  (DATA.popularGivenNames?.nationwideTop || []).forEach((nm, i) => {
+    DATA._popularRank.set(nm, i + 1);
+  });
 
-      if (!surname) {
-        alert("성을 입력해 주세요. 예: 김");
-        return;
-      }
+  renderTags(DATA.tags);
 
-      const items = generateCandidates(surname, gender, userTagsArr);
-      renderResult(items);
-    };
+  document.getElementById("btn").onclick = () => {
+    const surname = document.getElementById("surname").value.trim();
+    const gender = document.getElementById("gender").value;
+    if (!surname) {
+      alert("성을 입력해 주세요.");
+      return;
+    }
+    const items = generateNames(surname, gender, [...selectedTags]);
+    renderResult(items);
+  };
 
-    document.getElementById("btnReset").onclick = () => {
-      resetTagsUI();
-    };
-  } catch (e) {
-    console.error(e);
-    document.getElementById("result").innerHTML =
-      "<div class='muted'>데이터 로딩에 실패했습니다. data.json 경로/내용을 확인해 주세요.</div>";
-  }
+  document.getElementById("btnReset").onclick = resetTagsUI;
 }
 
 main();
