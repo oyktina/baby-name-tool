@@ -352,12 +352,14 @@ function generateNames(surname, gender) {
 
   candidates.sort((a, b) => b.score - a.score);
 
-  // pick 5 from top slice randomly
+  const RESULT_COUNT = 10;
+
+  // pick 10 from top slice randomly
   const top = candidates.slice(0, 140);
   const result = [];
   const used = new Set();
 
-  while (result.length < 5 && top.length > 0) {
+  while (result.length < RESULT_COUNT && top.length > 0) {
     const idx = Math.floor(Math.random() * top.length);
     const it = top.splice(idx, 1)[0];
     if (used.has(it.given)) continue;
