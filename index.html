@@ -3,133 +3,145 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>아이이름짓기</title>
-    <style>
-      body {
-        font-family:
-          system-ui,
-          -apple-system,
-          Segoe UI,
-          Roboto,
-          "Noto Sans KR",
-          sans-serif;
-        margin: 24px;
-        max-width: 720px;
-      }
-      .title {
-        font-size: 22px;
-        font-weight: 800;
-        margin-bottom: 6px;
-      }
-      .muted {
-        color: #666;
-        font-size: 13px;
-      }
-      hr {
-        margin: 18px 0;
-        border: 0;
-        border-top: 1px solid #eee;
-      }
-      .row {
-        display: flex;
-        gap: 12px;
-        flex-wrap: wrap;
-        margin-bottom: 12px;
-      }
-      label {
-        font-weight: 600;
-      }
-      input,
-      select,
-      button {
-        padding: 10px 12px;
-        font-size: 14px;
-      }
-      button.primary {
-        border: 0;
-        border-radius: 10px;
-        cursor: pointer;
-      }
-      .tags {
-        display: flex;
-        gap: 8px;
-        flex-wrap: wrap;
-        margin-top: 8px;
-      }
-      .tags button {
-        border: 1px solid #ddd;
-        background: #fff;
-        border-radius: 999px;
-        cursor: pointer;
-        padding: 8px 12px;
-      }
-      .tags button.active {
-        border-color: #111;
-      }
-      .hint {
-        margin-top: 10px;
-      }
-      .card {
-        border: 1px solid #eee;
-        border-radius: 12px;
-        padding: 12px 14px;
-        margin: 10px 0;
-      }
-      .row > div {
-        min-width: 220px;
-      }
-    </style>
+    <title>아이 이름 짓기</title>
+    <link rel="stylesheet" href="./styles.css" />
   </head>
 
   <body>
-    <div class="title">아이이름짓기</div>
-    <div class="muted">의미/사주/한자 기반이 아닌, “느낌” 기반 추천입니다.</div>
-    <div class="muted">느낌은 1~2개가 가장 자연스럽습니다.</div>
+    <main class="page">
+      <!-- Header -->
+      <header class="hero">
+        <div class="hero__badge" aria-hidden="true">
+          <!-- simple sparkle icon -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M12 2l1.2 4.2L17.4 8 13.2 9.2 12 13.4 10.8 9.2 6.6 8l4.2-1.8L12 2z"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M19 12l.8 2.8L22.6 16 19.8 16.8 19 19.6 18.2 16.8 15.4 16l2.8-1.2L19 12z"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
 
-    <hr />
+        <h1 class="hero__title">
+          <span class="grad1">아이</span>
+          <span class="grad2"> 이름</span>
+          <span class="grad3"> 짓기</span>
+        </h1>
 
-    <div class="row">
-      <div>
-        <label>성(필수)</label><br />
-        <input id="surname" placeholder="예: 김" maxlength="2" />
+        <p class="hero__desc">
+          의미/사주/한자 기반이 아닌, <b>“느낌” 기반</b> 추천입니다.<br />
+          성별과 느낌을 선택하면 1~2가지 자동 제안됩니다.
+        </p>
+      </header>
+
+      <!-- Card -->
+      <section class="card">
+        <div class="card__head">
+          <div class="card__icon" aria-hidden="true">✨</div>
+          <div>
+            <div class="card__title">이름 정보 입력</div>
+            <div class="card__sub">아이의 정보를 입력해주세요</div>
+          </div>
+        </div>
+
+        <div class="form">
+          <!-- surname -->
+          <div class="field">
+            <label class="label" for="surname">성(姓)</label>
+            <input
+              id="surname"
+              class="input"
+              placeholder="예: 김"
+              maxlength="2"
+              autocomplete="off"
+            />
+          </div>
+
+          <!-- gender -->
+          <div class="field">
+            <div class="label">성별</div>
+            <div class="seg" role="group" aria-label="성별 선택">
+              <label class="seg__item">
+                <input type="radio" name="genderRadio" value="male" />
+                <span>남아</span>
+              </label>
+              <label class="seg__item">
+                <input type="radio" name="genderRadio" value="female" />
+                <span>여아</span>
+              </label>
+              <label class="seg__item seg__item--ghost">
+                <input type="radio" name="genderRadio" value="any" checked />
+                <span>상관없음</span>
+              </label>
+            </div>
+
+            <!-- hidden select for backward compatibility with your existing JS -->
+            <select
+              id="gender"
+              class="sr-only"
+              aria-hidden="true"
+              tabindex="-1"
+            >
+              <option value="any" selected>상관없음</option>
+              <option value="female">여아</option>
+              <option value="male">남아</option>
+            </select>
+          </div>
+
+          <!-- tags -->
+          <div class="field">
+            <div class="label">느낌 (최대 2개)</div>
+            <div class="tags" id="tagButtons"></div>
+            <div class="hint" id="tagHint"></div>
+          </div>
+
+          <!-- action -->
+          <button class="cta" id="btn" type="button">
+            <span class="cta__spark" aria-hidden="true">✦</span>
+            이름 제안 받기
+          </button>
+
+          <!-- results -->
+          <div id="result" class="result"></div>
+
+          <div class="footnote">
+            참고용 도구입니다. 특정 이름이 더 “좋다”는 의미가 아닙니다.
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Center Modal (Name Detail) -->
+    <div id="modalOverlay" class="modalOverlay" style="display: none"></div>
+    <div id="nameModal" class="modalWrap" style="display: none">
+      <div class="modal">
+        <div class="modal__head">
+          <div class="modal__title" id="modalTitle">이름 상세</div>
+          <button id="modalClose" class="modal__close" type="button">
+            닫기
+          </button>
+        </div>
+        <div id="modalBody" class="modal__body"></div>
       </div>
-
-      <div>
-        <label>성별</label><br />
-        <select id="gender">
-          <option value="any">상관없음</option>
-          <option value="female">여아</option>
-          <option value="male">남아</option>
-        </select>
-      </div>
     </div>
 
-    <div class="row">
-      <div style="flex: 1">
-        <label>느낌 (최대 2개)</label>
-        <div class="tags" id="tagButtons"></div>
-        <div class="muted hint" id="tagHint"></div>
-      </div>
-    </div>
+    <script>
+      // sync radio -> hidden select (#gender) so existing JS keeps working
+      const sel = document.getElementById("gender");
+      document.querySelectorAll('input[name="genderRadio"]').forEach((r) => {
+        r.addEventListener("change", () => {
+          if (r.checked && sel) sel.value = r.value;
+        });
+      });
+    </script>
 
-    <div class="row">
-      <button class="primary" id="btn">이름 받아보기</button>
-    </div>
-
-    <div id="result"></div>
-    <div
-      id="debug"
-      class="muted"
-      style="margin-top: 12px; white-space: pre-wrap"
-    ></div>
-
-    <hr />
-
-    <div class="muted">
-      참고용 도구입니다. 특정 이름이 더 “좋다”는 의미가 아닙니다.
-    </div>
-
-    <!-- 캐시가 문제일 때만 v=값을 바꿔서 강제 갱신하세요 -->
-    <script src="./app.js?v=20260122-1"></script>
+    <script type="module" src="./src/app.js"></script>
   </body>
 </html>
