@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>반려동물 이름 리스트</title>
+    <meta
+      name="description"
+      content="느낌별로 정리한 반려동물 이름 리스트입니다. 귀여운, 활발한, 고급스러운, 독특한 느낌의 이름을 확인해보세요."
+    />
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      .subpage-wrap {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 24px 24px 80px;
+      }
+
+      .sub-hero {
+        text-align: center;
+        padding: 56px 0 28px;
+      }
+
+      .sub-hero__title {
+        font-size: 48px;
+        line-height: 1.15;
+        font-weight: 800;
+        margin: 0 0 12px;
+        letter-spacing: -0.02em;
+        color: #1f2a44;
+      }
+
+      .sub-hero__desc {
+        margin: 0;
+        font-size: 18px;
+        color: #667085;
+        line-height: 1.6;
+      }
+
+      .filter-card {
+        background: rgba(255, 255, 255, 0.82);
+        border: 1px solid rgba(229, 222, 241, 0.95);
+        border-radius: 24px;
+        padding: 24px;
+        box-shadow: 0 12px 32px rgba(80, 55, 120, 0.06);
+      }
+
+      .filter-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .filter-title {
+        font-size: 20px;
+        font-weight: 700;
+        color: #1f2a44;
+      }
+
+      .filter-select {
+        height: 48px;
+        min-width: 220px;
+        padding: 0 14px;
+        border-radius: 14px;
+        border: 1px solid #e5dff0;
+        background: #fff;
+        font-size: 15px;
+      }
+
+      .table-card {
+        margin-top: 24px;
+        background: rgba(255, 255, 255, 0.82);
+        border: 1px solid rgba(229, 222, 241, 0.95);
+        border-radius: 24px;
+        padding: 10px 0;
+        box-shadow: 0 12px 32px rgba(80, 55, 120, 0.06);
+        overflow: hidden;
+      }
+
+      .name-table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      .name-table thead th {
+        text-align: left;
+        font-size: 14px;
+        font-weight: 700;
+        color: #667085;
+        padding: 18px 24px;
+        background: #faf7fd;
+        border-bottom: 1px solid #eee7f5;
+      }
+
+      .name-table tbody td {
+        padding: 18px 24px;
+        border-bottom: 1px solid #f0ebf7;
+        font-size: 15px;
+        color: #253046;
+        vertical-align: top;
+      }
+
+      .name-table tbody tr:last-child td {
+        border-bottom: 0;
+      }
+
+      .name-chip {
+        display: inline-block;
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: #fff0dc;
+        color: #d97a00;
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      @media (max-width: 768px) {
+        .subpage-wrap {
+          padding: 16px 16px 60px;
+        }
+
+        .sub-hero {
+          padding: 36px 0 22px;
+        }
+
+        .sub-hero__title {
+          font-size: 34px;
+        }
+
+        .sub-hero__desc {
+          font-size: 15px;
+        }
+
+        .filter-card {
+          padding: 18px;
+        }
+
+        .filter-row {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .filter-select {
+          width: 100%;
+          min-width: 0;
+        }
+
+        .name-table thead th,
+        .name-table tbody td {
+          padding: 14px 14px;
+          font-size: 14px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="site-bg">
+      <div class="subpage-wrap">
+        <nav class="topnav">
+          <div class="topnav__inner">
+            <a href="../index.html" class="topnav__brand">
+              <div class="topnav__logo">👶</div>
+              <span class="topnav__brand-text">아이 이름 짓기</span>
+            </a>
+
+            <div class="topnav__menu">
+              <a href="../index.html" class="topnav__link">아기 이름 짓기</a>
+              <a href="./pet-name.html" class="topnav__link topnav__link--active">반려동물 이름</a>
+              <a href="./korean-name.html" class="topnav__link">순우리말 이름</a>
+            </div>
+          </div>
+        </nav>
+
+        <header class="sub-hero">
+          <h1 class="sub-hero__title">반려동물 이름 리스트</h1>
+          <p class="sub-hero__desc">
+            느낌별로 잘 어울리는 반려동물 이름을 모아봤어요.<br />
+            귀엽고 재미있는 이름을 편하게 살펴보세요.
+          </p>
+        </header>
+
+        <section class="filter-card">
+          <div class="filter-row">
+            <div class="filter-title">느낌별 보기</div>
+            <select id="petFeeling" class="filter-select">
+              <option value="all">전체</option>
+              <option value="cute">귀여운</option>
+              <option value="active">활발한</option>
+              <option value="luxury">고급스러운</option>
+              <option value="unique">독특한</option>
+            </select>
+          </div>
+        </section>
+
+        <section class="table-card">
+          <table class="name-table">
+            <thead>
+              <tr>
+                <th style="width: 20%">이름</th>
+                <th style="width: 20%">느낌</th>
+                <th>설명</th>
+              </tr>
+            </thead>
+            <tbody id="petNameTable"></tbody>
+          </table>
+        </section>
+      </div>
+    </div>
+
+    <script src="../js/pet-name.js"></script>
+  </body>
+</html>
