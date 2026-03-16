@@ -18,7 +18,7 @@ const globalNameData = [
   { name: "선우", roman: "Seon-woo", feeling: "neutral", desc: "부드럽고 중성적인 분위기를 가진 이름" },
   { name: "서준", roman: "Seo-jun", feeling: "modern", desc: "세련되고 또렷한 구조의 이름" },
   { name: "현우", roman: "Hyeon-woo", feeling: "neutral", desc: "차분하고 안정감 있는 인상을 주는 이름" },
-  { name: "유안", roman: "Yu-an", feeling: "easy", desc: "짧고 글로벌 환경에서도 비교적 자연스러운 이름" }
+  { name: "유안", roman: "Yu-an", feeling: "easy", desc: "짧고 글로벌 환경에서도 비교적 자연스러운 이름" },
   { name: "로나", roman: "Rona", feeling: "global", desc: "짧고 이국적인 울림이 있는 이름" },
   { name: "제니", roman: "Jenny", feeling: "global", desc: "해외에서도 익숙하게 들리는 이름" },
   { name: "로아", roman: "Roa", feeling: "modern", desc: "짧고 세련된 느낌의 이름" },
