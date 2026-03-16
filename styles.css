@@ -841,3 +841,10 @@ body {
   }
 
 }
+.service-card--global {
+  background: #e8f3ff;
+}
+
+.service-card__icon--global {
+  background: linear-gradient(135deg, #4f8cff 0%, #4fd1ff 100%);
+}
