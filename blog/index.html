@@ -1,15 +1,13 @@
 <!doctype html>
 <html lang="ko">
   <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2329221115092158"
-     crossorigin="anonymous"></script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>아기 이름 추천, 순우리말 이름, 반려동물 이름 이야기 | 아이 이름 짓기</title>
+    <title>아기 이름 추천, 순우리말 이름, 반려동물 이름 이야기 | 아이 이름 짓기</title>
     <meta
-  name="description"
-  content="아기 이름 추천, 순우리말 이름, 강아지 이름과 고양이 이름까지 다양한 이름 아이디어를 소개합니다. 이름 트렌드와 뜻, 예쁜 이름 리스트를 확인해보세요."
-/>
+      name="description"
+      content="아기 이름 추천, 순우리말 이름, 강아지 이름과 고양이 이름까지 다양한 이름 아이디어를 소개합니다. 이름 트렌드와 뜻, 예쁜 이름 리스트를 확인해보세요."
+    />
     <link rel="stylesheet" href="../styles.css" />
     <style>
       .blog-wrap {
@@ -20,7 +18,7 @@
 
       .blog-hero {
         text-align: center;
-        padding: 56px 0 28px;
+        padding: 56px 0 24px;
       }
 
       .blog-hero__title {
@@ -33,36 +31,56 @@
       }
 
       .blog-hero__desc {
-        margin: 0;
+        margin: 0 auto;
+        max-width: 760px;
         font-size: 17px;
         color: #667085;
-        line-height: 1.6;
+        line-height: 1.7;
       }
 
-      .blog-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 24px;
+      .blog-section {
         margin-top: 28px;
       }
 
+      .blog-section__title {
+        font-size: 24px;
+        font-weight: 800;
+        color: #1f2a44;
+        margin: 0 0 14px;
+      }
+
+      .blog-section__desc {
+        margin: 0 0 18px;
+        color: #667085;
+        font-size: 15px;
+        line-height: 1.7;
+      }
+
+      .featured-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+      }
+
+      .featured-card,
       .blog-card {
         display: block;
         text-decoration: none;
-        background: rgba(255, 255, 255, 0.86);
+        background: rgba(255, 255, 255, 0.88);
         border: 1px solid rgba(229, 222, 241, 0.95);
         border-radius: 24px;
-        padding: 24px;
+        padding: 22px;
         box-shadow: 0 12px 32px rgba(80, 55, 120, 0.06);
         transition: transform 0.18s ease, box-shadow 0.18s ease;
       }
 
+      .featured-card:hover,
       .blog-card:hover {
         transform: translateY(-4px);
         box-shadow: 0 18px 36px rgba(80, 55, 120, 0.1);
       }
 
-      .blog-card__tag {
+      .card-tag {
         display: inline-block;
         padding: 6px 12px;
         border-radius: 999px;
@@ -73,20 +91,64 @@
         margin-bottom: 14px;
       }
 
-      .blog-card__title {
-        font-size: 24px;
+      .card-title {
+        font-size: 22px;
+        line-height: 1.35;
         font-weight: 800;
         color: #1f2a44;
-        line-height: 1.35;
         margin: 0 0 10px;
         letter-spacing: -0.02em;
       }
 
-      .blog-card__desc {
-        font-size: 15px;
+      .card-desc {
+        margin: 0;
+        font-size: 14px;
         line-height: 1.7;
         color: #667085;
+      }
+
+      .category-box {
+        background: rgba(255, 255, 255, 0.7);
+        border: 1px solid rgba(229, 222, 241, 0.9);
+        border-radius: 24px;
+        padding: 24px;
+      }
+
+      .category-list {
         margin: 0;
+        padding-left: 18px;
+        color: #3f4a60;
+        line-height: 1.9;
+        font-size: 15px;
+      }
+
+      .blog-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .service-return {
+        margin-top: 36px;
+        text-align: center;
+      }
+
+      .service-return a {
+        display: inline-block;
+        text-decoration: none;
+        padding: 12px 18px;
+        border-radius: 14px;
+        background: linear-gradient(135deg, #a74cff 0%, #ff4ca0 100%);
+        color: #fff;
+        font-weight: 700;
+        box-shadow: 0 8px 18px rgba(167, 76, 255, 0.2);
+      }
+
+      @media (max-width: 900px) {
+        .featured-grid,
+        .blog-grid {
+          grid-template-columns: 1fr;
+        }
       }
 
       @media (max-width: 768px) {
@@ -95,7 +157,7 @@
         }
 
         .blog-hero {
-          padding: 36px 0 20px;
+          padding: 36px 0 18px;
         }
 
         .blog-hero__title {
@@ -106,22 +168,8 @@
           font-size: 15px;
         }
 
-        .blog-grid {
-          grid-template-columns: 1fr;
-          gap: 16px;
-        }
-
-        .blog-card {
-          padding: 20px;
-          border-radius: 20px;
-        }
-
-        .blog-card__title {
+        .card-title {
           font-size: 20px;
-        }
-
-        .blog-card__desc {
-          font-size: 14px;
         }
       }
     </style>
@@ -149,51 +197,150 @@
         <header class="blog-hero">
           <h1 class="blog-hero__title">이름 이야기</h1>
           <p class="blog-hero__desc">
-            아기 이름 추천, 순우리말 이름, 반려동물 이름을 짓는 데 도움이 되는 이야기와 아이디어를 모아봤어요.
+            아기 이름 추천, 순우리말 이름, 반려동물 이름에 대한 다양한 이야기와 작명 아이디어를 정리했습니다.
+            이름의 의미, 트렌드, 발음, 분위기까지 함께 살펴보세요.
           </p>
         </header>
 
-        <section class="blog-grid">
-          <a href="./baby-name-trends.html" class="blog-card">
-            <div class="blog-card__tag">아기 이름</div>
-            <h2 class="blog-card__title">아기 이름 트렌드, 요즘 부모들이 많이 찾는 이름 | 아이 이름 짓기</h2>
-            <p class="blog-card__desc">
-              최근 부모들이 선호하는 이름 스타일과 자주 보이는 흐름을 정리했습니다.
-            </p>
-          </a>
+        <section class="blog-section">
+          <h2 class="blog-section__title">추천 글</h2>
+          <div class="featured-grid">
+            <a href="./baby-name-trends.html" class="featured-card">
+              <div class="card-tag">아기 이름</div>
+              <h3 class="card-title">2026 아기 이름 추천 트렌드, 요즘 부모들이 많이 찾는 이름</h3>
+              <p class="card-desc">최근 부모들이 선호하는 이름 스타일과 실제로 많이 보이는 흐름을 정리했습니다.</p>
+            </a>
 
-          <a href="./korean-name-meaning.html" class="blog-card">
-            <div class="blog-card__tag">순우리말</div>
-            <h2 class="blog-card__title">순우리말 이름 추천, 부모들이 한글 이름을 찾는 이유</h2>
-            <p class="blog-card__desc">
-              순우리말 이름이 주는 느낌과 최근 선호 흐름을 쉽게 정리했습니다.
-            </p>
-          </a>
+            <a href="./pretty-korean-names.html" class="featured-card">
+              <div class="card-tag">순우리말</div>
+              <h3 class="card-title">예쁜 순우리말 이름 추천 20가지, 뜻이 아름다운 한글 이름</h3>
+              <p class="card-desc">발음과 의미가 아름다운 순우리말 이름을 골라 소개합니다.</p>
+            </a>
 
-          <a href="./pet-name-ideas.html" class="blog-card">
-            <div class="blog-card__tag">반려동물</div>
-            <h2 class="blog-card__title">강아지 이름 추천, 고양이 이름 추천 아이디어 모음</h2>
-            <p class="blog-card__desc">
-              귀엽고 부르기 쉬운 반려동물 이름을 느낌별로 소개합니다.
-            </p>
-          </a>
-
-          <a href="./pretty-korean-names.html" class="blog-card">
-            <div class="blog-card__tag">한글 이름</div>
-            <h2 class="blog-card__title">예쁜 순우리말 이름 추천 20가지, 뜻이 아름다운 한글 이름</h2>
-            <p class="blog-card__desc">
-              발음도 좋고 의미도 예쁜 순우리말 이름을 골라 소개합니다.
-            </p>
-          </a>
-
-          <a href="./unique-baby-names.html" class="blog-card">
-            <div class="blog-card__tag">특별한 이름</div>
-            <h2 class="blog-card__title">흔하지 않은 아기 이름 추천, 특별하지만 자연스러운 이름 아이디어</h2>
-            <p class="blog-card__desc">
-              너무 튀지는 않지만 조금 더 특별한 느낌의 이름을 찾을 때 참고해보세요.
-            </p>
-          </a>
+            <a href="./pet-name-ideas.html" class="featured-card">
+              <div class="card-tag">반려동물</div>
+              <h3 class="card-title">강아지 이름 추천, 고양이 이름 추천 아이디어 모음</h3>
+              <p class="card-desc">귀엽고 부르기 쉬운 반려동물 이름을 느낌별로 정리했습니다.</p>
+            </a>
+          </div>
         </section>
+
+        <section class="blog-section">
+          <h2 class="blog-section__title">이름 이야기 카테고리</h2>
+          <div class="category-box">
+            <p class="blog-section__desc">
+              현재 사이트에서는 다음과 같은 주제로 이름 관련 정보를 꾸준히 정리하고 있습니다.
+            </p>
+            <ul class="category-list">
+              <li>아기 이름 추천 트렌드</li>
+              <li>순우리말 이름 의미와 추천</li>
+              <li>반려동물 이름 아이디어</li>
+              <li>부르기 쉬운 이름, 짧은 이름, 따뜻한 이름 같은 분위기별 가이드</li>
+              <li>성씨와 어울리는 이름, 형제자매 이름 조합, 유행 이름과 오래가는 이름 비교</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="blog-section">
+          <h2 class="blog-section__title">전체 글 목록</h2>
+          <div class="blog-grid">
+
+            <a href="./baby-name-trends.html" class="blog-card">
+              <div class="card-tag">아기 이름</div>
+              <h3 class="card-title">2026 아기 이름 추천 트렌드, 요즘 부모들이 많이 찾는 이름</h3>
+              <p class="card-desc">최근 부모들이 선호하는 아기 이름 스타일과 자주 보이는 흐름을 정리했습니다.</p>
+            </a>
+
+            <a href="./korean-name-meaning.html" class="blog-card">
+              <div class="card-tag">순우리말</div>
+              <h3 class="card-title">순우리말 이름 추천, 부모들이 한글 이름을 찾는 이유</h3>
+              <p class="card-desc">순우리말 이름이 왜 꾸준히 사랑받는지, 어떤 매력이 있는지 설명합니다.</p>
+            </a>
+
+            <a href="./pet-name-ideas.html" class="blog-card">
+              <div class="card-tag">반려동물</div>
+              <h3 class="card-title">강아지 이름 추천, 고양이 이름 추천 아이디어 모음</h3>
+              <p class="card-desc">귀엽고 부르기 쉬운 반려동물 이름 아이디어를 모았습니다.</p>
+            </a>
+
+            <a href="./pretty-korean-names.html" class="blog-card">
+              <div class="card-tag">한글 이름</div>
+              <h3 class="card-title">예쁜 순우리말 이름 추천 20가지, 뜻이 아름다운 한글 이름</h3>
+              <p class="card-desc">발음도 좋고 의미도 예쁜 순우리말 이름을 소개합니다.</p>
+            </a>
+
+            <a href="./unique-baby-names.html" class="blog-card">
+              <div class="card-tag">특별한 이름</div>
+              <h3 class="card-title">흔하지 않은 아기 이름 추천, 특별하지만 자연스러운 이름 아이디어</h3>
+              <p class="card-desc">너무 튀지 않으면서도 개성 있는 이름을 찾을 때 참고할 수 있는 글입니다.</p>
+            </a>
+
+            <a href="./good-name-criteria.html" class="blog-card">
+              <div class="card-tag">작명 가이드</div>
+              <h3 class="card-title">좋은 이름의 기준 5가지</h3>
+              <p class="card-desc">좋은 이름을 고를 때 꼭 확인하면 좋은 핵심 기준을 정리했습니다.</p>
+            </a>
+
+            <a href="./easy-pronounce-names.html" class="blog-card">
+              <div class="card-tag">발음</div>
+              <h3 class="card-title">부르기 쉬운 이름이 좋은 이유</h3>
+              <p class="card-desc">실제로 오래 쓰기 좋은 이름은 왜 발음이 중요할까요? 쉽게 정리했습니다.</p>
+            </a>
+
+            <a href="./surname-matching-names.html" class="blog-card">
+              <div class="card-tag">성씨 조합</div>
+              <h3 class="card-title">성씨와 어울리는 이름 고르는 방법</h3>
+              <p class="card-desc">성과 이름을 함께 놓고 볼 때 자연스러운 조합을 고르는 방법입니다.</p>
+            </a>
+
+            <a href="./global-friendly-korean-names.html" class="blog-card">
+              <div class="card-tag">글로벌</div>
+              <h3 class="card-title">외국에서도 발음하기 쉬운 한국 이름</h3>
+              <p class="card-desc">글로벌 환경에서도 자연스럽게 쓰기 좋은 한국 이름을 소개합니다.</p>
+            </a>
+
+            <a href="./short-baby-names.html" class="blog-card">
+              <div class="card-tag">짧은 이름</div>
+              <h3 class="card-title">짧고 기억하기 쉬운 아기 이름 추천</h3>
+              <p class="card-desc">부르기 쉽고 기억하기 좋은 짧은 이름의 장점과 예시를 정리했습니다.</p>
+            </a>
+
+            <a href="./warm-feeling-names.html" class="blog-card">
+              <div class="card-tag">따뜻한 이름</div>
+              <h3 class="card-title">따뜻한 느낌의 아기 이름 추천</h3>
+              <p class="card-desc">부드럽고 따뜻한 인상을 주는 이름 스타일을 소개합니다.</p>
+            </a>
+
+            <a href="./calm-feeling-names.html" class="blog-card">
+              <div class="card-tag">차분한 이름</div>
+              <h3 class="card-title">차분한 느낌의 이름 추천</h3>
+              <p class="card-desc">안정적이고 편안한 인상을 주는 이름을 찾을 때 참고할 수 있습니다.</p>
+            </a>
+
+            <a href="./bright-feeling-names.html" class="blog-card">
+              <div class="card-tag">밝은 이름</div>
+              <h3 class="card-title">밝고 또렷한 느낌의 이름 추천</h3>
+              <p class="card-desc">밝고 긍정적인 인상을 주는 이름 스타일을 정리했습니다.</p>
+            </a>
+
+            <a href="./trendy-vs-timeless-names.html" class="blog-card">
+              <div class="card-tag">이름 트렌드</div>
+              <h3 class="card-title">유행 이름 vs 오래가는 이름</h3>
+              <p class="card-desc">유행 이름과 오래 사용하기 좋은 이름의 차이를 비교해봅니다.</p>
+            </a>
+
+            <a href="./sibling-name-combinations.html" class="blog-card">
+              <div class="card-tag">이름 조합</div>
+              <h3 class="card-title">형제자매 이름 조합 추천</h3>
+              <p class="card-desc">형제자매 이름을 함께 지을 때 참고하면 좋은 조합 포인트를 소개합니다.</p>
+            </a>
+
+          </div>
+        </section>
+
+        <div class="service-return">
+          <a href="../index.html">아이 이름 추천 서비스 바로가기</a>
+        </div>
 
         <footer class="site-footer">
           <div class="footer-inner">
