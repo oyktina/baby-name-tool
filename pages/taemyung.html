@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>태명 짓기 | 아이 이름 짓기</title>
+    <meta
+      name="description"
+      content="귀여운 태명, 순우리말 태명, 먹거리 태명, 자연 느낌 태명까지 느낌별로 태명을 추천해드립니다."
+    />
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      .subpage-wrap {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 24px 24px 80px;
+      }
+
+      .sub-hero {
+        text-align: center;
+        padding: 56px 0 28px;
+      }
+
+      .sub-hero__title {
+        font-size: 48px;
+        line-height: 1.15;
+        font-weight: 800;
+        margin: 0 0 12px;
+        letter-spacing: -0.02em;
+        color: #1f2a44;
+      }
+
+      .sub-hero__desc {
+        margin: 0;
+        font-size: 18px;
+        color: #667085;
+        line-height: 1.6;
+      }
+
+      .filter-card {
+        background: rgba(255, 255, 255, 0.82);
+        border: 1px solid rgba(229, 222, 241, 0.95);
+        border-radius: 24px;
+        padding: 24px;
+        box-shadow: 0 12px 32px rgba(80, 55, 120, 0.06);
+      }
+
+      .filter-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr auto;
+        gap: 16px;
+        align-items: end;
+      }
+
+      .field-label {
+        font-size: 14px;
+        font-weight: 700;
+        color: #1f2a44;
+        margin-bottom: 8px;
+      }
+
+      .filter-select {
+        height: 48px;
+        width: 100%;
+        padding: 0 14px;
+        border-radius: 14px;
+        border: 1px solid #e5dff0;
+        background: #fff;
+        font-size: 15px;
+      }
+
+      .filter-btn {
+        height: 48px;
+        padding: 0 20px;
+        border: 0;
+        border-radius: 14px;
+        background: linear-gradient(135deg, #a74cff 0%, #ff4da0 100%);
+        color: #fff;
+        font-size: 15px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .result-grid {
+        margin-top: 24px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+
+      .name-card {
+        background: rgba(255, 255, 255, 0.88);
+        border: 1px solid rgba(229, 222, 241, 0.95);
+        border-radius: 24px;
+        padding: 22px;
+        box-shadow: 0 12px 32px rgba(80, 55, 120, 0.06);
+      }
+
+      .name-card__tag {
+        display: inline-block;
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: #f3ecff;
+        color: #8b3dff;
+        font-size: 12px;
+        font-weight: 700;
+        margin-bottom: 12px;
+      }
+
+      .name-card__title {
+        font-size: 28px;
+        font-weight: 800;
+        color: #1f2a44;
+        margin: 0 0 8px;
+        letter-spacing: -0.02em;
+      }
+
+      .name-card__desc {
+        font-size: 15px;
+        color: #667085;
+        line-height: 1.7;
+        margin: 0 0 14px;
+      }
+
+      .name-card__sub {
+        font-size: 14px;
+        color: #3f4a60;
+        line-height: 1.7;
+      }
+
+      .page-note {
+        margin-top: 18px;
+        color: #667085;
+        font-size: 14px;
+        line-height: 1.7;
+      }
+
+      @media (max-width: 900px) {
+        .filter-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .result-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .subpage-wrap {
+          padding: 16px 16px 60px;
+        }
+
+        .sub-hero {
+          padding: 36px 0 22px;
+        }
+
+        .sub-hero__title {
+          font-size: 34px;
+        }
+
+        .sub-hero__desc {
+          font-size: 15px;
+        }
+
+        .filter-card {
+          padding: 18px;
+        }
+
+        .name-card {
+          padding: 18px;
+          border-radius: 20px;
+        }
+
+        .name-card__title {
+          font-size: 24px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="site-bg">
+      <div class="subpage-wrap">
+        <nav class="topnav">
+          <div class="topnav__inner">
+            <a href="../index.html" class="topnav__brand">
+              <div class="topnav__logo">👶</div>
+              <span class="topnav__brand-text">아이 이름 짓기</span>
+            </a>
+
+            <div class="topnav__menu">
+              <a href="../index.html" class="topnav__link">아기 이름 짓기</a>
+              <a href="./taemyung.html" class="topnav__link topnav__link--active">태명 짓기</a>
+              <a href="./korean-name.html" class="topnav__link">순우리말 이름</a>
+              <a href="./global-name.html" class="topnav__link">외국에서 쓰기 좋은 이름</a>
+              <a href="../blog/index.html" class="topnav__link">이름 이야기</a>
+            </div>
+          </div>
+        </nav>
+
+        <header class="sub-hero">
+          <h1 class="sub-hero__title">태명 짓기</h1>
+          <p class="sub-hero__desc">
+            귀엽고 부르기 좋은 태명을 느낌별로 추천해드려요.<br />
+            순우리말, 먹거리, 자연, 영어 느낌까지 가볍게 골라보세요.
+          </p>
+        </header>
+
+        <section class="filter-card">
+          <div class="filter-grid">
+            <div>
+              <div class="field-label">카테고리</div>
+              <select id="taeCategory" class="filter-select">
+                <option value="all">전체</option>
+                <option value="cute">귀여운 태명</option>
+                <option value="pure">순우리말 태명</option>
+                <option value="food">먹거리 태명</option>
+                <option value="nature">자연 느낌 태명</option>
+                <option value="english">영어 느낌 태명</option>
+                <option value="strong">튼튼한 느낌 태명</option>
+              </select>
+            </div>
+
+            <div>
+              <div class="field-label">느낌</div>
+              <select id="taeFeeling" class="filter-select">
+                <option value="all">전체</option>
+                <option value="soft">부드러운</option>
+                <option value="bright">밝은</option>
+                <option value="warm">따뜻한</option>
+                <option value="playful">귀여운</option>
+                <option value="strong">건강한</option>
+              </select>
+            </div>
+
+            <div>
+              <div class="field-label">스타일</div>
+              <select id="taeStyle" class="filter-select">
+                <option value="all">전체</option>
+                <option value="common">익숙한 스타일</option>
+                <option value="modern">요즘 느낌</option>
+                <option value="unique">조금 특별한 느낌</option>
+              </select>
+            </div>
+
+            <button id="taeBtn" class="filter-btn" type="button">태명 추천받기</button>
+          </div>
+        </section>
+
+        <section id="taeResult" class="result-grid"></section>
+
+        <p class="page-note">
+          태명은 정해진 규칙보다 가족이 편하게 부를 수 있는지가 더 중요합니다.
+          이 페이지는 감성적인 참고용 추천 도구입니다.
+        </p>
+
+        <footer class="site-footer">
+          <div class="footer-inner">
+            <div class="footer-grid">
+              <div class="footer-col">
+                <h4>서비스</h4>
+                <a href="../index.html">아기 이름 짓기</a>
+                <a href="./taemyung.html">태명 짓기</a>
+                <a href="./pet-name.html">반려동물 이름</a>
+                <a href="./korean-name.html">순우리말 이름</a>
+                <a href="./global-name.html">외국에서 쓰기 좋은 이름</a>
+              </div>
+
+              <div class="footer-col">
+                <h4>정보</h4>
+                <a href="../privacy.html">개인정보처리방침</a>
+                <a href="../about.html">사이트 소개</a>
+                <a href="../contact.html">문의하기</a>
+              </div>
+
+              <div class="footer-col">
+                <h4>안내</h4>
+                <p>의미있고 아름다운 이름을 찾는 데 도움을 드립니다.</p>
+              </div>
+            </div>
+
+            <div class="footer-bottom">
+              © 2026 아이 이름 짓기. All rights reserved.
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <script src="../js/taemyung.js?v=1"></script>
+  </body>
+</html>

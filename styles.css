@@ -848,3 +848,11 @@ body {
 .service-card__icon--global {
   background: linear-gradient(135deg, #4f8cff 0%, #4fd1ff 100%);
 }
+
+.service-card--tae {
+  background: #fff7e9;
+}
+
+.service-card__icon--tae {
+  background: linear-gradient(135deg, #ffb84d 0%, #ff8a4d 100%);
+}
