@@ -80,6 +80,70 @@ const taeData = [
     desc: "반복되는 소리로 귀여움을 살린 태명",
     sub: "짧고 기억하기 쉬운 스타일입니다."
   },
+  {
+    name: "봉봉이",
+    category: "cute",
+    feeling: "playful",
+    style: "common",
+    desc: "통통 튀고 사랑스러운 분위기의 태명",
+    sub: "짧고 귀여워 가족들이 부르기 편한 스타일입니다."
+  },
+  {
+    name: "뿌니",
+    category: "cute",
+    feeling: "soft",
+    style: "modern",
+    desc: "부드럽고 동글동글한 인상을 주는 태명",
+    sub: "요즘 감각의 짧은 애칭형 태명을 원할 때 잘 어울립니다."
+  },
+  {
+    name: "보보",
+    category: "cute",
+    feeling: "playful",
+    style: "modern",
+    desc: "반복되는 소리로 귀여움을 살린 태명",
+    sub: "밝고 가볍게 부르기 좋은 스타일입니다."
+  },
+  {
+    name: "두두",
+    category: "cute",
+    feeling: "playful",
+    style: "common",
+    desc: "짧고 리듬감 있는 귀여운 태명",
+    sub: "성별과 상관없이 편하게 부를 수 있습니다."
+  },
+  {
+    name: "뽀글이",
+    category: "cute",
+    feeling: "soft",
+    style: "unique",
+    desc: "작고 몽글몽글한 이미지를 담은 태명",
+    sub: "부드럽고 귀여운 분위기를 좋아할 때 잘 맞습니다."
+  },
+  {
+    name: "봉실이",
+    category: "cute",
+    feeling: "warm",
+    style: "common",
+    desc: "포근하고 사랑스러운 느낌을 담은 태명",
+    sub: "정겹고 친근하게 들리는 스타일입니다."
+  },
+  {
+    name: "또미",
+    category: "cute",
+    feeling: "bright",
+    style: "common",
+    desc: "짧고 산뜻하게 들리는 귀여운 태명",
+    sub: "애칭처럼 부르기 좋아 일상적으로 잘 어울립니다."
+  },
+  {
+    name: "쪼롱이",
+    category: "cute",
+    feeling: "playful",
+    style: "unique",
+    desc: "작고 반짝이는 이미지를 담은 귀여운 태명",
+    sub: "조금 더 특별한 애칭 느낌을 원할 때 좋습니다."
+  },
 
   // pure
   {
@@ -161,6 +225,70 @@ const taeData = [
     style: "modern",
     desc: "세상을 뜻하는 순우리말 태명",
     sub: "짧고 단정해 요즘 태명으로도 잘 어울립니다."
+  },
+  {
+    name: "다온이",
+    category: "pure",
+    feeling: "warm",
+    style: "modern",
+    desc: "좋은 일이 다 온다는 느낌을 담은 태명",
+    sub: "부드럽고 따뜻한 순우리말 계열로 사랑받는 스타일입니다."
+  },
+  {
+    name: "온새미",
+    category: "pure",
+    feeling: "soft",
+    style: "unique",
+    desc: "가르거나 쪼개지 않은 그대로라는 느낌의 태명",
+    sub: "조금 특별한 순우리말 감성을 담고 싶을 때 잘 어울립니다."
+  },
+  {
+    name: "한결이",
+    category: "pure",
+    feeling: "warm",
+    style: "common",
+    desc: "한결같고 안정적인 이미지를 담은 태명",
+    sub: "차분하고 단정한 분위기를 좋아할 때 좋습니다."
+  },
+  {
+    name: "새나",
+    category: "pure",
+    feeling: "bright",
+    style: "modern",
+    desc: "새롭고 맑은 느낌을 주는 순우리말 계열 태명",
+    sub: "짧고 요즘 감각이 있어 부르기 편합니다."
+  },
+  {
+    name: "온빛이",
+    category: "pure",
+    feeling: "bright",
+    style: "unique",
+    desc: "온전한 빛처럼 환하고 따뜻한 이미지를 담은 태명",
+    sub: "감성적이고 부드러운 느낌을 줍니다."
+  },
+  {
+    name: "여울이",
+    category: "pure",
+    feeling: "soft",
+    style: "unique",
+    desc: "잔잔하게 흐르는 물길을 떠올리게 하는 태명",
+    sub: "차분하고 감성적인 순우리말 태명입니다."
+  },
+  {
+    name: "가람이",
+    category: "pure",
+    feeling: "neutral",
+    style: "common",
+    desc: "강처럼 넓고 시원한 이미지를 담은 태명",
+    sub: "중성적인 분위기도 함께 있어 편하게 부르기 좋습니다."
+  },
+  {
+    name: "한울이",
+    category: "pure",
+    feeling: "warm",
+    style: "modern",
+    desc: "하늘처럼 크고 넓은 이미지를 담은 태명",
+    sub: "순우리말 느낌을 살리면서도 부르기 자연스럽습니다."
   },
 
   // food
@@ -244,6 +372,70 @@ const taeData = [
     desc: "말랑하고 귀여운 인상을 주는 태명",
     sub: "부드럽고 통통 튀는 느낌을 함께 줍니다."
   },
+  {
+    name: "버터",
+    category: "food",
+    feeling: "soft",
+    style: "modern",
+    desc: "부드럽고 포근한 이미지를 주는 먹거리 태명",
+    sub: "짧고 세련되게 들려 요즘 감각의 태명으로 잘 어울립니다."
+  },
+  {
+    name: "마카롱",
+    category: "food",
+    feeling: "playful",
+    style: "unique",
+    desc: "달콤하고 사랑스러운 느낌을 담은 태명",
+    sub: "조금 더 특별하고 귀여운 먹거리 태명을 원할 때 좋습니다."
+  },
+  {
+    name: "송편이",
+    category: "food",
+    feeling: "warm",
+    style: "common",
+    desc: "동글동글하고 정겨운 느낌의 태명",
+    sub: "가족적인 분위기와 따뜻한 정서를 함께 담습니다."
+  },
+  {
+    name: "감자",
+    category: "food",
+    feeling: "warm",
+    style: "common",
+    desc: "소박하고 귀여운 먹거리 느낌의 태명",
+    sub: "짧고 중성적으로도 불릴 수 있어 편합니다."
+  },
+  {
+    name: "옥수",
+    category: "food",
+    feeling: "bright",
+    style: "modern",
+    desc: "톡톡 튀는 밝은 이미지를 가진 태명",
+    sub: "조금 특별하면서도 발음이 쉬운 편입니다."
+  },
+  {
+    name: "쌀콩이",
+    category: "food",
+    feeling: "playful",
+    style: "unique",
+    desc: "작고 귀엽고 통통한 이미지를 담은 태명",
+    sub: "먹거리 태명 중에서도 귀여움이 강조되는 스타일입니다."
+  },
+  {
+    name: "머핀이",
+    category: "food",
+    feeling: "soft",
+    style: "modern",
+    desc: "폭신하고 달콤한 느낌의 태명",
+    sub: "부드럽고 귀여운 이미지를 담고 싶을 때 잘 어울립니다."
+  },
+  {
+    name: "쿠앤크",
+    category: "food",
+    feeling: "playful",
+    style: "unique",
+    desc: "요즘 감각이 있는 달콤한 먹거리 태명",
+    sub: "조금 더 재밌고 개성 있는 스타일을 원할 때 좋습니다."
+  },
 
   // nature
   {
@@ -326,6 +518,70 @@ const taeData = [
     desc: "맑고 환한 이미지를 떠올리게 하는 태명",
     sub: "귀여우면서도 생기 있는 느낌이 있습니다."
   },
+  {
+    name: "새벽이",
+    category: "nature",
+    feeling: "soft",
+    style: "unique",
+    desc: "맑고 고요한 새벽 이미지를 담은 태명",
+    sub: "차분하고 감성적인 자연 느낌을 좋아할 때 잘 맞습니다."
+  },
+  {
+    name: "은하",
+    category: "nature",
+    feeling: "bright",
+    style: "unique",
+    desc: "반짝이는 은하수 같은 이미지를 담은 태명",
+    sub: "조금 더 신비롭고 예쁜 분위기를 줍니다."
+  },
+  {
+    name: "들꽃이",
+    category: "nature",
+    feeling: "warm",
+    style: "unique",
+    desc: "작고 단단하게 피어나는 들꽃 같은 태명",
+    sub: "자연스럽고 소박한 감성을 좋아할 때 좋습니다."
+  },
+  {
+    name: "솔바람",
+    category: "nature",
+    feeling: "soft",
+    style: "unique",
+    desc: "솔숲을 스치는 바람처럼 맑은 이미지의 태명",
+    sub: "순우리말 감성과 자연 느낌을 함께 담고 있습니다."
+  },
+  {
+    name: "초원",
+    category: "nature",
+    feeling: "neutral",
+    style: "modern",
+    desc: "넓고 편안한 자연의 이미지를 담은 태명",
+    sub: "차분하면서도 시원한 느낌을 줍니다."
+  },
+  {
+    name: "봄비",
+    category: "nature",
+    feeling: "warm",
+    style: "modern",
+    desc: "부드럽고 따뜻한 비의 이미지를 담은 태명",
+    sub: "잔잔하고 감성적인 느낌을 좋아할 때 잘 어울립니다."
+  },
+  {
+    name: "이슬비",
+    category: "nature",
+    feeling: "soft",
+    style: "unique",
+    desc: "은은하고 맑은 자연의 이미지를 담은 태명",
+    sub: "여리고 차분한 분위기를 표현하기 좋습니다."
+  },
+  {
+    name: "숲별이",
+    category: "nature",
+    feeling: "bright",
+    style: "unique",
+    desc: "숲과 별의 이미지를 함께 담은 감성 태명",
+    sub: "조금 더 특별한 자연 태명을 원할 때 좋습니다."
+  },
 
   // english
   {
@@ -339,7 +595,7 @@ const taeData = [
   {
     name: "로이",
     category: "english",
-    feeling: "modern",
+    feeling: "bright",
     style: "modern",
     desc: "짧고 또렷한 영어 느낌의 태명",
     sub: "남녀 모두 가볍게 부르기 좋은 편입니다."
@@ -348,7 +604,7 @@ const taeData = [
     name: "엘리",
     category: "english",
     feeling: "soft",
-    style: "modern",
+    style: "global",
     desc: "부드럽고 여성스러운 영어 느낌 태명",
     sub: "익숙하고 귀엽게 들리는 스타일입니다."
   },
@@ -356,7 +612,7 @@ const taeData = [
     name: "레오",
     category: "english",
     feeling: "bright",
-    style: "modern",
+    style: "global",
     desc: "짧고 선명한 영어식 태명",
     sub: "또렷하고 발음하기 쉬운 편입니다."
   },
@@ -364,7 +620,7 @@ const taeData = [
     name: "미아",
     category: "english",
     feeling: "soft",
-    style: "modern",
+    style: "global",
     desc: "전 세계적으로 익숙한 짧은 이름 느낌의 태명",
     sub: "부드럽고 편안한 이미지가 있습니다."
   },
@@ -372,7 +628,7 @@ const taeData = [
     name: "로나",
     category: "english",
     feeling: "modern",
-    style: "unique",
+    style: "global",
     desc: "이국적이고 세련된 영어 느낌의 태명",
     sub: "조금 특별한 분위기를 원할 때 잘 어울립니다."
   },
@@ -388,7 +644,7 @@ const taeData = [
     name: "리아",
     category: "english",
     feeling: "soft",
-    style: "modern",
+    style: "global",
     desc: "부드럽고 글로벌한 울림이 있는 태명",
     sub: "짧고 세련된 인상을 줍니다."
   },
@@ -396,7 +652,7 @@ const taeData = [
     name: "루나",
     category: "english",
     feeling: "soft",
-    style: "modern",
+    style: "global",
     desc: "몽환적이고 감성적인 영어 느낌 태명",
     sub: "요즘 감각이 강한 편입니다."
   },
@@ -404,9 +660,81 @@ const taeData = [
     name: "지오",
     category: "english",
     feeling: "modern",
-    style: "unique",
+    style: "global",
     desc: "짧고 개성 있는 글로벌 느낌 태명",
     sub: "중성적이고 세련된 인상이 있습니다."
+  },
+  {
+    name: "로지",
+    category: "english",
+    feeling: "soft",
+    style: "global",
+    desc: "부드럽고 사랑스러운 영어 느낌의 태명",
+    sub: "짧고 세련돼 해외 이름 같은 분위기를 냅니다."
+  },
+  {
+    name: "에이미",
+    category: "english",
+    feeling: "soft",
+    style: "global",
+    desc: "익숙하고 편안하게 들리는 글로벌 태명",
+    sub: "부르기 쉬워 가족들이 자연스럽게 적응하기 좋습니다."
+  },
+  {
+    name: "안나",
+    category: "english",
+    feeling: "warm",
+    style: "global",
+    desc: "부드럽고 단정한 글로벌 느낌의 태명",
+    sub: "짧고 안정적인 울림이 있어 편안하게 들립니다."
+  },
+  {
+    name: "하이디",
+    category: "english",
+    feeling: "bright",
+    style: "global",
+    desc: "밝고 산뜻한 인상의 영어 느낌 태명",
+    sub: "조금 더 생기 있는 분위기를 원할 때 잘 맞습니다."
+  },
+  {
+    name: "리나",
+    category: "english",
+    feeling: "soft",
+    style: "global",
+    desc: "짧고 여성스러운 글로벌 느낌의 태명",
+    sub: "해외 이름 같은 분위기를 부담 없이 담을 수 있습니다."
+  },
+  {
+    name: "니코",
+    category: "english",
+    feeling: "neutral",
+    style: "global",
+    desc: "짧고 중성적인 글로벌 태명",
+    sub: "남녀 모두에 자연스럽게 어울리는 느낌입니다."
+  },
+  {
+    name: "소피",
+    category: "english",
+    feeling: "soft",
+    style: "global",
+    desc: "부드럽고 세련된 영어 느낌의 태명",
+    sub: "익숙하고 예쁘게 들려 부담 없이 쓰기 좋습니다."
+  },
+  {
+    name: "라니",
+    category: "english",
+    feeling: "bright",
+    style: "global",
+    desc: "짧고 이국적인 인상을 주는 태명",
+    sub: "조금 특별하면서도 부르기 쉬운 편입니다."
+  },
+  {
+    name: "에덴",
+    category: "english",
+    feeling: "modern",
+    style: "global",
+    desc: "세련되고 글로벌한 감각이 있는 태명",
+    sub: "조금 더 요즘스럽고 감각적인 분위기를 줍니다."
   },
 
   // strong
@@ -490,346 +818,6 @@ const taeData = [
     desc: "씩씩함과 복을 함께 담은 태명",
     sub: "건강형 태명 중에서도 조금 귀엽게 들립니다."
   },
-
-  // cute 추가 8개
-  {
-    name: "봉봉이",
-    category: "cute",
-    feeling: "playful",
-    style: "common",
-    desc: "통통 튀고 사랑스러운 분위기의 태명",
-    sub: "짧고 귀여워 가족들이 부르기 편한 스타일입니다."
-  },
-  {
-    name: "뿌니",
-    category: "cute",
-    feeling: "soft",
-    style: "modern",
-    desc: "부드럽고 동글동글한 인상을 주는 태명",
-    sub: "요즘 감각의 짧은 애칭형 태명을 원할 때 잘 어울립니다."
-  },
-  {
-    name: "보보",
-    category: "cute",
-    feeling: "playful",
-    style: "modern",
-    desc: "반복되는 소리로 귀여움을 살린 태명",
-    sub: "밝고 가볍게 부르기 좋은 스타일입니다."
-  },
-  {
-    name: "두두",
-    category: "cute",
-    feeling: "playful",
-    style: "common",
-    desc: "짧고 리듬감 있는 귀여운 태명",
-    sub: "성별과 상관없이 편하게 부를 수 있습니다."
-  },
-  {
-    name: "뽀글이",
-    category: "cute",
-    feeling: "soft",
-    style: "unique",
-    desc: "작고 몽글몽글한 이미지를 담은 태명",
-    sub: "부드럽고 귀여운 분위기를 좋아할 때 잘 맞습니다."
-  },
-  {
-    name: "봉실이",
-    category: "cute",
-    feeling: "warm",
-    style: "common",
-    desc: "포근하고 사랑스러운 느낌을 담은 태명",
-    sub: "정겹고 친근하게 들리는 스타일입니다."
-  },
-  {
-    name: "또미",
-    category: "cute",
-    feeling: "bright",
-    style: "common",
-    desc: "짧고 산뜻하게 들리는 귀여운 태명",
-    sub: "애칭처럼 부르기 좋아 일상적으로 잘 어울립니다."
-  },
-  {
-    name: "쪼롱이",
-    category: "cute",
-    feeling: "playful",
-    style: "unique",
-    desc: "작고 반짝이는 이미지를 담은 귀여운 태명",
-    sub: "조금 더 특별한 애칭 느낌을 원할 때 좋습니다."
-  },
-
-  // pure 추가 8개
-  {
-    name: "다온이",
-    category: "pure",
-    feeling: "warm",
-    style: "modern",
-    desc: "좋은 일이 다 온다는 느낌을 담은 태명",
-    sub: "부드럽고 따뜻한 순우리말 계열로 사랑받는 스타일입니다."
-  },
-  {
-    name: "온새미",
-    category: "pure",
-    feeling: "soft",
-    style: "unique",
-    desc: "가르거나 쪼개지 않은 그대로라는 느낌의 태명",
-    sub: "조금 특별한 순우리말 감성을 담고 싶을 때 잘 어울립니다."
-  },
-  {
-    name: "한결이",
-    category: "pure",
-    feeling: "warm",
-    style: "common",
-    desc: "한결같고 안정적인 이미지를 담은 태명",
-    sub: "차분하고 단정한 분위기를 좋아할 때 좋습니다."
-  },
-  {
-    name: "새나",
-    category: "pure",
-    feeling: "bright",
-    style: "modern",
-    desc: "새롭고 맑은 느낌을 주는 순우리말 계열 태명",
-    sub: "짧고 요즘 감각이 있어 부르기 편합니다."
-  },
-  {
-    name: "온빛이",
-    category: "pure",
-    feeling: "bright",
-    style: "unique",
-    desc: "온전한 빛처럼 환하고 따뜻한 이미지를 담은 태명",
-    sub: "감성적이고 부드러운 느낌을 줍니다."
-  },
-  {
-    name: "여울이",
-    category: "pure",
-    feeling: "soft",
-    style: "unique",
-    desc: "잔잔하게 흐르는 물길을 떠올리게 하는 태명",
-    sub: "차분하고 감성적인 순우리말 태명입니다."
-  },
-  {
-    name: "가람이",
-    category: "pure",
-    feeling: "neutral",
-    style: "common",
-    desc: "강처럼 넓고 시원한 이미지를 담은 태명",
-    sub: "중성적인 분위기도 함께 있어 편하게 부르기 좋습니다."
-  },
-  {
-    name: "한울이",
-    category: "pure",
-    feeling: "warm",
-    style: "modern",
-    desc: "하늘처럼 크고 넓은 이미지를 담은 태명",
-    sub: "순우리말 느낌을 살리면서도 부르기 자연스럽습니다."
-  },
-
-  // food 추가 8개
-  {
-    name: "버터",
-    category: "food",
-    feeling: "soft",
-    style: "modern",
-    desc: "부드럽고 포근한 이미지를 주는 먹거리 태명",
-    sub: "짧고 세련되게 들려 요즘 감각의 태명으로 잘 어울립니다."
-  },
-  {
-    name: "마카롱",
-    category: "food",
-    feeling: "playful",
-    style: "unique",
-    desc: "달콤하고 사랑스러운 느낌을 담은 태명",
-    sub: "조금 더 특별하고 귀여운 먹거리 태명을 원할 때 좋습니다."
-  },
-  {
-    name: "송편이",
-    category: "food",
-    feeling: "warm",
-    style: "common",
-    desc: "동글동글하고 정겨운 느낌의 태명",
-    sub: "가족적인 분위기와 따뜻한 정서를 함께 담습니다."
-  },
-  {
-    name: "감자",
-    category: "food",
-    feeling: "warm",
-    style: "common",
-    desc: "소박하고 귀여운 먹거리 느낌의 태명",
-    sub: "짧고 중성적으로도 불릴 수 있어 편합니다."
-  },
-  {
-    name: "옥수",
-    category: "food",
-    feeling: "bright",
-    style: "modern",
-    desc: "톡톡 튀는 밝은 이미지를 가진 태명",
-    sub: "조금 특별하면서도 발음이 쉬운 편입니다."
-  },
-  {
-    name: "쌀콩이",
-    category: "food",
-    feeling: "playful",
-    style: "unique",
-    desc: "작고 귀엽고 통통한 이미지를 담은 태명",
-    sub: "먹거리 태명 중에서도 귀여움이 강조되는 스타일입니다."
-  },
-  {
-    name: "머핀이",
-    category: "food",
-    feeling: "soft",
-    style: "modern",
-    desc: "폭신하고 달콤한 느낌의 태명",
-    sub: "부드럽고 귀여운 이미지를 담고 싶을 때 잘 어울립니다."
-  },
-  {
-    name: "쿠앤크",
-    category: "food",
-    feeling: "playful",
-    style: "unique",
-    desc: "요즘 감각이 있는 달콤한 먹거리 태명",
-    sub: "조금 더 재밌고 개성 있는 스타일을 원할 때 좋습니다."
-  },
-
-  // nature 추가 8개
-  {
-    name: "새벽이",
-    category: "nature",
-    feeling: "soft",
-    style: "unique",
-    desc: "맑고 고요한 새벽 이미지를 담은 태명",
-    sub: "차분하고 감성적인 자연 느낌을 좋아할 때 잘 맞습니다."
-  },
-  {
-    name: "은하",
-    category: "nature",
-    feeling: "bright",
-    style: "unique",
-    desc: "반짝이는 은하수 같은 이미지를 담은 태명",
-    sub: "조금 더 신비롭고 예쁜 분위기를 줍니다."
-  },
-  {
-    name: "들꽃이",
-    category: "nature",
-    feeling: "warm",
-    style: "unique",
-    desc: "작고 단단하게 피어나는 들꽃 같은 태명",
-    sub: "자연스럽고 소박한 감성을 좋아할 때 좋습니다."
-  },
-  {
-    name: "솔바람",
-    category: "nature",
-    feeling: "soft",
-    style: "unique",
-    desc: "솔숲을 스치는 바람처럼 맑은 이미지의 태명",
-    sub: "순우리말 감성과 자연 느낌을 함께 담고 있습니다."
-  },
-  {
-    name: "초원",
-    category: "nature",
-    feeling: "neutral",
-    style: "modern",
-    desc: "넓고 편안한 자연의 이미지를 담은 태명",
-    sub: "차분하면서도 시원한 느낌을 줍니다."
-  },
-  {
-    name: "봄비",
-    category: "nature",
-    feeling: "warm",
-    style: "modern",
-    desc: "부드럽고 따뜻한 비의 이미지를 담은 태명",
-    sub: "잔잔하고 감성적인 느낌을 좋아할 때 잘 어울립니다."
-  },
-  {
-    name: "이슬비",
-    category: "nature",
-    feeling: "soft",
-    style: "unique",
-    desc: "은은하고 맑은 자연의 이미지를 담은 태명",
-    sub: "여리고 차분한 분위기를 표현하기 좋습니다."
-  },
-  {
-    name: "숲별이",
-    category: "nature",
-    feeling: "bright",
-    style: "unique",
-    desc: "숲과 별의 이미지를 함께 담은 감성 태명",
-    sub: "조금 더 특별한 자연 태명을 원할 때 좋습니다."
-  },
-
-  // english 추가 9개
-  {
-    name: "로지",
-    category: "english",
-    feeling: "soft",
-    style: "global",
-    desc: "부드럽고 사랑스러운 영어 느낌의 태명",
-    sub: "짧고 세련돼 해외 이름 같은 분위기를 냅니다."
-  },
-  {
-    name: "에이미",
-    category: "english",
-    feeling: "soft",
-    style: "global",
-    desc: "익숙하고 편안하게 들리는 글로벌 태명",
-    sub: "부르기 쉬워 가족들이 자연스럽게 적응하기 좋습니다."
-  },
-  {
-    name: "안나",
-    category: "english",
-    feeling: "warm",
-    style: "global",
-    desc: "부드럽고 단정한 글로벌 느낌의 태명",
-    sub: "짧고 안정적인 울림이 있어 편안하게 들립니다."
-  },
-  {
-    name: "하이디",
-    category: "english",
-    feeling: "bright",
-    style: "global",
-    desc: "밝고 산뜻한 인상의 영어 느낌 태명",
-    sub: "조금 더 생기 있는 분위기를 원할 때 잘 맞습니다."
-  },
-  {
-    name: "리나",
-    category: "english",
-    feeling: "soft",
-    style: "global",
-    desc: "짧고 여성스러운 글로벌 느낌의 태명",
-    sub: "해외 이름 같은 분위기를 부담 없이 담을 수 있습니다."
-  },
-  {
-    name: "니코",
-    category: "english",
-    feeling: "neutral",
-    style: "global",
-    desc: "짧고 중성적인 글로벌 태명",
-    sub: "남녀 모두에 자연스럽게 어울리는 느낌입니다."
-  },
-  {
-    name: "소피",
-    category: "english",
-    feeling: "soft",
-    style: "global",
-    desc: "부드럽고 세련된 영어 느낌의 태명",
-    sub: "익숙하고 예쁘게 들려 부담 없이 쓰기 좋습니다."
-  },
-  {
-    name: "라니",
-    category: "english",
-    feeling: "bright",
-    style: "global",
-    desc: "짧고 이국적인 인상을 주는 태명",
-    sub: "조금 특별하면서도 부르기 쉬운 편입니다."
-  },
-  {
-    name: "에덴",
-    category: "english",
-    feeling: "modern",
-    style: "global",
-    desc: "세련되고 글로벌한 감각이 있는 태명",
-    sub: "조금 더 요즘스럽고 감각적인 분위기를 줍니다."
-  },
-
-  // strong 추가 9개
   {
     name: "튼새싹",
     category: "strong",
@@ -902,8 +890,6 @@ const taeData = [
     desc: "씩씩하고 무럭무럭 자라길 바라는 태명",
     sub: "건강형 태명 중에서도 밝고 리듬감 있게 들립니다."
   }
-
-
 ];
 
 const taeCategory = document.getElementById("taeCategory");
@@ -916,7 +902,21 @@ function shuffle(arr) {
   return [...arr].sort(() => Math.random() - 0.5);
 }
 
+function getCategoryLabel(category) {
+  const labels = {
+    cute: "귀여운 태명",
+    pure: "순우리말 태명",
+    food: "먹거리 태명",
+    nature: "자연 느낌 태명",
+    english: "영어 느낌 태명",
+    strong: "튼튼한 느낌 태명"
+  };
+  return labels[category] || category;
+}
+
 function renderTaeResult() {
+  if (!taeResult) return;
+
   const category = taeCategory?.value || "all";
   const feeling = taeFeeling?.value || "all";
   const style = taeStyle?.value || "all";
@@ -930,7 +930,6 @@ function renderTaeResult() {
 
   let result = [...exact];
 
-  // 카테고리를 선택한 경우: 절대 다른 카테고리 섞지 않음
   if (category !== "all") {
     if (result.length < 12) {
       const sameCategoryRelaxed = taeData.filter((item) => {
@@ -942,7 +941,6 @@ function renderTaeResult() {
       result = [...result, ...shuffle(sameCategoryRelaxed)];
     }
   } else {
-    // 전체 보기일 때만 넓게 보충
     if (result.length < 12) {
       const relaxed = taeData.filter((item) => {
         const notAlreadyIncluded = !result.some((r) => r.name === item.name);
