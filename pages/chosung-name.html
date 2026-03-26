@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>외국에서 쓰기 좋은 이름 | 아이 이름 짓기</title>
+    <title>초성으로 이름 짓기 | 아이 이름 짓기</title>
     <meta
       name="description"
-      content="외국에서도 부르기 쉽고 자연스럽게 사용할 수 있는 이름을 느낌별로 정리했습니다."
+      content="초성으로 아기 이름을 추천해드려요. 원하는 초성을 선택하고 느낌별 이름을 확인해보세요."
     />
     <link rel="stylesheet" href="../styles.css" />
     <style>
@@ -45,23 +45,23 @@
         box-shadow: 0 12px 32px rgba(80, 55, 120, 0.06);
       }
 
-      .filter-row {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+      .filter-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr auto;
         gap: 16px;
-        flex-wrap: wrap;
+        align-items: end;
       }
 
-      .filter-title {
-        font-size: 20px;
+      .field-label {
+        font-size: 14px;
         font-weight: 700;
         color: #1f2a44;
+        margin-bottom: 8px;
       }
 
       .filter-select {
         height: 48px;
-        min-width: 220px;
+        width: 100%;
         padding: 0 14px;
         border-radius: 14px;
         border: 1px solid #e5dff0;
@@ -69,9 +69,22 @@
         font-size: 15px;
       }
 
+      .filter-btn {
+        height: 48px;
+        padding: 0 20px;
+        border: 0;
+        border-radius: 14px;
+        background: linear-gradient(135deg, #a74cff 0%, #ff4da0 100%);
+        color: #fff;
+        font-size: 15px;
+        font-weight: 700;
+        cursor: pointer;
+        white-space: nowrap;
+      }
+
       .table-card {
         margin-top: 24px;
-        background: rgba(255, 255, 255, 0.82);
+        background: rgba(255, 255, 255, 0.88);
         border: 1px solid rgba(229, 222, 241, 0.95);
         border-radius: 24px;
         padding: 10px 0;
@@ -110,10 +123,21 @@
         display: inline-block;
         padding: 6px 12px;
         border-radius: 999px;
-        background: #eef4ff;
-        color: #3b6fd8;
+        background: #f3ecff;
+        color: #8b3dff;
         font-size: 13px;
         font-weight: 700;
+      }
+
+      .empty-box {
+        margin-top: 24px;
+        background: rgba(255, 255, 255, 0.88);
+        border: 1px dashed #d8cdea;
+        border-radius: 24px;
+        padding: 40px 20px;
+        text-align: center;
+        color: #667085;
+        line-height: 1.8;
       }
 
       .page-note {
@@ -121,6 +145,12 @@
         color: #667085;
         font-size: 14px;
         line-height: 1.7;
+      }
+
+      @media (max-width: 900px) {
+        .filter-grid {
+          grid-template-columns: 1fr 1fr;
+        }
       }
 
       @media (max-width: 768px) {
@@ -144,14 +174,8 @@
           padding: 18px;
         }
 
-        .filter-row {
-          flex-direction: column;
-          align-items: stretch;
-        }
-
-        .filter-select {
-          width: 100%;
-          min-width: 0;
+        .filter-grid {
+          grid-template-columns: 1fr;
         }
 
         .name-table thead th,
@@ -175,54 +199,59 @@
 
             <div class="topnav__menu">
               <a href="../index.html" class="topnav__link">아기 이름 짓기</a>
-              <a href="./pages/taemyung.html" class="topnav__link">태명 짓기</a>
-              <a href="./chosung-name.html" class="topnav__link">초성 이름 짓기</a>
-              <a href="./pet-name.html" class="topnav__link">반려동물 이름</a>
+              <a href="./taemyung.html" class="topnav__link">태명 짓기</a>
+              <a href="./chosung-name.html" class="topnav__link topnav__link--active">초성 이름 짓기</a>
               <a href="./korean-name.html" class="topnav__link">순우리말 이름</a>
-              <a href="./global-name.html" class="topnav__link topnav__link--active">외국에서 쓰기 좋은 이름</a>
+              <a href="./global-name.html" class="topnav__link">외국에서 쓰기 좋은 이름</a>
               <a href="../blog/index.html" class="topnav__link">이름 이야기</a>
             </div>
           </div>
         </nav>
 
         <header class="sub-hero">
-          <h1 class="sub-hero__title">외국에서 쓰기 좋은 이름</h1>
+          <h1 class="sub-hero__title">초성으로 이름 짓기</h1>
           <p class="sub-hero__desc">
-            이민, 유학, 국제학교, 해외 생활을 고려해<br />
-            외국에서도 부르기 쉬운 이름을 느낌별로 정리했어요.
+            원하는 초성을 고르면 어울리는 이름을 추천해드려요.<br />
+            성별과 느낌까지 함께 선택해 더 쉽게 고를 수 있어요.
           </p>
         </header>
 
         <section class="filter-card">
-          <div class="filter-row">
-            <div class="filter-title">느낌별 보기</div>
-            <select id="globalFeeling" class="filter-select">
-              <option value="all">전체</option>
-              <option value="easy">부르기 쉬운</option>
-              <option value="soft">부드러운</option>
-              <option value="modern">세련된</option>
-              <option value="neutral">중성적인</option>
-              <option value="global">이국적인</option>
-            </select>
+          <div class="filter-grid">
+            <div>
+              <div class="field-label">첫 번째 초성</div>
+              <select id="firstChosung" class="filter-select"></select>
+            </div>
+
+            <div>
+              <div class="field-label">두 번째 초성</div>
+              <select id="secondChosung" class="filter-select"></select>
+            </div>
+            <button id="chosungBtn" class="filter-btn" type="button">이름 찾기</button>
           </div>
         </section>
 
-        <section class="table-card">
+        <div id="emptyBox" class="empty-box">
+          원하는 초성을 선택한 뒤 <b>이름 찾기</b>를 눌러보세요.<br />
+          예: ㅅ + ㅇ, ㄷ + ㅎ, ㅎ + ㄹ
+        </div>
+        <p id="chosungGuideMessage" class="page-note" style="display: none;"></p>
+        
+        <section id="resultTableWrap" class="table-card" style="display: none">
           <table class="name-table">
             <thead>
               <tr>
-                <th style="width: 18%">이름</th>
-                <th style="width: 18%">영문 표기</th>
-                <th style="width: 18%">느낌</th>
+                <th style="width: 22%">이름</th>
+                <th style="width: 18%">초성</th>
                 <th>설명</th>
               </tr>
             </thead>
-            <tbody id="globalNameTable"></tbody>
+            <tbody id="chosungNameTable"></tbody>
           </table>
         </section>
 
         <p class="page-note">
-          이 리스트는 법적 이름 추천이 아니라, 해외에서 부르기 쉽고 자연스럽게 쓰일 가능성이 높은 이름을 기준으로 정리한 참고용 리스트입니다.
+          초성 조합은 참고용 기준입니다. 실제 이름은 성과의 조화, 발음, 분위기를 함께 보고 정하는 것을 추천합니다.
         </p>
 
         <footer class="site-footer">
@@ -231,6 +260,8 @@
               <div class="footer-col">
                 <h4>서비스</h4>
                 <a href="../index.html">아기 이름 짓기</a>
+                <a href="./taemyung.html">태명 짓기</a>
+                <a href="./chosung-name.html">초성 이름 짓기</a>
                 <a href="./pet-name.html">반려동물 이름</a>
                 <a href="./korean-name.html">순우리말 이름</a>
                 <a href="./global-name.html">외국에서 쓰기 좋은 이름</a>
@@ -257,6 +288,6 @@
       </div>
     </div>
 
-    <script src="../js/global-name.js?v=2"></script>
+    <script src="../js/chosung-name.js?v=1"></script>
   </body>
 </html>

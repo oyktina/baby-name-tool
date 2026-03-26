@@ -905,3 +905,38 @@ body {
   color: #fff;
   font-weight: 700;
 }
+
+.service-card--chosung {
+  background: #eef6ff;
+}
+
+.service-card__icon--chosung {
+  background: linear-gradient(135deg, #5b8cff 0%, #7aa8ff 100%);
+}
+
+.nav-menu a {
+  white-space: nowrap;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: nowrap; /* 줄바꿈 방지 */
+}
+
+.nav-menu a {
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    overflow-x: auto;
+    gap: 16px;
+  }
+
+  .nav-menu a {
+    font-size: 13px;
+    flex-shrink: 0;
+  }
+}
