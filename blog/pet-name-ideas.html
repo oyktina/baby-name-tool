@@ -1,165 +1,328 @@
 <!doctype html>
 <html lang="ko">
   <head>
+    <!-- 애드센스 -->
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2329221115092158"
+      crossorigin="anonymous"
+    ></script>
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>강아지 이름 추천, 고양이 이름 추천 아이디어 모음 | 아이 이름 짓기</title>
+
+    <title>강아지 이름 추천, 고양이 이름 추천 아이디어 모음 | babyname.cloud</title>
     <meta
-  name="description"
-  content="강아지 이름 추천과 고양이 이름 추천 아이디어를 모았습니다. 귀엽고 부르기 쉬운 반려동물 이름을 느낌별로 확인해보세요."
-/>
+      name="description"
+      content="강아지 이름 추천과 고양이 이름 추천 아이디어를 정리했습니다. 귀엽고 부르기 쉬운 반려동물 이름, 음식 계열 이름, 세련된 이름까지 한 번에 확인해보세요."
+    />
+    <link rel="canonical" href="https://babyname.cloud/blog/pet-name-ideas.html" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="강아지 이름 추천, 고양이 이름 추천 아이디어 모음 | babyname.cloud" />
+    <meta
+      property="og:description"
+      content="귀엽고 부르기 쉬운 반려동물 이름 아이디어를 정리했습니다. 강아지 이름 추천, 고양이 이름 추천을 한 번에 확인해보세요."
+    />
+    <meta property="og:url" content="https://babyname.cloud/blog/pet-name-ideas.html" />
+    <meta property="og:image" content="https://babyname.cloud/og-image.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="강아지 이름 추천, 고양이 이름 추천 아이디어 모음 | babyname.cloud" />
+    <meta
+      name="twitter:description"
+      content="귀엽고 부르기 쉬운 반려동물 이름 아이디어를 정리했습니다. 강아지 이름 추천, 고양이 이름 추천을 한 번에 확인해보세요."
+    />
+    <meta name="twitter:image" content="https://babyname.cloud/og-image.png" />
+
     <link rel="stylesheet" href="../styles.css" />
+
     <style>
-      .post-wrap { max-width: 860px; margin: 0 auto; padding: 24px 24px 80px; }
-      .post-hero { padding: 56px 0 18px; }
+      .site-header {
+        border-bottom: 1px solid #eee;
+        background: #fff;
+        position: sticky;
+        top: 0;
+        z-index: 50;
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      .site-header__inner {
+        padding: 14px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .brand {
+        display: flex;
+        gap: 8px;
+        font-weight: 700;
+        text-decoration: none;
+        color: #222;
+        align-items: center;
+      }
+
+      .main-nav {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+      }
+
+      .main-nav a {
+        text-decoration: none;
+        color: #444;
+        font-size: 14px;
+        white-space: nowrap;
+      }
+
+      .main-nav a:hover,
+      .main-nav a.is-active {
+        color: #8b49ff;
+      }
+
+      .post-wrap {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 40px 20px 80px;
+      }
+
+      .post-hero {
+        padding: 18px 0 8px;
+      }
+
       .post-tag {
-        display: inline-block; padding: 6px 12px; border-radius: 999px;
-        background: #fff0dc; color: #d97a00; font-size: 12px; font-weight: 700; margin-bottom: 16px;
+        display: inline-block;
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: #fff0dc;
+        color: #d97a00;
+        font-size: 12px;
+        font-weight: 700;
+        margin-bottom: 16px;
       }
+
       .post-title {
-        font-size: 42px; line-height: 1.2; font-weight: 800; margin: 0 0 14px;
-        color: #1f2a44; letter-spacing: -0.02em;
+        font-size: 40px;
+        font-weight: 800;
+        margin: 0 0 18px;
+        color: #1f2a44;
+        line-height: 1.25;
+        letter-spacing: -0.02em;
       }
-      .post-desc { margin: 0; font-size: 17px; color: #667085; line-height: 1.7; }
+
+      .post-desc {
+        margin: 0;
+        font-size: 17px;
+        line-height: 1.8;
+        color: #667085;
+      }
+
       .post-card {
-        margin-top: 26px; background: rgba(255, 255, 255, 0.86);
-        border: 1px solid rgba(229, 222, 241, 0.95); border-radius: 24px;
-        padding: 32px 28px; box-shadow: 0 12px 32px rgba(80, 55, 120, 0.06);
+        margin-top: 24px;
+        background: #fff;
+        border-radius: 20px;
+        padding: 30px;
+        border: 1px solid #eee;
+        box-shadow: 0 12px 32px rgba(80, 55, 120, 0.06);
       }
-      .post-card h2 { margin: 34px 0 12px; font-size: 24px; color: #1f2a44; }
-      .post-card h2:first-child { margin-top: 0; }
-      .post-card p, .post-card li { font-size: 16px; line-height: 1.85; color: #3f4a60; }
-      .post-card ul { margin: 10px 0 0; padding-left: 20px; }
-      .post-nav { margin-top: 24px; }
-      .post-back { display: inline-block; text-decoration: none; font-size: 14px; font-weight: 700; color: #8b3dff; }
+
+      .post-card h2 {
+        margin: 30px 0 12px;
+        font-size: 22px;
+        color: #1f2a44;
+        line-height: 1.4;
+      }
+
+      .post-card h2:first-child {
+        margin-top: 0;
+      }
+
+      .post-card p,
+      .post-card li {
+        font-size: 16px;
+        line-height: 1.9;
+        color: #444;
+      }
+
+      .post-card ul {
+        margin-top: 10px;
+        padding-left: 20px;
+      }
+
+      .back-link {
+        margin-top: 20px;
+        display: inline-block;
+        color: #8b49ff;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
       @media (max-width: 768px) {
-        .post-wrap { padding: 16px 16px 60px; }
-        .post-hero { padding: 36px 0 14px; }
-        .post-title { font-size: 30px; }
-        .post-desc { font-size: 15px; }
-        .post-card { padding: 22px 18px; border-radius: 20px; }
-        .post-card h2 { font-size: 20px; }
-        .post-card p, .post-card li { font-size: 14px; }
+        .site-header__inner {
+          padding: 12px 16px;
+          display: block;
+        }
+
+        .brand {
+          margin-bottom: 10px;
+        }
+
+        .main-nav {
+          overflow-x: auto;
+          white-space: nowrap;
+          -webkit-overflow-scrolling: touch;
+        }
+
+        .main-nav::-webkit-scrollbar {
+          display: none;
+        }
+
+        .post-wrap {
+          padding: 24px 16px 60px;
+        }
+
+        .post-title {
+          font-size: 28px;
+        }
+
+        .post-desc {
+          font-size: 15px;
+        }
+
+        .post-card {
+          padding: 20px;
+        }
+
+        .post-card p,
+        .post-card li {
+          font-size: 14px;
+        }
       }
     </style>
   </head>
+
   <body>
-    <div class="site-bg">
-      <div class="post-wrap">
-        <nav class="topnav">
-          <div class="topnav__inner">
-            <a href="../index.html" class="topnav__brand">
-              <div class="topnav__logo">👶</div>
-              <span class="topnav__brand-text">아이 이름 짓기</span>
-            </a>
-            <div class="topnav__menu">
-              <a href="../index.html" class="topnav__link">아기 이름 짓기</a>
-              <a href="./pages/taemyung.html" class="topnav__link">태명 짓기</a>
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a class="brand" href="../index.html">
+          <span>✨</span>
+          <span>babyname.cloud</span>
+        </a>
 
-              <a href="../pages/chosung-name.html" class="topnav__link">초성 이름 짓기</a>
-
-              <a href="../pages/pet-name.html" class="topnav__link">반려동물 이름</a>
-              <a href="../pages/korean-name.html" class="topnav__link">순우리말 이름</a>
-              <a href="./global-name.html" class="topnav__link">외국에서 쓰기 좋은 이름</a>
-              <a href="./index.html" class="topnav__link topnav__link--active">이름 이야기</a>
-            </div>
-          </div>
+        <nav class="main-nav">
+          <a href="../index.html">홈</a>
+          <a href="../index.html#services">이름 만들기</a>
+          <a href="./index.html" class="is-active">이름 이야기</a>
+          <a href="../about.html">소개</a>
         </nav>
-
-        <header class="post-hero">
-          <div class="post-tag">반려동물</div>
-          <h1 class="post-title">강아지·고양이 이름 추천 아이디어</h1>
-          <p class="post-desc">
-            귀엽고 부르기 쉬운 반려동물 이름은 생각보다 오래 함께 갑니다. 느낌별로 이름을 고를 때 참고할 수 있는 아이디어를 정리했습니다.
-          </p>
-        </header>
-
-        <article class="post-card">
-          <h2>짧고 부르기 쉬운 이름이 가장 편합니다</h2>
-          <p>
-            반려동물 이름은 일상에서 자주 부르게 됩니다.
-            그래서 두 음절 또는 세 음절 정도의 짧은 이름이 가장 편합니다.
-            예를 들면 콩이, 보리, 코코, 루루 같은 이름은 기억하기 쉽고 부르기도 자연스럽습니다.
-          </p>
-
-          <h2>반려동물의 성격을 기준으로 고르면 실패가 적습니다</h2>
-          <p>
-            활발한 아이는 번개, 달리, 로켓처럼 경쾌한 이름이 잘 어울리고,
-            차분하고 포근한 아이는 두부, 모찌, 구름처럼 부드러운 이름이 잘 어울립니다.
-            결국 이름은 외모보다 성격에 맞출수록 오래 만족하는 경우가 많습니다.
-          </p>
-
-          <h2>귀여운 이름은 음식 계열도 강합니다</h2>
-          <p>
-            만두, 쿠키, 젤리, 치즈, 버터 같은 이름은 반려동물 이름에서 꾸준히 인기가 많습니다.
-            부를 때도 귀엽고, 사진이나 SNS에 올렸을 때도 기억에 잘 남습니다.
-          </p>
-
-          <h2>고급스러운 분위기를 원하면 해외식 이름도 좋습니다</h2>
-          <p>
-            루이, 레오, 벨라, 클로이, 오스카 같은 이름은 세련되고 도회적인 느낌을 줍니다.
-            작은 체구의 아이든, 기품 있는 대형견이든 비교적 폭넓게 잘 어울리는 편입니다.
-          </p>
-
-          <h2>결국 가장 중요한 것은 내가 자주 부르고 싶은 이름</h2>
-          <ul>
-            <li>짧고 부르기 쉬운지</li>
-            <li>발음이 자연스러운지</li>
-            <li>아이의 성격과 잘 어울리는지</li>
-            <li>가족 모두가 편하게 부를 수 있는지</li>
-          </ul>
-
-          <p>
-            이름은 반려동물과의 생활에서 가장 많이 쓰이는 단어 중 하나입니다.
-            재미있고 귀여운 것도 좋지만, 매일 불러도 질리지 않는 이름인지 함께 생각해보면 좋습니다.
-          </p>
-          <p>
-아기 이름을 직접 추천받고 싶다면 
-<a href="../index.html">아이 이름 짓기 서비스</a>를 이용해보세요.
-</p>
-        </article>
-
-        <div class="post-nav">
-          <a href="./index.html" class="post-back">← 이름 이야기 목록으로 돌아가기</a>
-        </div>
-<footer class="site-footer">
-  <div class="footer-inner">
-
-    <div class="footer-grid">
-
-<div class="footer-col">
-  <h4>서비스</h4>
-  <a href="./index.html">아기 이름 짓기</a>
-  <a href="./pages/taemyung.html">태명 짓기</a>
-  <a href="./pages/chosung-name.html">초성 이름 찾기</a>
-  <a href="./pages/pet-name.html">반려동물 이름</a>
-  <a href="./pages/korean-name.html">순우리말 이름</a>
-  <a href="./pages/global-name.html">외국에서 쓰기 좋은 이름</a>
-</div>
-
-<div class="footer-col">
-  <h4>이름 가이드</h4>
-  <a href="./blog/index.html">이름 이야기</a>
-  <a href="./blog/good-name-criteria.html">좋은 이름의 기준</a>
-  <a href="./blog/baby-name-trends.html">요즘 이름 트렌드</a>
-  <a href="./blog/surname-matching-names.html">성씨별 이름 추천</a>
-  <a href="./blog/global-friendly-names.html">해외에서 쓰기 좋은 이름</a>
-</div>
-
-<div class="footer-col">
-  <h4>정보</h4>
-  <a href="./about.html">사이트 소개</a>
-  <a href="./contact.html">문의하기</a>
-  <a href="./privacy.html">개인정보처리방침</a>
-</div>
-
-    <div class="footer-bottom">
-      © 2026 아이 이름 짓기. All rights reserved.
-    </div>
-
-  </div>
-</footer>
       </div>
-    </div>
+    </header>
+
+    <main class="post-wrap">
+      <header class="post-hero">
+        <span class="post-tag">반려동물 이름 추천</span>
+        <h1 class="post-title">강아지 이름 추천, 고양이 이름 추천 아이디어 모음</h1>
+        <p class="post-desc">
+          귀엽고 부르기 쉬운 반려동물 이름은 매일 함께하는 생활에서 만족도를 크게 높여줍니다.
+          강아지 이름 추천, 고양이 이름 추천을 고민하고 있다면 아래 아이디어를 참고해보세요.
+        </p>
+      </header>
+
+      <article class="post-card">
+        <h2>짧고 부르기 쉬운 이름이 가장 편합니다</h2>
+        <p>
+          반려동물 이름은 일상에서 자주 부르게 됩니다.
+          그래서 두 음절 또는 세 음절 정도의 짧은 이름이 가장 편합니다.
+          예를 들면 콩이, 보리, 코코, 루루 같은 이름은 기억하기 쉽고 부르기도 자연스럽습니다.
+          반려동물 이름 추천을 할 때도 가장 먼저 보는 기준이 바로 발음의 쉬움입니다.
+          이름이 짧고 리듬이 좋으면 산책할 때, 집에서 부를 때, 병원이나 미용실에서 소개할 때도 훨씬 편합니다.
+        </p>
+
+        <h2>반려동물의 성격을 기준으로 고르면 실패가 적습니다</h2>
+        <p>
+          활발한 아이는 번개, 달리, 로켓처럼 경쾌한 이름이 잘 어울리고,
+          차분하고 포근한 아이는 두부, 모찌, 구름처럼 부드러운 이름이 잘 어울립니다.
+          결국 이름은 외모보다 성격에 맞출수록 오래 만족하는 경우가 많습니다.
+          처음에는 털색이나 외모를 보고 이름을 정하고 싶어지지만,
+          실제로 함께 살아보면 성격이 이름과 더 오래 연결되는 경우가 많기 때문입니다.
+          그래서 강아지 이름 추천이나 고양이 이름 추천을 받을 때도
+          성격, 움직임, 표정, 반응 같은 요소를 함께 떠올려보는 것이 좋습니다.
+        </p>
+
+        <h2>귀여운 이름은 음식 계열도 꾸준히 인기입니다</h2>
+        <p>
+          만두, 쿠키, 젤리, 치즈, 버터 같은 이름은 반려동물 이름에서 꾸준히 인기가 많습니다.
+          부를 때도 귀엽고, 사진이나 SNS에 올렸을 때도 기억에 잘 남습니다.
+          특히 작은 체구의 아이나 표정이 사랑스러운 아이에게는
+          음식 계열 이름이 훨씬 더 친근하고 정감 있게 느껴질 수 있습니다.
+          이런 이름은 발음도 쉬운 경우가 많아서 실제 사용감도 좋습니다.
+          그래서 고양이 이름 추천, 강아지 이름 추천 리스트에서 늘 빠지지 않는 계열이기도 합니다.
+        </p>
+
+        <h2>세련된 분위기를 원하면 해외식 이름도 좋은 선택입니다</h2>
+        <p>
+          루이, 레오, 벨라, 클로이, 오스카 같은 이름은 세련되고 도회적인 느낌을 줍니다.
+          작은 체구의 아이든, 기품 있는 대형견이든 비교적 폭넓게 잘 어울리는 편입니다.
+          특히 반려동물 이름을 조금 더 감각적으로 짓고 싶거나,
+          사람 이름처럼 자연스럽게 들리는 이름을 원한다면 이런 계열이 잘 맞습니다.
+          해외식 이름은 사진, 계정 이름, 병원 등록명 등 여러 상황에서도
+          깔끔하고 기억하기 쉬워 만족도가 높은 경우가 많습니다.
+        </p>
+
+        <h2>좋은 반려동물 이름을 고를 때 체크하면 좋은 기준</h2>
+        <p>
+          반려동물 이름은 단지 예쁜 단어를 고르는 것이 아니라,
+          앞으로 오랫동안 함께 부르게 될 가장 익숙한 호칭을 정하는 일입니다.
+          그래서 처음에는 귀엽게 느껴져도 실제로 불편하면 금방 바꾸고 싶어질 수 있습니다.
+          아래 기준을 함께 보면 훨씬 실패가 적습니다.
+        </p>
+
+        <ul>
+          <li>짧고 부르기 쉬운지</li>
+          <li>발음이 자연스러운지</li>
+          <li>아이의 성격과 잘 어울리는지</li>
+          <li>가족 모두가 편하게 부를 수 있는지</li>
+          <li>병원, 산책, 훈련 상황에서도 바로 전달되는지</li>
+        </ul>
+
+        <h2>결국 가장 중요한 것은 내가 자주 부르고 싶은 이름입니다</h2>
+        <p>
+          이름은 반려동물과의 생활에서 가장 많이 쓰이는 단어 중 하나입니다.
+          재미있고 귀여운 것도 좋지만, 매일 불러도 질리지 않는 이름인지 함께 생각해보면 좋습니다.
+          실제로 좋은 이름은 특별하게 보이는 이름보다,
+          보호자가 자연스럽게 자주 부를 수 있고 아이도 익숙하게 반응하는 이름인 경우가 많습니다.
+          그래서 반려동물 이름 추천을 볼 때도 유행만 따라가기보다는,
+          우리 집 아이와 가장 잘 어울리는지를 기준으로 선택하는 것이 좋습니다.
+        </p>
+
+        <h2>반려동물 이름도 결국 사용감이 중요합니다</h2>
+        <p>
+          아기 이름 추천이나 작명에서 발음과 사용감을 중요하게 보듯,
+          반려동물 이름도 마찬가지입니다.
+          짧고 편한 이름은 보호자와 반려동물 모두에게 익숙해지기 쉽고,
+          생활 속에서 부를 때 훨씬 자연스럽습니다.
+          그래서 이름을 고를 때는 첫인상뿐 아니라,
+          실제로 자주 부르게 될 상황까지 함께 떠올려보는 것이 중요합니다.
+        </p>
+
+        <p>
+          반려동물 이름을 더 찾아보고 싶다면
+          <a href="../pages/pet-name.html">반려동물 이름 추천 페이지</a>를 이용해보세요.
+          아기 이름이 궁금하다면 <a href="../pages/baby-name.html">아기 이름 짓기</a>,
+          감성적인 한글 이름을 보고 싶다면
+          <a href="../pages/korean-name.html">순우리말 이름 리스트</a>,
+          글로벌한 이름을 비교하고 싶다면
+          <a href="../pages/global-name.html">외국에서 쓰기 좋은 이름</a>도 함께 참고할 수 있습니다.
+        </p>
+      </article>
+
+      <a href="./index.html" class="back-link">← 이름 이야기 목록으로</a>
+    </main>
   </body>
 </html>

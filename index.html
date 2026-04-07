@@ -1,328 +1,959 @@
 <!doctype html>
 <html lang="ko">
   <head>
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2329221115092158"
-      crossorigin="anonymous"
-    ></script>
-
-    <link rel="canonical" href="https://babyname.cloud/" />
-
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-
-    <title>아이 이름 짓기 | 느낌 기반 이름 추천</title>
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>babyname.cloud | 이름 크리에이터 플랫폼</title>
     <meta
       name="description"
-      content="세련된 아기 이름부터 귀여운 태명, 반려동물 이름까지! 느낌 기반 맞춤형 네이밍 솔루션 babyname.cloud"
+      content="아기 이름, 태명, 반려동물 이름, 캐릭터 이름, 동아리 이름까지. 이름이 필요한 모든 순간을 위한 이름 크리에이터 플랫폼 babyname.cloud"
     />
+    <style>
+      :root {
+        --bg: #f7f1fb;
+        --surface: rgba(255, 255, 255, 0.82);
+        --surface-strong: #ffffff;
+        --line: #eadff4;
+        --text: #1f2745;
+        --muted: #6f7891;
+        --muted-2: #8f96aa;
+        --pink: #ff4fa3;
+        --purple: #8b49ff;
+        --purple-dark: #6a35ec;
+        --navy: #08142c;
+        --shadow: 0 14px 38px rgba(72, 42, 110, 0.08);
+        --radius-xl: 28px;
+        --radius-lg: 22px;
+        --radius-md: 18px;
+        --radius-sm: 14px;
+        --max: 1180px;
+      }
 
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "아이 이름 짓기 - babyname.cloud",
-        "url": "https://babyname.cloud",
-        "description": "성씨와 느낌으로 찾는 아기 이름 추천 서비스. 태명, 반려동물 이름, 순우리말 이름, 외국에서 쓰기 좋은 이름까지 제공합니다.",
-        "publisher": {
-          "@type": "Organization",
-          "name": "babyname.cloud"
-        },
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://babyname.cloud/?q={search_term_string}",
-          "query-input": "required name=search_term_string"
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Noto Sans KR", sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top left, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0) 28%),
+          linear-gradient(180deg, #fbf7fe 0%, #f5eefb 100%);
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .container {
+        width: min(var(--max), calc(100% - 40px));
+        margin: 0 auto;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        backdrop-filter: blur(14px);
+        background: rgba(255, 255, 255, 0.72);
+        border-bottom: 1px solid rgba(234, 223, 244, 0.75);
+      }
+
+      .site-header__inner {
+        min-height: 76px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .brand__logo {
+        width: 42px;
+        height: 42px;
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, var(--purple) 0%, var(--pink) 100%);
+        color: #fff;
+        box-shadow: 0 10px 22px rgba(164, 76, 255, 0.18);
+        font-size: 20px;
+      }
+
+      .brand__text {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.1;
+      }
+
+      .brand__title {
+        font-size: 19px;
+        font-weight: 800;
+      }
+
+      .brand__subtitle {
+        margin-top: 3px;
+        font-size: 11px;
+        color: var(--muted);
+        font-weight: 600;
+      }
+
+      .main-nav {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+      }
+
+      .main-nav a {
+        font-size: 14px;
+        font-weight: 700;
+        color: #353d57;
+        white-space: nowrap;
+      }
+
+      .main-nav a:hover {
+        color: var(--purple-dark);
+      }
+
+      .hero {
+        padding: 92px 0 78px;
+        text-align: center;
+      }
+
+      .hero__title {
+        margin: 0;
+        font-size: clamp(40px, 6vw, 72px);
+        line-height: 1.08;
+        letter-spacing: -0.04em;
+        font-weight: 900;
+        background: linear-gradient(135deg, var(--purple) 0%, var(--pink) 55%, #7f5cff 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .hero__desc {
+        margin: 24px auto 0;
+        max-width: 780px;
+        font-size: 22px;
+        line-height: 1.75;
+        color: #4b5471;
+      }
+
+      .section {
+        padding: 58px 0;
+      }
+
+      .section--card {
+        background: rgba(255, 255, 255, 0.54);
+        border-top: 1px solid rgba(234, 223, 244, 0.75);
+        border-bottom: 1px solid rgba(234, 223, 244, 0.75);
+      }
+
+      .section--soft {
+        background: linear-gradient(180deg, rgba(253, 248, 255, 0.74) 0%, rgba(248, 241, 252, 0.95) 100%);
+      }
+
+      .section__head {
+        text-align: center;
+        margin-bottom: 34px;
+      }
+
+      .section__title {
+        margin: 0;
+        font-size: clamp(30px, 4vw, 48px);
+        line-height: 1.15;
+        letter-spacing: -0.03em;
+        font-weight: 900;
+      }
+
+      .section__desc {
+        margin: 14px auto 0;
+        max-width: 720px;
+        font-size: 18px;
+        line-height: 1.8;
+        color: var(--muted);
+      }
+
+      .service-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 22px;
+      }
+
+      .service-card {
+        padding: 24px 22px 22px;
+        background: var(--surface-strong);
+        border: 1px solid rgba(233, 224, 243, 0.95);
+        border-radius: var(--radius-lg);
+        box-shadow: 0 12px 28px rgba(82, 56, 117, 0.05);
+        min-height: 214px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .service-card__icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 22px;
+        box-shadow: 0 10px 20px rgba(120, 90, 180, 0.15);
+      }
+
+      .service-card--baby .service-card__icon {
+        background: linear-gradient(135deg, #ff4b92 0%, #ff6fa7 100%);
+      }
+
+      .service-card--tae .service-card__icon {
+        background: linear-gradient(135deg, #c85cff 0%, #ff69ba 100%);
+      }
+
+      .service-card--pet .service-card__icon {
+        background: linear-gradient(135deg, #ff9700 0%, #ffb14a 100%);
+      }
+
+      .service-card--character .service-card__icon {
+        background: linear-gradient(135deg, #8a5cff 0%, #b466ff 100%);
+      }
+
+      .service-card--club .service-card__icon {
+        background: linear-gradient(135deg, #00a2ff 0%, #49c0ff 100%);
+      }
+
+      .service-card--chosung .service-card__icon {
+        background: linear-gradient(135deg, #14c27a 0%, #29db92 100%);
+      }
+
+      .service-card--korean .service-card__icon {
+        background: linear-gradient(135deg, #00b2c9 0%, #2ad1dc 100%);
+      }
+
+      .service-card--global .service-card__icon {
+        background: linear-gradient(135deg, #5a6fff 0%, #6fa2ff 100%);
+      }
+
+      .service-card__title {
+        margin: 22px 0 10px;
+        font-size: 24px;
+        line-height: 1.25;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+      }
+
+      .service-card__desc {
+        margin: 0;
+        font-size: 15px;
+        line-height: 1.7;
+        color: var(--muted);
+        flex: 1;
+      }
+
+      .service-card__more {
+        margin-top: 18px;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        color: var(--purple-dark);
+        font-size: 14px;
+        font-weight: 800;
+      }
+
+      .mini-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .mini-card {
+        padding: 22px 20px;
+        background: rgba(255, 255, 255, 0.92);
+        border: 1px solid rgba(234, 223, 244, 0.95);
+        border-radius: var(--radius-md);
+        box-shadow: 0 10px 24px rgba(82, 56, 117, 0.04);
+      }
+
+      .mini-card__title {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 16px;
+        font-weight: 800;
+      }
+
+      .mini-card__tags {
+        margin-top: 16px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: #f6efff;
+        color: var(--purple-dark);
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .story-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+      }
+
+      .story-column {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .story-column__title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 0 0 4px;
+        font-size: 20px;
+        font-weight: 900;
+      }
+
+      .story-card {
+        padding: 18px 18px 16px;
+        background: rgba(255, 255, 255, 0.92);
+        border: 1px solid rgba(234, 223, 244, 0.95);
+        border-radius: var(--radius-md);
+        box-shadow: 0 10px 24px rgba(82, 56, 117, 0.04);
+      }
+
+      .story-card__meta {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 12px;
+      }
+
+      .story-card__category {
+        display: inline-flex;
+        align-items: center;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: #f4ecff;
+        color: var(--purple-dark);
+        font-size: 11px;
+        font-weight: 800;
+      }
+
+      .story-card__stats {
+        font-size: 12px;
+        color: var(--muted-2);
+        font-weight: 700;
+      }
+
+      .story-card__title {
+        margin: 0;
+        font-size: 22px;
+        line-height: 1.35;
+        letter-spacing: -0.02em;
+        font-weight: 800;
+      }
+
+      .story-card__desc {
+        margin: 10px 0 0;
+        font-size: 14px;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .center-button {
+        margin-top: 28px;
+        text-align: center;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        min-height: 52px;
+        padding: 0 24px;
+        border-radius: 16px;
+        background: linear-gradient(135deg, var(--purple) 0%, var(--pink) 100%);
+        color: #fff;
+        font-size: 15px;
+        font-weight: 800;
+        box-shadow: 0 14px 28px rgba(164, 76, 255, 0.18);
+      }
+
+      .about-block {
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .about-block__title {
+        margin: 0;
+        font-size: clamp(30px, 4vw, 48px);
+        font-weight: 900;
+        letter-spacing: -0.03em;
+      }
+
+      .about-block__desc {
+        margin: 18px auto 0;
+        font-size: 19px;
+        line-height: 1.9;
+        color: #47506a;
+        max-width: 820px;
+      }
+
+      .about-block__desc strong {
+        color: var(--purple-dark);
+      }
+
+      .feature-list {
+        margin-top: 34px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px 22px;
+        text-align: left;
+      }
+
+      .feature-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 16px 18px;
+        background: rgba(255, 255, 255, 0.82);
+        border: 1px solid rgba(234, 223, 244, 0.92);
+        border-radius: 16px;
+        font-size: 15px;
+        font-weight: 700;
+        color: #4b5471;
+      }
+
+      .feature-item__icon {
+        width: 22px;
+        height: 22px;
+        border-radius: 999px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--purple-dark);
+        background: #f4ebff;
+        font-size: 12px;
+        flex-shrink: 0;
+      }
+
+      .cta-panel {
+        margin-top: 34px;
+        padding: 42px 32px;
+        border-radius: 24px;
+        background: linear-gradient(135deg, #8f43ff 0%, #ff2f9e 100%);
+        color: #fff;
+        box-shadow: 0 18px 34px rgba(171, 64, 211, 0.18);
+      }
+
+      .cta-panel__title {
+        margin: 0;
+        font-size: clamp(28px, 3.2vw, 40px);
+        line-height: 1.2;
+        font-weight: 900;
+        letter-spacing: -0.03em;
+      }
+
+      .cta-panel__desc {
+        margin: 14px 0 0;
+        font-size: 17px;
+        line-height: 1.75;
+        color: rgba(255, 255, 255, 0.94);
+      }
+
+      .cta-panel .button {
+        margin-top: 24px;
+        background: #fff;
+        color: var(--purple-dark);
+        box-shadow: none;
+      }
+
+      .site-footer {
+        margin-top: 60px;
+        background: var(--navy);
+        color: rgba(255, 255, 255, 0.94);
+      }
+
+      .site-footer__inner {
+        display: grid;
+        grid-template-columns: 1.25fr 1fr 1fr 1fr;
+        gap: 36px;
+        padding: 42px 0 26px;
+      }
+
+      .footer-brand__title {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 22px;
+        font-weight: 900;
+      }
+
+      .footer-brand__desc {
+        margin: 18px 0 0;
+        font-size: 14px;
+        line-height: 1.8;
+        color: rgba(255, 255, 255, 0.68);
+      }
+
+      .footer-col h4 {
+        margin: 4px 0 14px;
+        font-size: 16px;
+        font-weight: 800;
+      }
+
+      .footer-col a {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .footer-col a:hover {
+        color: #fff;
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 18px 0 28px;
+        text-align: center;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.52);
+      }
+
+      @media (max-width: 1080px) {
+        .service-grid,
+        .mini-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .site-footer__inner {
+          grid-template-columns: 1fr 1fr;
         }
       }
-    </script>
 
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "아이 이름 짓기",
-        "url": "https://babyname.cloud",
-        "applicationCategory": "LifestyleApplication",
-        "operatingSystem": "All",
-        "description": "느낌 기반으로 아기 이름, 태명, 반려동물 이름을 추천하는 서비스",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "KRW"
+      @media (max-width: 820px) {
+        .site-header__inner {
+          min-height: auto;
+          padding: 14px 0;
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .main-nav {
+          overflow-x: auto;
+          white-space: nowrap;
+          gap: 18px;
+          padding-bottom: 4px;
+        }
+
+        .hero {
+          padding: 70px 0 56px;
+        }
+
+        .hero__desc {
+          font-size: 18px;
+        }
+
+        .service-grid,
+        .mini-grid,
+        .story-grid,
+        .feature-list,
+        .site-footer__inner {
+          grid-template-columns: 1fr;
+        }
+
+        .cta-panel {
+          padding: 34px 24px;
         }
       }
-    </script>
 
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="아이 이름 짓기 | 느낌 기반 이름 추천" />
-    <meta
-      property="og:description"
-      content="세련된 아기 이름부터 귀여운 태명, 반려동물 이름까지! 느낌 기반 맞춤형 네이밍 솔루션 babyname.cloud"
-    />
-    <meta property="og:url" content="https://babyname.cloud/" />
-    <meta property="og:image" content="https://babyname.cloud/og-image.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+      @media (max-width: 560px) {
+        .container {
+          width: min(var(--max), calc(100% - 24px));
+        }
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="아이 이름 짓기 | 느낌 기반 이름 추천" />
-    <meta
-      name="twitter:description"
-      content="세련된 아기 이름부터 귀여운 태명, 반려동물 이름까지! 느낌 기반 맞춤형 네이밍 솔루션 babyname.cloud"
-    />
-    <meta name="twitter:image" content="https://babyname.cloud/og-image.png" />
+        .section {
+          padding: 44px 0;
+        }
 
-    <link rel="stylesheet" href="./styles.css" />
+        .hero__desc,
+        .section__desc,
+        .about-block__desc {
+          font-size: 16px;
+        }
+
+        .service-card,
+        .mini-card,
+        .story-card {
+          padding-left: 18px;
+          padding-right: 18px;
+        }
+      }
+    </style>
   </head>
-
-
   <body>
-    <main class="page">
-      <!-- Top navigation -->
-<nav class="topnav">
-  <div class="topnav__inner">
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a class="brand" href="./index.html">
+          <span class="brand__logo">✨</span>
+          <span class="brand__text">
+            <span class="brand__title">babyname.cloud</span>
+            <span class="brand__subtitle">이름 크리에이터 플랫폼</span>
+          </span>
+        </a>
 
-    <a href="./index.html" class="topnav__brand">
-      <div class="topnav__logo">👶</div>
-      <span class="topnav__brand-text">아이 이름 짓기</span>
-    </a>
+        <nav class="main-nav">
+          <a href="#services">이름 만들기</a>
+          <a href="#popular">인기 기능</a>
+          <a href="#stories">이름 이야기</a>
+          <a href="#about">소개</a>
+        </nav>
+      </div>
+    </header>
 
-    <div class="topnav__menu">
-      <a href="./index.html" class="topnav__link topnav__link--active">아기 이름 짓기</a>
-      <a href="/pages/taemyung.html" class="topnav__link">태명 짓기</a>
-      <a href="./pages/chosung-name.html" class="topnav__link">초성이름짓기</a>
-      <a href="./pages/pet-name.html" class="topnav__link">반려동물 이름</a>
-      <a href="./pages/korean-name.html" class="topnav__link">순우리말 이름</a>
-      <a href="./pages/global-name.html" class="topnav__link">외국에서 쓰기 좋은 이름</a>
-      <a href="./blog/index.html" class="topnav__link">이름 이야기</a>
-      
-    </div>
-
-  </div>
-</nav>
-      <!-- Header -->
-      <header class="hero">
-        <div class="hero__badge" aria-hidden="true">
-          <!-- simple sparkle icon -->
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-            <path
-              d="M12 2l1.2 4.2L17.4 8 13.2 9.2 12 13.4 10.8 9.2 6.6 8l4.2-1.8L12 2z"
-              stroke="currentColor"
-              stroke-width="1.6"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M19 12l.8 2.8L22.6 16 19.8 16.8 19 19.6 18.2 16.8 15.4 16l2.8-1.2L19 12z"
-              stroke="currentColor"
-              stroke-width="1.6"
-              stroke-linejoin="round"
-            />
-          </svg>
+    <main>
+      <section class="hero">
+        <div class="container">
+          <h1 class="hero__title">이름이 필요한 모든 순간을 위한 플랫폼</h1>
+          <p class="hero__desc">
+            아기 이름부터 태명, 반려동물 이름, 캐릭터 이름, 동아리 이름까지<br />
+            상황과 분위기에 맞는 이름을 쉽고 재미있게 만들어보세요.
+          </p>
         </div>
+      </section>
 
-        <h1 class="hero__title">
-          <span class="grad1">아이</span>
-          <span class="grad2"> 이름</span>
-          <span class="grad3"> 짓기</span>
-        </h1>
-
-        <p class="hero__desc">
-          의미/사주/한자 기반이 아닌, <b>“느낌” 기반</b> 추천입니다.<br />
-          성별과 느낌을 선택하면 1~2가지 자동 제안됩니다.
-        </p>
-      </header>
-
-      <!-- Card -->
-      <section class="card">
-        <div class="card__head">
-          <div class="card__icon" aria-hidden="true">✨</div>
-          <div>
-            <div class="card__title">이름 정보 입력</div>
-            <div class="card__sub">아이의 정보를 입력해주세요</div>
-          </div>
-        </div>
-
-        <div class="form">
-          <!-- surname -->
-          <div class="field">
-            <label class="label" for="surname">성(姓)</label>
-            <input
-              id="surname"
-              class="input"
-              placeholder="예: 김"
-              maxlength="2"
-              autocomplete="off"
-            />
+      <section class="section section--card" id="services">
+        <div class="container">
+          <div class="section__head">
+            <h2 class="section__title">어떤 이름을 찾고 계신가요?</h2>
+            <p class="section__desc">상황에 맞는 이름 서비스를 선택해보세요.</p>
           </div>
 
-          <!-- gender -->
-          <div class="field">
-            <div class="label">성별</div>
-            <div class="seg" role="group" aria-label="성별 선택">
-              <label class="seg__item">
-                <input type="radio" name="genderRadio" value="male" />
-                <span>남아</span>
-              </label>
-              <label class="seg__item">
-                <input type="radio" name="genderRadio" value="female" />
-                <span>여아</span>
-              </label>
-              <label class="seg__item seg__item--ghost">
-                <input type="radio" name="genderRadio" value="any" checked />
-                <span>상관없음</span>
-              </label>
+          <div class="service-grid">
+            <a class="service-card service-card--baby" href="./pages/baby-name.html">
+              <div class="service-card__icon">👶</div>
+              <h3 class="service-card__title">아기 이름 짓기</h3>
+              <p class="service-card__desc">
+                소중한 우리 아이에게 특별한 의미를 담은 이름을 찾아보세요. 발음,
+                이미지, 분위기를 고려한 이름 추천을 제공합니다.
+              </p>
+              <span class="service-card__more">바로가기 →</span>
+            </a>
+
+            <a class="service-card service-card--tae" href="./pages/taemyung.html">
+              <div class="service-card__icon">💜</div>
+              <h3 class="service-card__title">태명 짓기</h3>
+              <p class="service-card__desc">
+                뱃속 아기와 교감할 수 있는 따뜻하고 귀여운 태명을 추천해드려요.
+                말랑하고 사랑스러운 분위기의 이름을 찾아보세요.
+              </p>
+              <span class="service-card__more">바로가기 →</span>
+            </a>
+
+            <a class="service-card service-card--pet" href="./pages/pet-name.html">
+              <div class="service-card__icon">🐾</div>
+              <h3 class="service-card__title">반려동물 이름 짓기</h3>
+              <p class="service-card__desc">
+                반려동물의 성격과 외모에 어울리는 사랑스러운 이름을 찾아보세요.
+                강아지와 고양이 모두를 위한 네이밍 아이디어를 제공합니다.
+              </p>
+              <span class="service-card__more">바로가기 →</span>
+            </a>
+
+            <a class="service-card service-card--character" href="#">
+              <div class="service-card__icon">🪄</div>
+              <h3 class="service-card__title">캐릭터 이름 짓기</h3>
+              <p class="service-card__desc">
+                세계관, 장르, 분위기에 맞는 매력적인 캐릭터 이름을 만들어보세요.
+                판타지부터 현대물까지 폭넓은 스타일을 반영할 수 있어요.
+              </p>
+              <span class="service-card__more">준비중</span>
+            </a>
+
+            <a class="service-card service-card--club" href="#">
+              <div class="service-card__icon">👥</div>
+              <h3 class="service-card__title">동아리 이름 짓기</h3>
+              <p class="service-card__desc">
+                재미있고 기억에 남는 팀명과 모임 이름을 추천해드려요. 개성 있고
+                센스 있는 이름으로 첫인상을 완성해보세요.
+              </p>
+              <span class="service-card__more">준비중</span>
+            </a>
+
+            <a class="service-card service-card--chosung" href="./pages/chosung-name.html">
+              <div class="service-card__icon">🔠</div>
+              <h3 class="service-card__title">초성 이름 찾기</h3>
+              <p class="service-card__desc">
+                원하는 초성으로 시작하는 이름을 쉽게 살펴보세요. 조합이 없는 경우
+                비슷한 첫 초성 이름까지 보여주는 탐색형 기능입니다.
+              </p>
+              <span class="service-card__more">바로가기 →</span>
+            </a>
+
+            <a class="service-card service-card--korean" href="./pages/korean-name.html">
+              <div class="service-card__icon">🌿</div>
+              <h3 class="service-card__title">순우리말 이름 찾기</h3>
+              <p class="service-card__desc">
+                아름답고 뜻깊은 순우리말 이름을 발견해보세요. 따뜻하고 자연스러운
+                한국어의 울림을 살린 이름 모음을 제공합니다.
+              </p>
+              <span class="service-card__more">바로가기 →</span>
+            </a>
+
+            <a class="service-card service-card--global" href="./pages/global-name.html">
+              <div class="service-card__icon">🌐</div>
+              <h3 class="service-card__title">글로벌 이름 찾기</h3>
+              <p class="service-card__desc">
+                전 세계 어디서나 통하는 세련적인 이름을 찾아보세요. 발음하기 쉽고
+                국제적 분위기를 가진 이름을 한 번에 탐색할 수 있어요.
+              </p>
+              <span class="service-card__more">바로가기 →</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="popular">
+        <div class="container">
+          <div class="section__head">
+            <h2 class="section__title">인기 & 추천 기능</h2>
+            <p class="section__desc">많은 분들이 선택한 이름 서비스입니다.</p>
+          </div>
+
+          <div class="mini-grid">
+            <div class="mini-card">
+              <div class="mini-card__title">📈 요즘 많이 찾는 이름 기능</div>
+              <div class="mini-card__tags">
+                <span class="tag">아기 이름 생성</span>
+                <span class="tag">태명 짓기</span>
+                <span class="tag">반려동물 이름</span>
+              </div>
             </div>
 
-            <!-- hidden select for backward compatibility with your existing JS -->
-            <select
-              id="gender"
-              class="sr-only"
-              aria-hidden="true"
-              tabindex="-1"
-            >
-              <option value="any" selected>상관없음</option>
-              <option value="female">여아</option>
-              <option value="male">남아</option>
-            </select>
+            <div class="mini-card">
+              <div class="mini-card__title">☆ 오늘 인기 카테고리</div>
+              <div class="mini-card__tags">
+                <span class="tag">아기 이름</span>
+                <span class="tag">반려동물 이름</span>
+                <span class="tag">캐릭터 이름</span>
+              </div>
+            </div>
+
+            <div class="mini-card">
+              <div class="mini-card__title">♡ 부모들이 많이 보는 이름</div>
+              <div class="mini-card__tags">
+                <span class="tag">순우리말</span>
+                <span class="tag">글로벌 이름</span>
+                <span class="tag">중성적 이름</span>
+              </div>
+            </div>
+
+            <div class="mini-card">
+              <div class="mini-card__title">✧ 감성적인 순우리말 이름</div>
+              <div class="mini-card__tags">
+                <span class="tag">하늘</span>
+                <span class="tag">나봄</span>
+                <span class="tag">별빛</span>
+                <span class="tag">윤슬</span>
+                <span class="tag">소리</span>
+              </div>
+            </div>
           </div>
-
-          <!-- tags -->
-          <div class="field">
-            <div class="label">느낌 (최대 2개)</div>
-            <div class="tags" id="tagButtons"></div>
-            <div class="hint" id="tagHint"></div>
-          </div>
-
-          <!-- action -->
-          <button class="cta" id="btn" type="button">
-            <span class="cta__spark" aria-hidden="true">✦</span>
-            이름 제안 받기
-          </button>
-
-          <!-- results -->
-          <div id="result" class="result"></div>
-
-          <div class="footnote">
-            참고용 도구입니다. 특정 이름이 더 “좋다”는 의미가 아닙니다.
-          </div>
-          <!-- Other services -->
-<section class="other-services">
-  <div class="other-services__inner">
-    <h2 class="other-title">다<a href="/pages/taemyung.html"></a>른 이름 서비스</h2>
-    <p class="other-desc">다양한 이름 추천 서비스를 이용해보세요</p>
-
-    <a href="./pages/chosung-name.html" class="service-card service-card--chosung">
-  <div class="service-card__icon service-card__icon--chosung">🔠</div>
-  <div class="service-card__content">
-    <div class="service-name">초성으로 이름 짓기</div>
-    <div class="service-text">원하는 초성으로 어울리는 이름을 찾아보세요</div>
-  </div>
-</a>
-
-
-    <div class="service-grid">
-      <a href="/pages/taemyung.html" class="service-card service-card--tae">
-  <div class="service-card__icon service-card__icon--tae">🐣</div>
-  <div class="service-card__content">
-    <div class="service-name">태명 짓기</div>
-    <div class="service-text">귀여운 태명, 순우리말 태명, 먹거리 태명을 추천해드려요</div>
-  </div>
-</a>
-
-
-      <a href="./pages/pet-name.html" class="service-card service-card--pet">
-        <div class="service-card__icon service-card__icon--pet">🐾</div>
-        <div class="service-card__content">
-          <div class="service-name">반려동물 이름 추천</div>
-          <div class="service-text">귀여운 강아지·고양이 이름을 추천합니다.</div>
         </div>
-      </a>
-
-      <a href="./pages/korean-name.html" class="service-card service-card--korean">
-        <div class="service-card__icon service-card__icon--korean">🌿</div>
-        <div class="service-card__content">
-          <div class="service-name">순우리말 이름 리스트</div>
-          <div class="service-text">아름다운 순우리말 이름을 확인해 보세요.</div>
-        </div>
-      </a>
-
-     <a href="./pages/global-name.html" class="service-card service-card--global">
-  <div class="service-card__icon service-card__icon--global">🌍</div>
-  <div class="service-card__content">
-    <div class="service-name">외국에서 쓰기 좋은 이름</div>
-    <div class="service-text">이민, 유학, 국제학교를 고려한 이름 리스트</div>
-  </div>
-</a> 
-    </div>
-  </div>
-</section>
-       </div>
       </section>
-<footer class="site-footer">
-  <div class="footer-inner">
 
-    <div class="footer-grid">
+      <section class="section section--soft" id="stories">
+        <div class="container">
+          <div class="section__head">
+            <h2 class="section__title">이름 이야기</h2>
+            <p class="section__desc">
+              이름에 담긴 의미와 작명 노하우를 공유합니다.
+            </p>
+          </div>
 
-<div class="footer-col">
-  <h4>서비스</h4>
-  <a href="./index.html">아기 이름 짓기</a>
-  <a href="./pages/taemyung.html">태명 짓기</a>
-  <a href="./pages/chosung-name.html">초성 이름 찾기</a>
-  <a href="./pages/pet-name.html">반려동물 이름</a>
-  <a href="./pages/korean-name.html">순우리말 이름</a>
-  <a href="./pages/global-name.html">외국에서 쓰기 좋은 이름</a>
-</div>
+          <div class="story-grid">
+            <div class="story-column">
+              <h3 class="story-column__title">📝 최신 글</h3>
 
-<div class="footer-col">
-  <h4>이름 가이드</h4>
-  <a href="./blog/index.html">이름 이야기</a>
-  <a href="./blog/good-name-criteria.html">좋은 이름의 기준</a>
-  <a href="./blog/baby-name-trends.html">요즘 이름 트렌드</a>
-  <a href="./blog/surname-matching-names.html">성씨별 이름 추천</a>
-  <a href="./blog/global-friendly-names.html">해외에서 쓰기 좋은 이름</a>
-</div>
+              <article class="story-card">
+                <div class="story-card__meta">
+                  <span class="story-card__category">작명 가이드</span>
+                  <span class="story-card__stats">2026.04.01 · 조회 1,234</span>
+                </div>
+                <h4 class="story-card__title">좋은 이름의 기준 7가지</h4>
+                <p class="story-card__desc">
+                  정성, 발화의 리듬, 쉬운 기억까지. 이름을 고를 때 꼭 확인해야 할 기준을
+                  알기 쉽게 정리했습니다.
+                </p>
+              </article>
 
-<div class="footer-col">
-  <h4>정보</h4>
-  <a href="./about.html">사이트 소개</a>
-  <a href="./contact.html">문의하기</a>
-  <a href="./privacy.html">개인정보처리방침</a>
-</div>
+              <article class="story-card">
+                <div class="story-card__meta">
+                  <span class="story-card__category">태명</span>
+                  <span class="story-card__stats">2026.03.30 · 조회 987</span>
+                </div>
+                <h4 class="story-card__title">태명은 어떻게 지으면 좋을까</h4>
+                <p class="story-card__desc">
+                  첫 호칭인 만큼 따뜻하고 부르기 쉬운 태명이 중요합니다. 실제로 많이
+                  사랑받는 패턴과 예시를 함께 소개해요.
+                </p>
+              </article>
 
-    <div class="footer-bottom">
-      © 2026 아이 이름 짓기. All rights reserved.
-    </div>
+              <article class="story-card">
+                <div class="story-card__meta">
+                  <span class="story-card__category">글로벌 이름</span>
+                  <span class="story-card__stats">2026.03.28 · 조회 2,156</span>
+                </div>
+                <h4 class="story-card__title">외국에서도 쓰기 좋은 이름 모음</h4>
+                <p class="story-card__desc">
+                  글로벌 사회에 어울리는 이름, 한국과 해외에서 모두 자연스러운 이름을
+                  정리했습니다.
+                </p>
+              </article>
+            </div>
 
-  </div>
-</footer>
+            <div class="story-column">
+              <h3 class="story-column__title">🔥 많이 읽은 글</h3>
+
+              <article class="story-card">
+                <div class="story-card__meta">
+                  <span class="story-card__category">트렌드</span>
+                  <span class="story-card__stats">2026.03.15 · 조회 5,432</span>
+                </div>
+                <h4 class="story-card__title">2026년 아기 이름 트렌드</h4>
+                <p class="story-card__desc">
+                  요즘 부모들이 선호하는 이름 스타일과 인기 있는 초성 패턴을 분석해봤어요.
+                </p>
+              </article>
+
+              <article class="story-card">
+                <div class="story-card__meta">
+                  <span class="story-card__category">순우리말</span>
+                  <span class="story-card__stats">2026.03.10 · 조회 4,891</span>
+                </div>
+                <h4 class="story-card__title">순우리말 이름 200가지</h4>
+                <p class="story-card__desc">
+                  뜻이 아름다운 순우리말 이름을 남자아이, 여자아이별로 정리했습니다.
+                </p>
+              </article>
+
+              <article class="story-card">
+                <div class="story-card__meta">
+                  <span class="story-card__category">작명 이야기</span>
+                  <span class="story-card__stats">2026.03.05 · 조회 3,672</span>
+                </div>
+                <h4 class="story-card__title">작명노 AI 작명, 무엇이 다를까</h4>
+                <p class="story-card__desc">
+                  전통적 작명소와 AI 기반 작명 서비스의 차이점을 비교해봤습니다.
+                </p>
+              </article>
+            </div>
+          </div>
+
+          <div class="center-button">
+            <a class="button" href="./blog/index.html">모든 글 보기 →</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="container">
+          <div class="about-block">
+            <h2 class="about-block__title">babyname.cloud는</h2>
+            <p class="about-block__desc">
+              <strong>이름이 필요한 다양한 순간</strong>을 위한 네이밍 플랫폼입니다.<br />
+              아기 이름, 태명, 반려동물 이름, 캐릭터 이름, 팀 이름까지<br />
+              <strong>목적에 맞는 이름 아이디어</strong>를 쉽고 직관적으로 제공합니다.
+            </p>
+
+            <div class="feature-list">
+              <div class="feature-item"><span class="feature-item__icon">✓</span>다양한 상황과 목적에 맞는 맞춤형 이름 생성</div>
+              <div class="feature-item"><span class="feature-item__icon">✓</span>AI 기반 의미 있고 발음 좋은 이름 추천</div>
+              <div class="feature-item"><span class="feature-item__icon">✓</span>순우리말부터 글로벌 이름까지 폭넓은 선택지</div>
+              <div class="feature-item"><span class="feature-item__icon">✓</span>초성, 글자수, 분위기 등 세밀한 필터링</div>
+              <div class="feature-item"><span class="feature-item__icon">✓</span>실시간 트렌드 반영 및 인기 이름 분석</div>
+              <div class="feature-item"><span class="feature-item__icon">✓</span>작명 가이드와 노하우를 담은 콘텐츠 제공</div>
+            </div>
+
+            <div class="cta-panel">
+              <h3 class="cta-panel__title">특별한 이름을 찾는 여정, 함께 시작해보세요</h3>
+              <p class="cta-panel__desc">
+                당신의 소중한 순간에 어울리는 완벽한 이름을 발견해보세요.
+              </p>
+              <a class="button" href="#services">이름 만들기 시작하기</a>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <!-- Center Modal (Name Detail) -->
-    <div id="modalOverlay" class="modalOverlay" style="display: none"></div>
-    <div id="nameModal" class="modalWrap" style="display: none">
-      <div class="modal">
-        <div class="modal__head">
-          <div class="modal__title" id="modalTitle">이름 상세</div>
-          <button id="modalClose" class="modal__close" type="button">
-            닫기
-          </button>
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <div>
+          <div class="footer-brand__title">
+            <span class="brand__logo">✨</span>
+            <span>babyname.cloud</span>
+          </div>
+          <p class="footer-brand__desc">
+            이름이 필요한 모든 순간을 위한<br />
+            특별한 네이밍 서비스
+          </p>
         </div>
-        <div id="modalBody" class="modal__body"></div>
+
+        <div class="footer-col">
+          <h4>서비스</h4>
+          <a href="./pages/baby-name.html">아기 이름 짓기</a>
+          <a href="./pages/taemyung.html">태명 짓기</a>
+          <a href="./pages/pet-name.html">반려동물 이름</a>
+          <a href="./pages/chosung-name.html">초성 이름 짓기</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>이름 찾기</h4>
+          <a href="./pages/chosung-name.html">초성 검색</a>
+          <a href="./pages/korean-name.html">순우리말 이름</a>
+          <a href="./pages/global-name.html">글로벌 이름</a>
+          <a href="#">동아리 이름</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>정보</h4>
+          <a href="./blog/index.html">이름 이야기</a>
+          <a href="./blog/good-name-criteria.html">작명 가이드</a>
+          <a href="./about.html">소개</a>
+          <a href="./contact.html">문의하기</a>
+        </div>
       </div>
-    </div>
 
-    <script>
-      // sync radio -> hidden select (#gender) so existing JS keeps working
-      const sel = document.getElementById("gender");
-      document.querySelectorAll('input[name="genderRadio"]').forEach((r) => {
-        r.addEventListener("change", () => {
-          if (r.checked && sel) sel.value = r.value;
-        });
-      });
-    </script>
-
-    <script type="module" src="./src/app.js?v=1"></script>
+      <div class="container footer-bottom">
+        © 2026 babyname.cloud. All rights reserved. · 이름이 필요한 모든 순간을 위한 플랫폼
+      </div>
+    </footer>
   </body>
 </html>

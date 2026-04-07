@@ -1,141 +1,317 @@
 <!doctype html>
 <html lang="ko">
   <head>
+    <!-- 애드센스 -->
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2329221115092158"
+      crossorigin="anonymous"
+    ></script>
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>유행 이름 vs 오래가는 이름 | 아이 이름 짓기</title>
+
+    <title>유행 이름 vs 오래가는 이름 | babyname.cloud</title>
     <meta
       name="description"
+      content="유행 이름과 오래가는 이름의 차이를 정리했습니다. 아기 이름 추천, 작명 기준, 유행 이름의 장단점, 오래 불러도 편안한 이름의 특징까지 함께 확인해보세요."
+    />
+    <link rel="canonical" href="https://babyname.cloud/blog/trendy-vs-timeless-names.html" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="유행 이름 vs 오래가는 이름 | babyname.cloud" />
+    <meta
+      property="og:description"
       content="유행 이름과 오래 사용되는 이름의 차이를 소개합니다. 이름을 고를 때 어떤 균형이 중요한지 정리했습니다."
     />
+    <meta property="og:url" content="https://babyname.cloud/blog/trendy-vs-timeless-names.html" />
+    <meta property="og:image" content="https://babyname.cloud/og-image.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="유행 이름 vs 오래가는 이름 | babyname.cloud" />
+    <meta
+      name="twitter:description"
+      content="유행 이름과 오래 사용되는 이름의 차이를 소개합니다. 이름을 고를 때 어떤 균형이 중요한지 정리했습니다."
+    />
+    <meta name="twitter:image" content="https://babyname.cloud/og-image.png" />
+
     <link rel="stylesheet" href="../styles.css" />
+
     <style>
-      .post-wrap { max-width: 860px; margin: 0 auto; padding: 24px 24px 80px; }
-      .post-hero { padding: 56px 0 18px; }
-      .post-tag { display:inline-block; padding:6px 12px; border-radius:999px; background:#f3ecff; color:#8b3dff; font-size:12px; font-weight:700; margin-bottom:16px; }
-      .post-title { font-size:42px; line-height:1.2; font-weight:800; margin:0 0 14px; color:#1f2a44; letter-spacing:-0.02em; }
-      .post-desc { margin:0; font-size:17px; color:#667085; line-height:1.7; }
-      .post-card { margin-top:26px; background:rgba(255,255,255,0.86); border:1px solid rgba(229,222,241,0.95); border-radius:24px; padding:32px 28px; box-shadow:0 12px 32px rgba(80,55,120,0.06); }
-      .post-card h2 { margin:34px 0 12px; font-size:24px; color:#1f2a44; }
-      .post-card h2:first-child { margin-top:0; }
-      .post-card p, .post-card li { font-size:16px; line-height:1.85; color:#3f4a60; }
-      .post-card ul { margin:10px 0 0; padding-left:20px; }
-      .post-nav { margin-top:24px; }
-      .post-back { display:inline-block; text-decoration:none; font-size:14px; font-weight:700; color:#8b3dff; }
-      @media (max-width:768px){ .post-wrap{padding:16px 16px 60px;} .post-hero{padding:36px 0 14px;} .post-title{font-size:30px;} .post-desc{font-size:15px;} .post-card{padding:22px 18px; border-radius:20px;} .post-card h2{font-size:20px;} .post-card p,.post-card li{font-size:14px;} }
+      .site-header {
+        border-bottom: 1px solid #eee;
+        background: #fff;
+        position: sticky;
+        top: 0;
+        z-index: 50;
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      .site-header__inner {
+        padding: 14px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .brand {
+        display: flex;
+        gap: 8px;
+        font-weight: 700;
+        text-decoration: none;
+        color: #222;
+        align-items: center;
+      }
+
+      .main-nav {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+      }
+
+      .main-nav a {
+        text-decoration: none;
+        color: #444;
+        font-size: 14px;
+        white-space: nowrap;
+      }
+
+      .main-nav a:hover,
+      .main-nav a.is-active {
+        color: #8b49ff;
+      }
+
+      .post-wrap {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 40px 20px 80px;
+      }
+
+      .post-hero {
+        padding: 18px 0 8px;
+      }
+
+      .post-tag {
+        display: inline-block;
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: #f3ecff;
+        color: #8b3dff;
+        font-size: 12px;
+        font-weight: 700;
+        margin-bottom: 16px;
+      }
+
+      .post-title {
+        font-size: 40px;
+        font-weight: 800;
+        margin: 0 0 18px;
+        color: #1f2a44;
+        line-height: 1.25;
+        letter-spacing: -0.02em;
+      }
+
+      .post-desc {
+        margin: 0;
+        font-size: 17px;
+        line-height: 1.8;
+        color: #667085;
+      }
+
+      .post-card {
+        margin-top: 24px;
+        background: #fff;
+        border-radius: 20px;
+        padding: 30px;
+        border: 1px solid #eee;
+        box-shadow: 0 12px 32px rgba(80, 55, 120, 0.06);
+      }
+
+      .post-card h2 {
+        margin: 30px 0 12px;
+        font-size: 22px;
+        color: #1f2a44;
+        line-height: 1.4;
+      }
+
+      .post-card h2:first-child {
+        margin-top: 0;
+      }
+
+      .post-card p,
+      .post-card li {
+        font-size: 16px;
+        line-height: 1.9;
+        color: #444;
+      }
+
+      .post-card ul {
+        margin-top: 10px;
+        padding-left: 20px;
+      }
+
+      .back-link {
+        margin-top: 20px;
+        display: inline-block;
+        color: #8b49ff;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      @media (max-width: 768px) {
+        .site-header__inner {
+          padding: 12px 16px;
+          display: block;
+        }
+
+        .brand {
+          margin-bottom: 10px;
+        }
+
+        .main-nav {
+          overflow-x: auto;
+          white-space: nowrap;
+          -webkit-overflow-scrolling: touch;
+        }
+
+        .main-nav::-webkit-scrollbar {
+          display: none;
+        }
+
+        .post-wrap {
+          padding: 24px 16px 60px;
+        }
+
+        .post-title {
+          font-size: 28px;
+        }
+
+        .post-desc {
+          font-size: 15px;
+        }
+
+        .post-card {
+          padding: 20px;
+        }
+
+        .post-card p,
+        .post-card li {
+          font-size: 14px;
+        }
+      }
     </style>
   </head>
+
   <body>
-    <div class="site-bg">
-      <div class="post-wrap">
-        <nav class="topnav">
-          <div class="topnav__inner">
-            <a href="../index.html" class="topnav__brand">
-              <div class="topnav__logo">👶</div>
-              <span class="topnav__brand-text">아이 이름 짓기</span>
-            </a>
-            <div class="topnav__menu">
-              <a href="../index.html" class="topnav__link">아기 이름 짓기</a>
-              <a href="./pages/taemyung.html" class="topnav__link">태명 짓기</a>
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a class="brand" href="../index.html">
+          <span>✨</span>
+          <span>babyname.cloud</span>
+        </a>
 
-              <a href="../pages/chosung-name.html" class="topnav__link">초성 이름 짓기</a>
-
-              <a href="../pages/pet-name.html" class="topnav__link">반려동물 이름</a>
-              <a href="../pages/korean-name.html" class="topnav__link">순우리말 이름</a>
-              <a href="./global-name.html" class="topnav__link">외국에서 쓰기 좋은 이름</a>
-              <a href="./index.html" class="topnav__link topnav__link--active">이름 이야기</a>
-            </div>
-          </div>
+        <nav class="main-nav">
+          <a href="../index.html">홈</a>
+          <a href="../index.html#services">이름 만들기</a>
+          <a href="./index.html" class="is-active">이름 이야기</a>
+          <a href="../about.html">소개</a>
         </nav>
-
-        <header class="post-hero">
-          <div class="post-tag">이름 트렌드</div>
-          <h1 class="post-title">유행 이름 vs 오래가는 이름</h1>
-          <p class="post-desc">
-            이름을 고를 때 가장 많이 고민하는 주제 중 하나입니다. 유행 이름과 오래가는 이름의 차이를 비교해봅니다.
-          </p>
-        </header>
-
-        <article class="post-card">
-          <h2>유행 이름은 왜 매력적으로 느껴질까요</h2>
-          <p>
-            유행 이름은 이미 많은 사람들이 예쁘다고 느끼는 구조를 갖고 있습니다. 그래서 익숙하고, 처음 들었을 때도
-            거부감이 적습니다. 또래 부모들이 많이 선택하는 이름인 만큼 현재 시대의 감각과도 잘 맞아 보입니다.
-          </p>
-
-          <h2>하지만 유행 이름의 단점도 있습니다</h2>
-          <p>
-            특정 시기에 많이 선택된 이름은 시간이 지나면 비슷한 이름을 가진 아이가 많아질 수 있습니다. 부모가 처음에는
-            만족하더라도, 나중에 같은 반이나 주변에 같은 이름이 여러 명 있는 상황을 생각하면 고민이 생길 수 있습니다.
-          </p>
-
-          <h2>오래가는 이름의 특징</h2>
-          <p>
-            오래가는 이름은 유행을 강하게 타지 않으면서도 자연스럽고 안정적인 발음을 가집니다. 너무 낯설지 않지만,
-            지나치게 한 시기의 분위기에만 묶이지 않는 이름이라고 볼 수 있습니다.
-          </p>
-
-          <h2>어떤 균형이 좋을까요</h2>
-          <ul>
-            <li>현재 유행을 참고하되 그대로 따라가지는 않기</li>
-            <li>성을 붙였을 때 자연스러운지 보기</li>
-            <li>아이가 성인이 되었을 때도 잘 어울리는지 생각하기</li>
-            <li>처음 예쁜 것보다 오래 편안한 이름인지 보기</li>
-          </ul>
-
-          <h2>결국 중요한 것은 오래 만족할 수 있는가입니다</h2>
-          <p>
-            유행 이름이 무조건 나쁜 것도 아니고, 오래가는 이름이 늘 더 좋은 것도 아닙니다. 가장 좋은 선택은
-            지금 가족이 좋아하면서도 시간이 지나도 어색하지 않은 이름입니다. 이름은 순간의 선택이 아니라 오래 사용할
-            말이라는 점을 함께 생각하면 더 좋은 기준이 생깁니다.
-          </p>
-
-          <p>
-            다양한 스타일의 이름을 비교해보고 싶다면 <a href="../index.html">아이 이름 추천 서비스</a>를 이용해보세요.
-          </p>
-        </article>
-
-        <div class="post-nav">
-          <a href="./index.html" class="post-back">← 이름 이야기 목록으로 돌아가기</a>
-        </div>
-<footer class="site-footer">
-  <div class="footer-inner">
-
-    <div class="footer-grid">
-
-<div class="footer-col">
-  <h4>서비스</h4>
-  <a href="./index.html">아기 이름 짓기</a>
-  <a href="./pages/taemyung.html">태명 짓기</a>
-  <a href="./pages/chosung-name.html">초성 이름 찾기</a>
-  <a href="./pages/pet-name.html">반려동물 이름</a>
-  <a href="./pages/korean-name.html">순우리말 이름</a>
-  <a href="./pages/global-name.html">외국에서 쓰기 좋은 이름</a>
-</div>
-
-<div class="footer-col">
-  <h4>이름 가이드</h4>
-  <a href="./blog/index.html">이름 이야기</a>
-  <a href="./blog/good-name-criteria.html">좋은 이름의 기준</a>
-  <a href="./blog/baby-name-trends.html">요즘 이름 트렌드</a>
-  <a href="./blog/surname-matching-names.html">성씨별 이름 추천</a>
-  <a href="./blog/global-friendly-names.html">해외에서 쓰기 좋은 이름</a>
-</div>
-
-<div class="footer-col">
-  <h4>정보</h4>
-  <a href="./about.html">사이트 소개</a>
-  <a href="./contact.html">문의하기</a>
-  <a href="./privacy.html">개인정보처리방침</a>
-</div>
-
-    <div class="footer-bottom">
-      © 2026 아이 이름 짓기. All rights reserved.
-    </div>
-
-  </div>
-</footer>
       </div>
-    </div>
+    </header>
+
+    <main class="post-wrap">
+      <header class="post-hero">
+        <span class="post-tag">이름 추천 가이드</span>
+        <h1 class="post-title">유행 이름 vs 오래가는 이름</h1>
+        <p class="post-desc">
+          아기 이름을 고를 때 많은 부모가 고민하는 지점이 바로 이것입니다.
+          지금 예쁘게 느껴지는 유행 이름을 선택할지, 시간이 지나도 자연스러운 오래가는 이름을 선택할지 기준을 정리해봤습니다.
+        </p>
+      </header>
+
+      <article class="post-card">
+        <h2>유행 이름은 왜 매력적으로 느껴질까요</h2>
+        <p>
+          유행 이름은 이미 많은 사람들이 예쁘다고 느끼는 구조를 갖고 있습니다.
+          그래서 익숙하고, 처음 들었을 때도 거부감이 적습니다.
+          또래 부모들이 많이 선택하는 이름인 만큼 현재 시대의 감각과도 잘 맞아 보입니다.
+          아기 이름 추천을 찾을 때 유행 이름이 눈에 잘 들어오는 이유도 바로 이런 익숙함과 안정감 때문입니다.
+          특히 발음이 간결하고 세련된 이름, 밝고 부드러운 리듬을 가진 이름은
+          자연스럽게 많은 사람의 선택을 받게 됩니다.
+        </p>
+
+        <h2>하지만 유행 이름의 단점도 분명히 있습니다</h2>
+        <p>
+          특정 시기에 많이 선택된 이름은 시간이 지나면 비슷한 이름을 가진 아이가 많아질 수 있습니다.
+          부모가 처음에는 만족하더라도, 나중에 같은 반이나 주변에 같은 이름이 여러 명 있는 상황을 생각하면 고민이 생길 수 있습니다.
+          유행 이름이 무조건 나쁜 것은 아니지만,
+          특정 시기의 분위기를 강하게 담고 있는 이름은 시간이 지나면서 “그 시절 이름”처럼 느껴질 가능성도 있습니다.
+          그래서 작명에서는 지금 예쁜가뿐 아니라,
+          몇 년 뒤에도 자연스럽게 들릴 수 있는지를 함께 보는 것이 중요합니다.
+        </p>
+
+        <h2>오래가는 이름의 특징은 무엇일까요</h2>
+        <p>
+          오래가는 이름은 유행을 강하게 타지 않으면서도 자연스럽고 안정적인 발음을 가집니다.
+          너무 낯설지 않지만, 지나치게 한 시기의 분위기에만 묶이지 않는 이름이라고 볼 수 있습니다.
+          보통 이런 이름은 성과 붙였을 때도 리듬이 좋고,
+          학교나 사회생활처럼 다양한 상황에서 무난하게 사용할 수 있습니다.
+          그래서 아기 이름 추천에서 오래가는 이름은
+          화려하기보다는 균형이 좋은 이름인 경우가 많습니다.
+        </p>
+
+        <h2>유행 이름과 오래가는 이름 사이에서 어떤 균형이 좋을까요</h2>
+        <ul>
+          <li>현재 유행을 참고하되 그대로 따라가지는 않기</li>
+          <li>성을 붙였을 때 자연스러운지 보기</li>
+          <li>아이가 성인이 되었을 때도 잘 어울리는지 생각하기</li>
+          <li>처음 예쁜 것보다 오래 편안한 이름인지 보기</li>
+          <li>발음, 리듬, 사용감을 함께 비교하기</li>
+        </ul>
+        <p>
+          결국 좋은 이름은 유행과 무관한 이름이 아니라,
+          유행을 참고하면서도 우리 가족에게 잘 맞는 이름입니다.
+          즉, 지금 보기에도 예쁘고 나중에도 어색하지 않은 이름이 가장 좋은 균형에 가깝습니다.
+        </p>
+
+        <h2>이름 추천을 받을 때 함께 보면 좋은 관점</h2>
+        <p>
+          이름을 고를 때는 단순히 인기 순위만 보는 것보다,
+          밝은 이름인지 차분한 이름인지, 순우리말 이름인지, 글로벌 이름으로도 자연스러운지처럼
+          여러 기준을 함께 보는 것이 좋습니다.
+          요즘은 아기 이름 추천 서비스, 초성 이름, 순우리말 이름 리스트, 글로벌 이름 리스트를 함께 비교하면서
+          후보를 좁혀가는 방식이 훨씬 실용적입니다.
+          이렇게 하면 유행 이름과 오래가는 이름 사이에서
+          우리 가족에게 가장 잘 맞는 선택을 찾을 수 있습니다.
+        </p>
+
+        <h2>결국 중요한 것은 오래 만족할 수 있는가입니다</h2>
+        <p>
+          유행 이름이 무조건 나쁜 것도 아니고, 오래가는 이름이 늘 더 좋은 것도 아닙니다.
+          가장 좋은 선택은 지금 가족이 좋아하면서도 시간이 지나도 어색하지 않은 이름입니다.
+          이름은 순간의 선택이 아니라 오래 사용할 말이라는 점을 함께 생각하면 더 좋은 기준이 생깁니다.
+          결국 작명에서 가장 중요한 것은 특별함보다 사용감이고,
+          지금도 좋고 나중에도 편안한 이름이 오랫동안 만족을 줍니다.
+        </p>
+
+        <p>
+          다양한 스타일의 이름을 비교해보고 싶다면
+          <a href="../pages/baby-name.html">아기 이름 추천 서비스</a>를 이용해보세요.
+          감성적인 한글 이름이 궁금하다면
+          <a href="../pages/korean-name.html">순우리말 이름 리스트</a>,
+          초성 조합 중심으로 보고 싶다면
+          <a href="../pages/chosung-name.html">초성 이름 짓기</a>,
+          국제적인 분위기의 이름까지 비교하고 싶다면
+          <a href="../pages/global-name.html">외국에서 쓰기 좋은 이름</a>도 함께 참고할 수 있습니다.
+        </p>
+      </article>
+
+      <a href="./index.html" class="back-link">← 이름 이야기 목록으로</a>
+    </main>
   </body>
 </html>
