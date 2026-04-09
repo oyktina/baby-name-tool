@@ -105,31 +105,14 @@
 
       .about-hero {
         text-align: center;
-        padding: 52px 0 28px;
-      }
-
-      .about-hero__badge {
-        width: 54px;
-        height: 54px;
-        margin: 0 auto 18px;
-        border-radius: 18px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--purple);
-        background: linear-gradient(
-          135deg,
-          rgba(139, 73, 255, 0.12) 0%,
-          rgba(255, 79, 163, 0.12) 100%
-        );
-        box-shadow: 0 10px 24px rgba(139, 73, 255, 0.08);
+        padding: 92px 0 64px;
       }
 
       .about-hero__title {
         margin: 0;
-        font-size: clamp(38px, 5vw, 58px);
-        line-height: 1.12;
-        letter-spacing: -0.03em;
+        font-size: clamp(40px, 6vw, 72px);
+        line-height: 1.08;
+        letter-spacing: -0.04em;
         font-weight: 900;
       }
 
@@ -143,18 +126,18 @@
       }
 
       .about-hero__desc {
-        margin: 18px auto 0;
-        max-width: 760px;
-        font-size: 18px;
+        margin: 24px auto 0;
+        max-width: 780px;
+        font-size: 22px;
         line-height: 1.75;
-        color: var(--muted);
+        color: #4b5471;
       }
 
       .about-hero__actions {
-        margin-top: 24px;
+        margin-top: 30px;
         display: flex;
         justify-content: center;
-        gap: 12px;
+        gap: 14px;
         flex-wrap: wrap;
       }
 
@@ -162,15 +145,15 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        min-height: 48px;
-        padding: 0 20px;
-        border-radius: 14px;
+        min-height: 52px;
+        padding: 0 24px;
+        border-radius: 16px;
         background: linear-gradient(135deg, var(--purple) 0%, var(--pink) 100%);
         color: #fff;
         text-decoration: none;
         font-size: 15px;
-        font-weight: 700;
-        box-shadow: 0 12px 24px rgba(139, 73, 255, 0.16);
+        font-weight: 800;
+        box-shadow: 0 14px 28px rgba(164, 76, 255, 0.18);
       }
 
       .about-hero__button--ghost {
@@ -357,13 +340,13 @@
         }
 
         .about-hero {
-          padding: 40px 0 20px;
+          padding: 70px 0 48px;
         }
 
         .about-hero__desc,
         .about-section__desc,
         .about-cta__desc {
-          font-size: 15px;
+          font-size: 16px;
         }
 
         .about-hero__button {
@@ -411,35 +394,19 @@
 
     <main class="about-wrap">
       <section class="about-hero">
-        <div class="about-hero__badge" aria-hidden="true">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-            <path
-              d="M12 2l1.2 4.2L17.4 8 13.2 9.2 12 13.4 10.8 9.2 6.6 8l4.2-1.8L12 2z"
-              stroke="currentColor"
-              stroke-width="1.6"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M19 12l.8 2.8L22.6 16 19.8 16.8 19 19.6 18.2 16.8 15.4 16l2.8-1.2L19 12z"
-              stroke="currentColor"
-              stroke-width="1.6"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </div>
-
         <h1 class="about-hero__title">
-          <span class="grad1">babyname</span><span class="grad2">.cloud</span>
-          <span class="grad3">는</span>
+          <span class="grad1">이름이 필요한</span><br />
+          <span class="grad2">모든 순간을 위한</span><br />
+          <span class="grad3">babyname.cloud</span>
         </h1>
 
         <p class="about-hero__desc">
-          이름이 필요한 순간, 부담 없이 아이디어를 찾을 수 있는<br />
-          가볍고 직관적인 네이밍 서비스입니다.
+          아기 이름부터 태명, 반려동물 이름까지<br />
+          목적과 분위기에 맞는 이름 아이디어를 쉽고 재미있게 찾아보세요.
         </p>
 
         <div class="about-hero__actions">
-          <a href="./index.html#services" class="about-hero__button">이름 서비스 보러가기</a>
+          <a href="./index.html#services" class="about-hero__button">이름 만들기 시작하기</a>
           <a href="./blog/index.html" class="about-hero__button about-hero__button--ghost">이름 이야기 보기</a>
         </div>
       </section>

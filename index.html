@@ -337,11 +337,24 @@
       }
 
       .story-card {
+        display: block;
         padding: 18px 18px 16px;
         background: rgba(255, 255, 255, 0.92);
         border: 1px solid rgba(234, 223, 244, 0.95);
         border-radius: var(--radius-md);
         box-shadow: 0 10px 24px rgba(82, 56, 117, 0.04);
+        color: inherit;
+        text-decoration: none;
+        transition:
+          transform 0.18s ease,
+          box-shadow 0.18s ease,
+          border-color 0.18s ease;
+      }
+
+      .story-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 14px 30px rgba(82, 56, 117, 0.1);
+        border-color: rgba(212, 193, 236, 0.95);
       }
 
       .story-card__meta {
@@ -633,7 +646,7 @@
           <a href="./pages/baby-name.html">이름 만들기</a>
           <a href="./pages/baby-name.html">인기 기능</a>
           <a href="./blog/index.html">이름 이야기</a>
-          <a href="./about">소개</a>
+          <a href="./about.html">소개</a>
         </nav>
       </div>
     </header>
@@ -840,33 +853,35 @@
       <div class="story-column">
         <h3 class="story-column__title">🔥 많이 읽은 글</h3>
 
-        <a class="story-card" href="./blog/baby-name-trends-2026.html">
+        <a class="story-card" href="./blog/baby-name-trends.html">
           <div class="story-card__meta">
             <span class="story-card__category">트렌드</span>
           </div>
-          <h4 class="story-card__title">2026년 아기 이름 트렌드</h4>
+          <h4 class="story-card__title">아기 이름 트렌드, 요즘 부모들이 많이 찾는 이름</h4>
           <p class="story-card__desc">
-            요즘 부모들이 선호하는 이름 스타일과 인기 있는 초성 패턴을 분석해봤어요.
+            요즘 부모들이 선호하는 아기 이름의 분위기와 흐름을 정리했습니다. 짧고 부르기 쉬운 이름부터 순우리말 이름, 글로벌 이름까지 최근의 이름 추천 경향을 살펴보세요.
+
           </p>
         </a>
 
-        <a class="story-card" href="./blog/korean-name-200.html">
+        <a class="story-card" href="./blog/pretty-korean-names.html">
           <div class="story-card__meta">
             <span class="story-card__category">순우리말</span>
           </div>
-          <h4 class="story-card__title">순우리말 이름 200가지</h4>
+          <h4 class="story-card__title">예쁜 순우리말 이름 20가지, 뜻이 아름다운 한글 이름</h4>
           <p class="story-card__desc">
-            뜻이 아름다운 순우리말 이름을 남자아이, 여자아이별로 정리했습니다.
+            순우리말 이름은 한글이 가진 부드러운 울림과 감성을 담고 있어 꾸준히 사랑받고 있습니다. 뜻이 아름다운 순우리말 이름을 남자아이, 여자아이별로 정리했습니다.
           </p>
         </a>
 
-        <a class="story-card" href="./blog/ai-vs-naming.html">
+        <a class="story-card" href="./blog/good-name-criteria.html">
           <div class="story-card__meta">
             <span class="story-card__category">작명 이야기</span>
           </div>
-          <h4 class="story-card__title">작명소와 AI 작명, 무엇이 다를까</h4>
+          <h4 class="story-card__title">좋은 이름의 기준 5가지
+          </h4>
           <p class="story-card__desc">
-            전통적 작명소와 AI 기반 작명 서비스의 차이점을 비교해봤습니다.
+            이름은 평생 사용되는 중요한 요소이기 때문에 발음, 의미, 분위기, 사용감까지 함께 고려해야 합니다. 
           </p>
         </a>
       </div>

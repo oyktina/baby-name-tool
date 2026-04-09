@@ -94,73 +94,8 @@
         padding: 24px 24px 80px;
       }
 
-      .sub-hero {
-        text-align: center;
-        padding: 56px 0 28px;
-      }
-
-      .sub-hero__title {
-        font-size: 48px;
-        line-height: 1.15;
-        font-weight: 800;
-        margin: 0 0 12px;
-        letter-spacing: -0.02em;
-        color: #1f2a44;
-      }
-
-      .sub-hero__desc {
-        margin: 0;
-        font-size: 18px;
-        color: #667085;
-        line-height: 1.6;
-      }
-
-      .filter-card {
-        background: rgba(255, 255, 255, 0.82);
-        border: 1px solid rgba(229, 222, 241, 0.95);
-        border-radius: 24px;
-        padding: 24px;
-        box-shadow: 0 12px 32px rgba(80, 55, 120, 0.06);
-      }
-
-      .filter-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr auto;
-        gap: 16px;
-        align-items: end;
-      }
-
-      .field-label {
-        font-size: 14px;
-        font-weight: 700;
-        color: #1f2a44;
-        margin-bottom: 8px;
-      }
-
-      .filter-select {
-        height: 48px;
-        width: 100%;
-        padding: 0 14px;
-        border-radius: 14px;
-        border: 1px solid #e5dff0;
-        background: #fff;
-        font-size: 15px;
-      }
-
-      .filter-btn {
-        height: 48px;
-        padding: 0 20px;
-        border: 0;
-        border-radius: 14px;
-        background: linear-gradient(135deg, #a74cff 0%, #ff4da0 100%);
-        color: #fff;
-        font-size: 15px;
-        font-weight: 700;
-        cursor: pointer;
-      }
-
       .result-grid {
-        margin-top: 24px;
+        margin-top: 10px;
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 18px;
@@ -206,6 +141,17 @@
         line-height: 1.7;
       }
 
+      .name-card details {
+        margin-top: 10px;
+      }
+
+      .name-card summary {
+        cursor: pointer;
+        font-size: 13px;
+        font-weight: 700;
+        color: #7c3aed;
+      }
+
       .page-note {
         margin-top: 18px;
         color: #667085;
@@ -214,10 +160,6 @@
       }
 
       @media (max-width: 900px) {
-        .filter-grid {
-          grid-template-columns: 1fr;
-        }
-
         .result-grid {
           grid-template-columns: 1fr;
         }
@@ -246,22 +188,6 @@
 
         .subpage-wrap {
           padding: 16px 16px 60px;
-        }
-
-        .sub-hero {
-          padding: 36px 0 22px;
-        }
-
-        .sub-hero__title {
-          font-size: 34px;
-        }
-
-        .sub-hero__desc {
-          font-size: 15px;
-        }
-
-        .filter-card {
-          padding: 18px;
         }
 
         .name-card {
@@ -295,60 +221,107 @@
       </header>
 
       <main class="subpage-wrap">
-        <section class="sub-hero">
-          <h1 class="sub-hero__title">태명 짓기</h1>
-          <p class="sub-hero__desc">
+        <header class="hero">
+          <div class="hero__badge" aria-hidden="true">🐣</div>
+          <h1 class="hero__title">
+            <span class="grad1">태명</span>
+            <span class="grad2"> 짓기</span>
+          </h1>
+          <p class="hero__desc">
             귀여운 태명, 순우리말 태명, 먹거리 태명, 자연 느낌 태명까지<br />
             원하는 분위기에 맞춰 추천해드려요.
           </p>
-        </section>
+        </header>
 
-        <section class="filter-card">
-          <div class="filter-grid">
+        <section class="card">
+          <div class="card__head">
+            <div class="card__icon" aria-hidden="true">✨</div>
             <div>
-              <div class="field-label">카테고리</div>
-              <select id="taeCategory" class="filter-select">
-                <option value="all">전체</option>
-                <option value="food">먹거리 느낌</option>
-                <option value="nature">자연 느낌</option>
-                <option value="cute">귀여운 느낌</option>
-                <option value="pure">순우리말 느낌</option>
-              </select>
+              <div class="card__title">태명 정보 선택</div>
+              <div class="card__sub">성씨와 느낌을 선택하면 태명을 추천해드려요</div>
+            </div>
+          </div>
+
+          <div class="form">
+            <div class="field">
+              <label class="label" for="surname">성(姓)</label>
+              <input
+                id="surname"
+                class="input"
+                placeholder="예: 김"
+                maxlength="2"
+                autocomplete="off"
+              />
             </div>
 
-            <div>
-              <div class="field-label">느낌</div>
-              <select id="taeFeeling" class="filter-select">
-                <option value="all">전체</option>
-                <option value="soft">부드러운</option>
-                <option value="bright">밝은</option>
-                <option value="warm">따뜻한</option>
-                <option value="playful">귀여운</option>
-                <option value="strong">건강한</option>
-              </select>
+            <div class="field">
+              <div class="label">느낌 (최대 2개)</div>
+              <div class="tags" id="tagButtons"></div>
+              <div class="hint" id="tagHint"></div>
             </div>
 
-            <div>
-              <div class="field-label">스타일</div>
-              <select id="taeStyle" class="filter-select">
-                <option value="all">전체</option>
-                <option value="common">익숙한 스타일</option>
-                <option value="modern">요즘 느낌</option>
-                <option value="unique">조금 특별한 느낌</option>
-                <option value="global">글로벌 느낌</option>
-              </select>
-            </div>
+            <button id="btn" class="cta" type="button">
+              <span class="cta__spark" aria-hidden="true">✦</span>
+              태명 추천받기
+            </button>
 
-            <button id="taeBtn" class="filter-btn" type="button">태명 추천받기</button>
+            <section id="result" class="result-grid"></section>
           </div>
         </section>
-
-        <section id="taeResult" class="result-grid"></section>
 
         <p class="page-note">
           태명은 정해진 규칙보다 가족이 편하게 부를 수 있는지가 더 중요합니다.
           이 페이지는 감성적인 참고용 추천 도구입니다.
         </p>
+
+        <section class="other-services">
+          <div class="other-services__inner">
+            <h2 class="other-title">다른 이름 서비스</h2>
+            <p class="other-desc">다양한 이름 추천 서비스를 이용해보세요</p>
+
+            <a href="./chosung-name.html" class="service-card service-card--chosung">
+              <div class="service-card__icon service-card__icon--chosung">🔠</div>
+              <div class="service-card__content">
+                <div class="service-name">초성으로 이름 짓기</div>
+                <div class="service-text">원하는 초성으로 어울리는 이름을 찾아보세요</div>
+              </div>
+            </a>
+
+            <div class="service-grid">
+              <a href="./baby-name.html" class="service-card service-card--tae">
+                <div class="service-card__icon service-card__icon--tae">👶</div>
+                <div class="service-card__content">
+                  <div class="service-name">아기 이름 짓기</div>
+                  <div class="service-text">부르기 좋고 인상 좋은 아기 이름을 추천해드려요</div>
+                </div>
+              </a>
+
+              <a href="./pet-name.html" class="service-card service-card--pet">
+                <div class="service-card__icon service-card__icon--pet">🐾</div>
+                <div class="service-card__content">
+                  <div class="service-name">반려동물 이름 추천</div>
+                  <div class="service-text">귀여운 강아지·고양이 이름을 추천합니다.</div>
+                </div>
+              </a>
+
+              <a href="./korean-name.html" class="service-card service-card--korean">
+                <div class="service-card__icon service-card__icon--korean">🌿</div>
+                <div class="service-card__content">
+                  <div class="service-name">순우리말 이름 리스트</div>
+                  <div class="service-text">아름다운 순우리말 이름을 확인해 보세요.</div>
+                </div>
+              </a>
+
+              <a href="./global-name.html" class="service-card service-card--global">
+                <div class="service-card__icon service-card__icon--global">🌍</div>
+                <div class="service-card__content">
+                  <div class="service-name">외국에서 쓰기 좋은 이름</div>
+                  <div class="service-text">이민, 유학, 국제학교를 고려한 이름 리스트</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
 
         <footer class="site-footer">
           <div class="footer-inner">
@@ -384,6 +357,6 @@
       </main>
     </div>
 
-    <script src="../js/taemyung.js?v=1"></script>
+    <script src="../js/taemyung.js?v=2"></script>
   </body>
 </html>
