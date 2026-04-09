@@ -140,6 +140,7 @@
         letter-spacing: -0.04em;
         font-weight: 900;
         background: linear-gradient(135deg, var(--purple) 0%, var(--pink) 55%, #7f5cff 100%);
+        background-clip: text;           
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
@@ -629,10 +630,10 @@
         </a>
 
         <nav class="main-nav">
-          <a href="#services">이름 만들기</a>
-          <a href="#popular">인기 기능</a>
-          <a href="#stories">이름 이야기</a>
-          <a href="#about">소개</a>
+          <a href="./pages/baby-name.html">이름 만들기</a>
+          <a href="./pages/baby-name.html">인기 기능</a>
+          <a href="./blog/index.html">이름 이야기</a>
+          <a href="./about">소개</a>
         </nav>
       </div>
     </header>
@@ -787,100 +788,100 @@
           </div>
         </div>
       </section>
+<section class="section section--soft" id="stories">
+  <div class="container">
+    <div class="section__head">
+      <h2 class="section__title">이름 이야기</h2>
+      <p class="section__desc">
+        이름에 담긴 의미와 작명 노하우를 공유합니다.
+      </p>
+    </div>
 
-      <section class="section section--soft" id="stories">
-        <div class="container">
-          <div class="section__head">
-            <h2 class="section__title">이름 이야기</h2>
-            <p class="section__desc">
-              이름에 담긴 의미와 작명 노하우를 공유합니다.
-            </p>
+    <div class="story-grid">
+
+      <!-- 📝 최신 글 -->
+      <div class="story-column">
+        <h3 class="story-column__title">📝 최신 글</h3>
+
+        <a class="story-card" href="./blog/global-friendly-korean-names.html">
+          <div class="story-card__meta">
+            <span class="story-card__category">글로벌 네이밍</span>
           </div>
+          <h4 class="story-card__title">외국에서도 발음하기 쉬운 한국 이름</h4>
+          <p class="story-card__desc">
+            글로벌 환경에서도 자연스럽게 쓰일 수 있는 한국 이름을 찾고 있다면,
+            발음과 로마자 표기, 실제 사용감까지 함께 보는 것이 중요합니다.
+          </p>
+        </a>
 
-          <div class="story-grid">
-            <div class="story-column">
-              <h3 class="story-column__title">📝 최신 글</h3>
-
-              <article class="story-card">
-                <div class="story-card__meta">
-                  <span class="story-card__category">작명 가이드</span>
-                  <span class="story-card__stats">2026.04.01 · 조회 1,234</span>
-                </div>
-                <h4 class="story-card__title">좋은 이름의 기준 7가지</h4>
-                <p class="story-card__desc">
-                  정성, 발화의 리듬, 쉬운 기억까지. 이름을 고를 때 꼭 확인해야 할 기준을
-                  알기 쉽게 정리했습니다.
-                </p>
-              </article>
-
-              <article class="story-card">
-                <div class="story-card__meta">
-                  <span class="story-card__category">태명</span>
-                  <span class="story-card__stats">2026.03.30 · 조회 987</span>
-                </div>
-                <h4 class="story-card__title">태명은 어떻게 지으면 좋을까</h4>
-                <p class="story-card__desc">
-                  첫 호칭인 만큼 따뜻하고 부르기 쉬운 태명이 중요합니다. 실제로 많이
-                  사랑받는 패턴과 예시를 함께 소개해요.
-                </p>
-              </article>
-
-              <article class="story-card">
-                <div class="story-card__meta">
-                  <span class="story-card__category">글로벌 이름</span>
-                  <span class="story-card__stats">2026.03.28 · 조회 2,156</span>
-                </div>
-                <h4 class="story-card__title">외국에서도 쓰기 좋은 이름 모음</h4>
-                <p class="story-card__desc">
-                  글로벌 사회에 어울리는 이름, 한국과 해외에서 모두 자연스러운 이름을
-                  정리했습니다.
-                </p>
-              </article>
-            </div>
-
-            <div class="story-column">
-              <h3 class="story-column__title">🔥 많이 읽은 글</h3>
-
-              <article class="story-card">
-                <div class="story-card__meta">
-                  <span class="story-card__category">트렌드</span>
-                  <span class="story-card__stats">2026.03.15 · 조회 5,432</span>
-                </div>
-                <h4 class="story-card__title">2026년 아기 이름 트렌드</h4>
-                <p class="story-card__desc">
-                  요즘 부모들이 선호하는 이름 스타일과 인기 있는 초성 패턴을 분석해봤어요.
-                </p>
-              </article>
-
-              <article class="story-card">
-                <div class="story-card__meta">
-                  <span class="story-card__category">순우리말</span>
-                  <span class="story-card__stats">2026.03.10 · 조회 4,891</span>
-                </div>
-                <h4 class="story-card__title">순우리말 이름 200가지</h4>
-                <p class="story-card__desc">
-                  뜻이 아름다운 순우리말 이름을 남자아이, 여자아이별로 정리했습니다.
-                </p>
-              </article>
-
-              <article class="story-card">
-                <div class="story-card__meta">
-                  <span class="story-card__category">작명 이야기</span>
-                  <span class="story-card__stats">2026.03.05 · 조회 3,672</span>
-                </div>
-                <h4 class="story-card__title">작명노 AI 작명, 무엇이 다를까</h4>
-                <p class="story-card__desc">
-                  전통적 작명소와 AI 기반 작명 서비스의 차이점을 비교해봤습니다.
-                </p>
-              </article>
-            </div>
+        <a class="story-card" href="./blog/warm-feeling-names.html">
+          <div class="story-card__meta">
+            <span class="story-card__category">아기 이름</span>
           </div>
+          <h4 class="story-card__title">따뜻한 이름 추천</h4>
+          <p class="story-card__desc">
+            이름은 뜻만이 아니라 소리와 분위기로도 인상을 만듭니다. 부드럽고 편안한 느낌의 이름을 찾고 있다면,
+            발음과 리듬이 주는 따뜻한 인상을 함께 살펴보는 것이 중요합니다.
+          </p>
+        </a>
 
-          <div class="center-button">
-            <a class="button" href="./blog/index.html">모든 글 보기 →</a>
+        <a class="story-card" href="./blog/pet-name-ideas.html">
+          <div class="story-card__meta">
+            <span class="story-card__category">반려동물 이름</span>
           </div>
-        </div>
-      </section>
+          <h4 class="story-card__title">강아지 이름 추천, 고양이 이름 추천 아이디어 모음</h4>
+          <p class="story-card__desc">
+          귀엽고 부르기 쉬운 반려동물 이름은 매일 함께하는 생활에서 만족도를 크게 높여줍니다.
+          강아지 이름 추천, 고양이 이름 추천을 고민하고 있다면 아래 아이디어를 참고해보세요.          </p>
+        </a>
+      </div>
+
+      <!-- 🔥 많이 읽은 글 -->
+      <div class="story-column">
+        <h3 class="story-column__title">🔥 많이 읽은 글</h3>
+
+        <a class="story-card" href="./blog/baby-name-trends-2026.html">
+          <div class="story-card__meta">
+            <span class="story-card__category">트렌드</span>
+          </div>
+          <h4 class="story-card__title">2026년 아기 이름 트렌드</h4>
+          <p class="story-card__desc">
+            요즘 부모들이 선호하는 이름 스타일과 인기 있는 초성 패턴을 분석해봤어요.
+          </p>
+        </a>
+
+        <a class="story-card" href="./blog/korean-name-200.html">
+          <div class="story-card__meta">
+            <span class="story-card__category">순우리말</span>
+          </div>
+          <h4 class="story-card__title">순우리말 이름 200가지</h4>
+          <p class="story-card__desc">
+            뜻이 아름다운 순우리말 이름을 남자아이, 여자아이별로 정리했습니다.
+          </p>
+        </a>
+
+        <a class="story-card" href="./blog/ai-vs-naming.html">
+          <div class="story-card__meta">
+            <span class="story-card__category">작명 이야기</span>
+          </div>
+          <h4 class="story-card__title">작명소와 AI 작명, 무엇이 다를까</h4>
+          <p class="story-card__desc">
+            전통적 작명소와 AI 기반 작명 서비스의 차이점을 비교해봤습니다.
+          </p>
+        </a>
+      </div>
+
+    </div>
+
+    <div class="center-button">
+      <a class="button" href="./blog/index.html">모든 글 보기 →</a>
+    </div>
+  </div>
+</section>
+
+
+
+
 
       <section class="section" id="about">
         <div class="container">
@@ -906,7 +907,7 @@
               <p class="cta-panel__desc">
                 당신의 소중한 순간에 어울리는 완벽한 이름을 발견해보세요.
               </p>
-              <a class="button" href="#services">이름 만들기 시작하기</a>
+              <a class="button" href="./pages/baby-name.html">이름 만들기 시작하기</a>
             </div>
           </div>
         </div>
