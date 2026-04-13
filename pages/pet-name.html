@@ -11,20 +11,20 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-    <title>반려동물 이름 리스트 | babyname.cloud</title>
+    <title>반려동물 이름 추천 | babyname.cloud</title>
 
     <meta
       name="description"
-      content="느낌별로 정리한 반려동물 이름 리스트입니다. 귀여운, 활발한, 고급스러운, 독특한 느낌의 이름을 확인해보세요."
+      content="반려동물 종류, 외형, 성격 조합으로 어울리는 이름을 추천합니다. 강아지/고양이/기타 반려동물 맞춤 네이밍을 만나보세요."
     />
 
     <link rel="canonical" href="https://babyname.cloud/pages/pet-name.html" />
 
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="반려동물 이름 리스트 | babyname.cloud" />
+    <meta property="og:title" content="반려동물 이름 추천 | babyname.cloud" />
     <meta
       property="og:description"
-      content="느낌별로 정리한 반려동물 이름 리스트입니다. 귀여운, 활발한, 고급스러운, 독특한 느낌의 이름을 확인해보세요."
+      content="반려동물 종류, 외형, 성격 조합으로 어울리는 이름을 추천합니다. 강아지/고양이/기타 반려동물 맞춤 네이밍을 만나보세요."
     />
     <meta property="og:url" content="https://babyname.cloud/pages/pet-name.html" />
     <meta property="og:image" content="https://babyname.cloud/og-image.png" />
@@ -32,10 +32,10 @@
     <meta property="og:image:height" content="630" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="반려동물 이름 리스트 | babyname.cloud" />
+    <meta name="twitter:title" content="반려동물 이름 추천 | babyname.cloud" />
     <meta
       name="twitter:description"
-      content="느낌별로 정리한 반려동물 이름 리스트입니다. 귀여운, 활발한, 고급스러운, 독특한 느낌의 이름을 확인해보세요."
+      content="반려동물 종류, 외형, 성격 조합으로 어울리는 이름을 추천합니다. 강아지/고양이/기타 반려동물 맞춤 네이밍을 만나보세요."
     />
     <meta name="twitter:image" content="https://babyname.cloud/og-image.png" />
 
@@ -123,28 +123,99 @@
         box-shadow: 0 12px 32px rgba(80, 55, 120, 0.06);
       }
 
-      .filter-row {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 16px;
-        flex-wrap: wrap;
-      }
-
       .filter-title {
         font-size: 20px;
         font-weight: 700;
         color: #1f2a44;
+        margin: 0;
       }
 
-      .filter-select {
-        height: 48px;
-        min-width: 220px;
+      .filter-section + .filter-section {
+        margin-top: 24px;
+      }
+
+      .filter-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 14px;
+        flex-wrap: wrap;
+      }
+
+      .filter-help {
+        font-size: 13px;
+        color: #667085;
+      }
+
+      .choice-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .chip-input {
+        display: none;
+      }
+
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 40px;
         padding: 0 14px;
-        border-radius: 14px;
+        border-radius: 999px;
         border: 1px solid #e5dff0;
         background: #fff;
-        font-size: 15px;
+        color: #344054;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        user-select: none;
+        transition:
+          border-color 0.2s ease,
+          color 0.2s ease,
+          background-color 0.2s ease;
+      }
+
+      .chip-input:checked + .chip {
+        border-color: #8b49ff;
+        background: #f5efff;
+        color: #6a35ec;
+      }
+
+      .chip-input:disabled + .chip {
+        opacity: 0.45;
+        cursor: not-allowed;
+      }
+
+      .action-row {
+        margin-top: 24px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .btn-primary,
+      .btn-ghost {
+        height: 46px;
+        border: 0;
+        border-radius: 14px;
+        padding: 0 18px;
+        font-size: 14px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .btn-primary {
+        color: #fff;
+        background: linear-gradient(135deg, #8b49ff 0%, #ff4fa3 100%);
+      }
+
+      .btn-ghost {
+        color: #4a3b6c;
+        background: #f4f0fb;
       }
 
       .table-card {
@@ -152,46 +223,68 @@
         background: rgba(255, 255, 255, 0.82);
         border: 1px solid rgba(229, 222, 241, 0.95);
         border-radius: 24px;
-        padding: 10px 0;
+        padding: 18px;
         box-shadow: 0 12px 32px rgba(80, 55, 120, 0.06);
         overflow: hidden;
       }
 
-      .name-table {
-        width: 100%;
-        border-collapse: collapse;
-      }
-
-      .name-table thead th {
-        text-align: left;
-        font-size: 14px;
-        font-weight: 700;
-        color: #667085;
-        padding: 18px 24px;
-        background: #faf7fd;
-        border-bottom: 1px solid #eee7f5;
-      }
-
-      .name-table tbody td {
-        padding: 18px 24px;
-        border-bottom: 1px solid #f0ebf7;
+      .result-summary {
         font-size: 15px;
-        color: #253046;
-        vertical-align: top;
+        color: #344054;
+        margin-bottom: 14px;
       }
 
-      .name-table tbody tr:last-child td {
-        border-bottom: 0;
+      .result-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
       }
 
-      .name-chip {
-        display: inline-block;
-        padding: 6px 12px;
-        border-radius: 999px;
-        background: #fff0dc;
-        color: #d97a00;
+      .result-card {
+        border: 1px solid #eee5fa;
+        border-radius: 16px;
+        background: #fff;
+        padding: 14px;
+      }
+
+      .result-name {
+        margin: 0;
+        font-size: 22px;
+        color: #1f2a44;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+      }
+
+      .result-en {
+        margin-top: 3px;
+        font-size: 14px;
+        color: #667085;
+        font-weight: 600;
+      }
+
+      .result-desc {
+        margin: 10px 0 0;
+        font-size: 14px;
+        color: #364152;
+        line-height: 1.55;
+      }
+
+      .result-reason {
+        margin-top: 10px;
         font-size: 13px;
-        font-weight: 700;
+        color: #53389e;
+        background: #f5f1ff;
+        border-radius: 10px;
+        padding: 8px 10px;
+        line-height: 1.45;
+      }
+
+      .empty-state {
+        border: 1px dashed #e2d5f4;
+        border-radius: 16px;
+        padding: 18px;
+        color: #667085;
+        background: #fcfaff;
       }
 
       @media (max-width: 768px) {
@@ -235,20 +328,17 @@
           padding: 18px;
         }
 
-        .filter-row {
-          flex-direction: column;
-          align-items: stretch;
+        .filter-head {
+          align-items: flex-start;
         }
 
-        .filter-select {
-          width: 100%;
-          min-width: 0;
+        .result-grid {
+          grid-template-columns: 1fr;
         }
 
-        .name-table thead th,
-        .name-table tbody td {
-          padding: 14px 14px;
-          font-size: 14px;
+        .chip {
+          min-height: 38px;
+          font-size: 13px;
         }
       }
     </style>
@@ -274,37 +364,49 @@
 
       <main class="subpage-wrap">
         <section class="sub-hero">
-          <h1 class="sub-hero__title">반려동물 이름 리스트</h1>
+          <h1 class="sub-hero__title">반려동물 이름 추천</h1>
           <p class="sub-hero__desc">
-            귀여운, 활발한, 고급스러운, 독특한 느낌의 반려동물 이름을
-            한눈에 확인해보세요.
+            종류, 외형, 성격을 고르면 더 잘 어울리는 이름을 점수 기반으로 추천해드려요.
           </p>
         </section>
 
         <section class="filter-card">
-          <div class="filter-row">
-            <div class="filter-title">느낌별 보기</div>
-            <select id="petFeeling" class="filter-select">
-              <option value="all">전체</option>
-              <option value="cute">귀여운</option>
-              <option value="active">활발한</option>
-              <option value="luxury">고급스러운</option>
-              <option value="unique">독특한</option>
-            </select>
+          <div class="filter-section">
+            <div class="filter-head">
+              <h2 class="filter-title">1) 반려동물 종류</h2>
+              <span class="filter-help">1개 선택</span>
+            </div>
+            <div class="choice-row" id="petTypeChoices"></div>
+          </div>
+
+          <div class="filter-section">
+            <div class="filter-head">
+              <h2 class="filter-title">2) 외형 특징</h2>
+              <span class="filter-help">최대 3개 선택</span>
+            </div>
+            <div class="choice-row" id="appearanceChoices"></div>
+          </div>
+
+          <div class="filter-section">
+            <div class="filter-head">
+              <h2 class="filter-title">3) 성격 / 느낌</h2>
+              <span class="filter-help">최대 2개 선택</span>
+            </div>
+            <div class="choice-row" id="personalityChoices"></div>
+          </div>
+
+          <div class="action-row">
+            <button id="recommendBtn" class="btn-primary" type="button">추천 받기</button>
+            <button id="shuffleBtn" class="btn-ghost" type="button">다시 섞어서 보기</button>
           </div>
         </section>
 
         <section class="table-card">
-          <table class="name-table">
-            <thead>
-              <tr>
-                <th style="width: 20%">이름</th>
-                <th style="width: 20%">느낌</th>
-                <th>설명</th>
-              </tr>
-            </thead>
-            <tbody id="petNameTable"></tbody>
-          </table>
+          <div class="result-summary" id="resultSummary"></div>
+          <div class="result-grid" id="petResultList"></div>
+          <div class="empty-state" id="petEmptyState">
+            선택한 조건에 맞는 이름이 아직 없어요. 일부 조건을 줄이거나 "다시 섞어서 보기"를 눌러보세요.
+          </div>
         </section>
 
         <footer class="site-footer">
