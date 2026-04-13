@@ -398,7 +398,6 @@ const petNameData = [
       personalities: ["차분한", "도도한", "우아한"]
     }
   },
-
   {
     name: "두부",
     en: "Dubu",
@@ -621,7 +620,7 @@ const petNameData = [
   },
   {
     name: "달이",
-    en: "Dali",
+    en: "Dari",
     description: "부드럽고 잔잔한 이미지가 남는 이름",
     tags: {
       petTypes: ["dog", "cat", "other"],
@@ -985,7 +984,7 @@ const petNameData = [
     description: "잔잔하고 부드러운 분위기의 감성적인 이름",
     tags: {
       petTypes: ["dog", "cat", "other"],
-      appearances: ["하얀 털", "얼굴이 동그란", "차분한"],
+      appearances: ["하얀 털", "얼굴이 동그란", "통통한"],
       personalities: ["차분한", "우아한", "순한"]
     }
   },
@@ -1332,11 +1331,7 @@ function enforceSelectionLimit(group) {
   const isLimitReached = selectedSet.size >= limit;
 
   root.querySelectorAll('input[type="checkbox"]').forEach((input) => {
-    if (!input.checked) {
-      input.disabled = isLimitReached;
-    } else {
-      input.disabled = false;
-    }
+    input.disabled = isLimitReached && !input.checked;
   });
 }
 
@@ -1430,8 +1425,25 @@ function renderRecommendations() {
     .join("");
 }
 
-recommendBtn.addEventListener("click", renderRecommendations);
-shuffleBtn.addEventListener("click", renderRecommendations);
+function initPetNamePage() {
+  if (
+    !petTypeChoices ||
+    !appearanceChoices ||
+    !personalityChoices ||
+    !recommendBtn ||
+    !shuffleBtn ||
+    !resultSummary ||
+    !petResultList ||
+    !petEmptyState
+  ) {
+    return;
+  }
 
-renderOptions();
-renderRecommendations();
+  recommendBtn.addEventListener("click", renderRecommendations);
+  shuffleBtn.addEventListener("click", renderRecommendations);
+
+  renderOptions();
+  renderRecommendations();
+}
+
+initPetNamePage();
