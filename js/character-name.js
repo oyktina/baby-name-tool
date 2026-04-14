@@ -113,14 +113,43 @@ const FEELINGS = [
       "나", "리", "우", "이", "르"
     ]
   };
+
+const APPEARANCE_POOLS = {
+  "뚱뚱한": {
+    prefixes: ["둥", "통", "봉", "팡", "몽", "볼", "푸"],
+    suffixes: ["둥", "봉", "통", "몽", "팡", "볼"]
+  },
+  "작고 귀여운": {
+    prefixes: ["꼬", "쪼", "미", "콩", "쫑", "아기", "토"],
+    suffixes: ["꼬", "콩", "쪼", "미", "링", "니"]
+  },
+  "귀가 큰": {
+    prefixes: ["토", "루", "라", "버니", "쫑", "도"],
+    suffixes: ["토", "루", "니", "랑", "롱"]
+  },
+  "털이 복슬한": {
+    prefixes: ["복", "몽", "솜", "포", "푸", "구름"],
+    suffixes: ["솜", "몽", "복", "푸", "랑", "구"]
+  },
+  "눈이 반짝이는": {
+    prefixes: ["별", "반", "샤", "루", "빛", "윤"],
+    suffixes: ["별", "빛", "린", "샤", "루", "엘"]
+  },
+  "꼬리가 긴": {
+    prefixes: ["롱", "리", "루", "랑", "테일", "나"],
+    suffixes: ["롱", "리", "랑", "엘", "온", "아"]
+  }
+};
   
   const favoritesKey = "character_name_favorites_v1";
   const selectedFeelings = new Set();
+const selectedAppearanceTags = [];
   
   const surnameEl = document.getElementById("surname");
   const genderEl = document.getElementById("gender");
   const tagButtonsEl = document.getElementById("tagButtons");
   const tagHintEl = document.getElementById("tagHint");
+const appearanceTagsEl = document.getElementById("appearanceTags");
   const btnEl = document.getElementById("btn");
   const resultEl = document.getElementById("result");
   
@@ -135,6 +164,7 @@ const FEELINGS = [
   function init() {
     syncGenderRadios();
     renderFeelingButtons();
+  bindAppearanceTags();
     bindEvents();
   }
   
@@ -160,6 +190,38 @@ const FEELINGS = [
       }
     });
   }
+
+function bindAppearanceTags() {
+  if (!appearanceTagsEl) return;
+
+  const tagButtons = appearanceTagsEl.querySelectorAll("button");
+  tagButtons.forEach((button) => {
+    const value = button.textContent?.trim();
+    if (!value) return;
+
+    if (button.classList.contains("active") && !selectedAppearanceTags.includes(value)) {
+      selectedAppearanceTags.push(value);
+    }
+
+    button.addEventListener("click", () => {
+      toggleAppearanceTag(button, value);
+    });
+  });
+}
+
+function toggleAppearanceTag(buttonEl, value) {
+  const foundIndex = selectedAppearanceTags.indexOf(value);
+  const isSelected = foundIndex !== -1;
+
+  if (isSelected) {
+    selectedAppearanceTags.splice(foundIndex, 1);
+    buttonEl.classList.remove("active");
+    return;
+  }
+
+  selectedAppearanceTags.push(value);
+  buttonEl.classList.add("active");
+}
   
   function renderFeelingButtons() {
     if (!tagButtonsEl) return;
@@ -222,18 +284,23 @@ const FEELINGS = [
     const surname = (surnameEl?.value || "").trim();
     const gender = genderEl?.value || "any";
     const feelings = [...selectedFeelings];
+  const appearanceTags = [...selectedAppearanceTags];
+  const nameLength =
+    document.querySelector('input[name="nameLength"]:checked')?.value || "normal";
   
     const suggestions = generateSuggestions({
       surname,
       gender,
       feelings,
+    appearanceTags,
+    nameLength,
       count: 12
     });
   
     renderResults(suggestions, surname);
   }
   
-  function generateSuggestions({ surname, gender, feelings, count }) {
+function generateSuggestions({ surname, gender, feelings, appearanceTags, nameLength, count }) {
     const used = new Set();
     const results = [];
   
@@ -241,31 +308,54 @@ const FEELINGS = [
     while (results.length < count && safety < 300) {
       safety += 1;
   
-      const name = buildName(feelings);
+      const name = buildName(feelings, appearanceTags, nameLength);
       if (!isValidName(name)) continue;
       if (used.has(name)) continue;
   
       used.add(name);
   
-      const profile = buildProfile({ name, surname, gender, feelings });
+      const profile = buildProfile({ name, surname, gender, feelings, appearanceTags });
       results.push(profile);
     }
   
     return results;
   }
   
-  function buildName(feelings) {
-    const pools = feelings.length
+function buildName(feelings, appearanceTags, nameLength) {
+    const feelingPools = feelings.length
       ? feelings.map((key) => NAME_POOLS[key]).filter(Boolean)
-      : [DEFAULT_POOL];
-  
+      : [];
+    const appearancePools = appearanceTags.length
+      ? appearanceTags.map((tag) => APPEARANCE_POOLS[tag]).filter(Boolean)
+      : [];
+    const pools = [...feelingPools, ...appearancePools];
+
     const prefixPool = pools.flatMap((pool) => pool.prefixes);
     const suffixPool = pools.flatMap((pool) => pool.suffixes);
-  
-    const prefix = pick(prefixPool.length ? prefixPool : DEFAULT_POOL.prefixes);
-    const suffix = pick(suffixPool.length ? suffixPool : DEFAULT_POOL.suffixes);
-  
-    return normalizeName(`${prefix}${suffix}`);
+    const basePrefixes = prefixPool.length ? prefixPool : DEFAULT_POOL.prefixes;
+    const baseSuffixes = suffixPool.length ? suffixPool : DEFAULT_POOL.suffixes;
+
+    const range = getNameLengthRange(nameLength);
+    for (let tries = 0; tries < 40; tries += 1) {
+      const prefix = pick(basePrefixes);
+      const suffix = pick(baseSuffixes);
+      const candidate = normalizeName(`${prefix}${suffix}`);
+      if (candidate.length >= range.min && candidate.length <= range.max) {
+        return candidate;
+      }
+    }
+
+    return normalizeName(`${pick(basePrefixes)}${pick(baseSuffixes)}`);
+  }
+
+function getNameLengthRange(nameLength) {
+    if (nameLength === "short") {
+      return { min: 2, max: 3 };
+    }
+    if (nameLength === "long") {
+      return { min: 4, max: 6 };
+    }
+    return { min: 3, max: 4 };
   }
   
   function normalizeName(name) {
@@ -281,14 +371,15 @@ const FEELINGS = [
     return true;
   }
   
-  function buildProfile({ name, surname, gender, feelings }) {
+function buildProfile({ name, surname, gender, feelings, appearanceTags }) {
     const fullName = surname ? `${surname}${name}` : name;
     const feelingLabels = feelings.length
       ? feelings.map((key) => FEELINGS.find((item) => item.key === key)?.label || key)
       : ["자유로운"];
+  const appearanceLabels = appearanceTags.length ? appearanceTags : ["자유로운 외형"];
   
-    const oneLine = makeOneLine(feelingLabels);
-    const detail = makeDetail({ fullName, gender, feelingLabels });
+  const oneLine = makeOneLine(feelingLabels, appearanceLabels);
+  const detail = makeDetail({ fullName, gender, feelingLabels, appearanceLabels });
     const similar = makeSimilarNames(name, feelings);
   
     return {
@@ -298,29 +389,31 @@ const FEELINGS = [
       oneLine,
       detail,
       similar,
-      feelings: feelingLabels
+      feelings: [...feelingLabels, ...appearanceLabels]
     };
   }
   
-  function makeOneLine(feelingLabels) {
+  function makeOneLine(feelingLabels, appearanceLabels) {
     const first = feelingLabels[0] || "자유로운";
     const second = feelingLabels[1];
+    const firstAppearance = appearanceLabels[0] || "자유로운 외형";
   
     if (second) {
-      return `${first} 분위기와 ${second} 매력을 함께 가진 캐릭터 이름이에요.`;
+      return `${firstAppearance} 외형과 ${first}/${second} 분위기를 함께 살린 캐릭터 이름이에요.`;
     }
   
-    return `${first} 인상이 살아나는 캐릭터 이름이에요.`;
+    return `${firstAppearance} 외형에 ${first} 인상이 살아나는 캐릭터 이름이에요.`;
   }
   
-  function makeDetail({ fullName, gender, feelingLabels }) {
+  function makeDetail({ fullName, gender, feelingLabels, appearanceLabels }) {
     const genderText =
       gender === "male" ? "남성적인" :
       gender === "female" ? "여성적인" :
       "중성적인";
   
     const mood = feelingLabels.join(", ");
-    return `${fullName}은 ${genderText} 톤에도 잘 어울리고, ${mood} 느낌을 자연스럽게 살려주는 이름입니다. 부를 때 리듬감이 좋고 캐릭터의 인상을 한 번에 보여주기 쉬운 편이에요.`;
+    const appearance = appearanceLabels.join(", ");
+    return `${fullName}은 ${genderText} 톤에도 잘 어울리고, ${appearance} 외형과 ${mood} 느낌을 자연스럽게 살려주는 이름입니다. 부를 때 리듬감이 좋고 캐릭터의 인상을 한 번에 보여주기 쉬운 편이에요.`;
   }
   
   function makeSimilarNames(baseName, feelings) {
