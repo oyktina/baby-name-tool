@@ -281,26 +281,23 @@ function toggleAppearanceTag(buttonEl, value) {
   }
   
   function handleGenerate() {
-    const surname = (surnameEl?.value || "").trim();
-    const gender = genderEl?.value || "any";
-    const feelings = [...selectedFeelings];
+  const surname = (surnameEl?.value || "").trim();
+  const gender = genderEl?.value || "any";
+  const feelings = [...selectedFeelings];
   const appearanceTags = [...selectedAppearanceTags];
-  const nameLength =
-    document.querySelector('input[name="nameLength"]:checked')?.value || "normal";
-  
-    const suggestions = generateSuggestions({
-      surname,
-      gender,
-      feelings,
+
+  const suggestions = generateSuggestions({
+    surname,
+    gender,
+    feelings,
     appearanceTags,
-    nameLength,
-      count: 12
-    });
-  
-    renderResults(suggestions, surname);
-  }
-  
-function generateSuggestions({ surname, gender, feelings, appearanceTags, nameLength, count }) {
+    count: 12
+  });
+
+  renderResults(suggestions, surname);
+}
+
+function generateSuggestions({ surname, gender, feelings, appearanceTags, count }) {
     const used = new Set();
     const results = [];
   
@@ -308,7 +305,7 @@ function generateSuggestions({ surname, gender, feelings, appearanceTags, nameLe
     while (results.length < count && safety < 300) {
       safety += 1;
   
-      const name = buildName(feelings, appearanceTags, nameLength);
+      const name = buildName(feelings, appearanceTags);
       if (!isValidName(name)) continue;
       if (used.has(name)) continue;
   
@@ -321,7 +318,7 @@ function generateSuggestions({ surname, gender, feelings, appearanceTags, nameLe
     return results;
   }
   
-function buildName(feelings, appearanceTags, nameLength) {
+function buildName(feelings, appearanceTags) {
     const feelingPools = feelings.length
       ? feelings.map((key) => NAME_POOLS[key]).filter(Boolean)
       : [];
@@ -335,27 +332,9 @@ function buildName(feelings, appearanceTags, nameLength) {
     const basePrefixes = prefixPool.length ? prefixPool : DEFAULT_POOL.prefixes;
     const baseSuffixes = suffixPool.length ? suffixPool : DEFAULT_POOL.suffixes;
 
-    const range = getNameLengthRange(nameLength);
-    for (let tries = 0; tries < 40; tries += 1) {
-      const prefix = pick(basePrefixes);
-      const suffix = pick(baseSuffixes);
-      const candidate = normalizeName(`${prefix}${suffix}`);
-      if (candidate.length >= range.min && candidate.length <= range.max) {
-        return candidate;
-      }
-    }
-
-    return normalizeName(`${pick(basePrefixes)}${pick(baseSuffixes)}`);
-  }
-
-function getNameLengthRange(nameLength) {
-    if (nameLength === "short") {
-      return { min: 2, max: 3 };
-    }
-    if (nameLength === "long") {
-      return { min: 4, max: 6 };
-    }
-    return { min: 3, max: 4 };
+    const prefix = pick(basePrefixes);
+    const suffix = pick(baseSuffixes);
+    return normalizeName(`${prefix}${suffix}`);
   }
   
   function normalizeName(name) {
