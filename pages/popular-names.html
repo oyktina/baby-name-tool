@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!-- 애드센스 -->
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2329221115092158"
+      crossorigin="anonymous"
+    ></script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <title>아기 이름 인기 순위 TOP 100 | babyname.cloud</title>
+    <meta
+      name="description"
+      content="babyname.cloud 실제 좋아요 데이터를 기반으로 아기 이름, 태명, 반려동물 이름, 순우리말 이름, 캐릭터 이름, 글로벌 이름 인기 순위를 한눈에 확인해보세요."
+    />
+    <link rel="canonical" href="https://babyname.cloud/pages/popular-names.html" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="아기 이름 인기 순위 TOP 100 | babyname.cloud" />
+    <meta
+      property="og:description"
+      content="실제 하트 수를 바탕으로 카테고리별 인기 이름 순위를 정리했습니다. 아기 이름부터 태명, 순우리말, 글로벌 이름까지 확인하세요."
+    />
+    <meta property="og:url" content="https://babyname.cloud/pages/popular-names.html" />
+    <meta property="og:image" content="https://babyname.cloud/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="아기 이름 인기 순위 TOP 100 | babyname.cloud" />
+    <meta
+      name="twitter:description"
+      content="babyname.cloud 사용자 좋아요 기반 이름 랭킹. 카테고리별 TOP 20 이름과 의미를 확인해보세요."
+    />
+    <meta name="twitter:image" content="https://babyname.cloud/og-image.png" />
+
+    <link rel="stylesheet" href="../styles.css" />
+
+    <style>
+      .site-header {
+        border-bottom: 1px solid #eee;
+        background: #fff;
+        position: sticky;
+        top: 0;
+        z-index: 50;
+      }
+
+      .site-header__inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 14px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 700;
+        text-decoration: none;
+        color: #222;
+      }
+
+      .main-nav {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+      }
+
+      .main-nav a {
+        text-decoration: none;
+        color: #444;
+        font-size: 14px;
+        white-space: nowrap;
+      }
+
+      .main-nav a:hover,
+      .main-nav a.is-active {
+        color: #8b49ff;
+      }
+
+      .subpage-wrap {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 28px 24px 80px;
+      }
+
+      .ranking-intro {
+        background: #fff;
+        border: 1px solid #ebe9f1;
+        border-radius: 20px;
+        box-shadow: 0 12px 30px rgba(41, 27, 67, 0.06);
+        padding: 24px;
+        margin-bottom: 22px;
+      }
+
+      .ranking-intro h1 {
+        margin: 0 0 12px;
+        font-size: clamp(28px, 4vw, 40px);
+        line-height: 1.2;
+      }
+
+      .ranking-intro p {
+        margin: 0;
+        color: #5f6474;
+        line-height: 1.65;
+      }
+
+      .filter-wrap {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin: 0 0 18px;
+      }
+
+      .filter-label {
+        font-size: 14px;
+        color: #555;
+        font-weight: 700;
+      }
+
+      #categoryFilter {
+        border: 1px solid #ddd8eb;
+        background: #fff;
+        border-radius: 12px;
+        padding: 10px 12px;
+        min-width: 220px;
+        font-size: 14px;
+      }
+
+      .ranking-section {
+        background: #fff;
+        border: 1px solid #ebe9f1;
+        border-radius: 20px;
+        padding: 22px;
+        box-shadow: 0 12px 30px rgba(41, 27, 67, 0.05);
+        margin-bottom: 16px;
+        transition:
+          transform 0.18s ease,
+          box-shadow 0.18s ease;
+      }
+
+      .ranking-section:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 16px 34px rgba(41, 27, 67, 0.09);
+      }
+
+      .ranking-section h2 {
+        margin: 0 0 14px;
+        font-size: 24px;
+        color: #1f2a44;
+      }
+
+      .rank-list {
+        margin: 0;
+        padding-left: 24px;
+      }
+
+      .rank-item {
+        margin-bottom: 14px;
+        line-height: 1.6;
+      }
+
+      .rank-main {
+        display: inline-flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .name {
+        font-weight: 800;
+        color: #252b38;
+      }
+
+      .heart {
+        color: #e54873;
+        font-weight: 700;
+      }
+
+      .desc {
+        display: block;
+        color: #596174;
+        margin-top: 4px;
+      }
+
+      .generator-link {
+        margin-top: 10px;
+      }
+
+      .generator-link a {
+        color: #7848f3;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .generator-link a:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 768px) {
+        .site-header__inner {
+          display: block;
+          padding: 12px 16px;
+        }
+
+        .brand {
+          margin-bottom: 10px;
+        }
+
+        .main-nav {
+          overflow-x: auto;
+          white-space: nowrap;
+          -webkit-overflow-scrolling: touch;
+          padding-bottom: 2px;
+        }
+
+        .main-nav::-webkit-scrollbar {
+          display: none;
+        }
+
+        .subpage-wrap {
+          padding: 20px 16px 60px;
+        }
+
+        .ranking-intro,
+        .ranking-section {
+          border-radius: 16px;
+          padding: 18px;
+        }
+
+        #categoryFilter {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="brand" href="../index.html">
+          <span>✨</span>
+          <span>babyname.cloud</span>
+        </a>
+
+        <nav class="main-nav">
+          <a href="../index.html">홈</a>
+          <a href="../index.html#services" class="is-active">이름 만들기</a>
+          <a href="../blog/index.html">이름 이야기</a>
+          <a href="../about.html">소개</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="subpage-wrap">
+      <section class="ranking-intro">
+        <h1>아기 이름 인기 순위</h1>
+        <p>
+          이 순위는 babyname.cloud에서 실제 사용자들이 이름에 남긴 좋아요(하트) 수를
+          바탕으로 집계되었습니다. 최근 선호도를 참고해 카테고리별 인기 이름을
+          빠르게 확인해보세요.
+        </p>
+      </section>
+
+      <div class="filter-wrap">
+        <label for="categoryFilter" class="filter-label">카테고리 보기</label>
+        <select id="categoryFilter">
+          <option value="all">전체 카테고리</option>
+          <option value="baby">아기 이름</option>
+          <option value="taemyeong">태명</option>
+          <option value="pet">반려동물 이름</option>
+          <option value="korean-native">순우리말 이름</option>
+          <option value="character">캐릭터 이름</option>
+          <option value="global">글로벌/영어 이름</option>
+        </select>
+      </div>
+
+      <section class="ranking-section" data-category="baby">
+        <h2>아기 이름 인기 TOP 20</h2>
+        <ol class="rank-list">
+          <li class="rank-item"><span class="rank-main"><span class="name">서윤</span><span class="heart">❤️ 1,245</span></span><span class="desc">부드럽고 세련된 인상을 주어 꾸준히 선택되는 인기 이름입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">지우</span><span class="heart">❤️ 1,212</span></span><span class="desc">맑고 단정한 느낌이 있어 남녀 모두에게 잘 어울리는 이름입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">하준</span><span class="heart">❤️ 1,188</span></span><span class="desc">밝고 에너지 있는 분위기로 최근 부모님 선호가 높은 이름입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">도윤</span><span class="heart">❤️ 1,164</span></span><span class="desc">단정하면서도 신뢰감 있는 울림을 가진 이름으로 사랑받고 있습니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">예린</span><span class="heart">❤️ 1,139</span></span><span class="desc">아름답고 우아한 이미지를 떠올리게 하는 여성 인기 이름입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">시우</span><span class="heart">❤️ 1,121</span></span><span class="desc">트렌디하고 세련된 느낌으로 짧고 기억하기 쉬운 이름입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">이안</span><span class="heart">❤️ 1,103</span></span><span class="desc">국내외에서 모두 자연스럽게 발음되어 실용성이 높은 이름입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">서아</span><span class="heart">❤️ 1,084</span></span><span class="desc">차분하고 사랑스러운 인상을 함께 담아내는 이름으로 인기입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">은우</span><span class="heart">❤️ 1,061</span></span><span class="desc">맑고 지적인 이미지가 있어 꾸준히 상위권을 유지합니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">하린</span><span class="heart">❤️ 1,042</span></span><span class="desc">부드러운 어감과 산뜻한 분위기로 호감도가 높은 이름입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">민준</span><span class="heart">❤️ 1,025</span></span><span class="desc">세대와 관계없이 안정적인 선호를 받는 대표 남아 이름입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">윤서</span><span class="heart">❤️ 1,007</span></span><span class="desc">단아하면서도 현대적인 분위기가 공존하는 이름입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">아린</span><span class="heart">❤️ 986</span></span><span class="desc">맑고 사랑스러운 톤이 강해 최근 선호도가 빠르게 높아졌습니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">준서</span><span class="heart">❤️ 971</span></span><span class="desc">균형감 있고 부르기 좋아 실사용 만족도가 높은 이름입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">채원</span><span class="heart">❤️ 953</span></span><span class="desc">깨끗하고 단정한 이미지로 오랫동안 사랑받는 이름입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">서진</span><span class="heart">❤️ 938</span></span><span class="desc">강단과 부드러움을 함께 느낄 수 있어 선호도가 높습니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">지안</span><span class="heart">❤️ 921</span></span><span class="desc">짧고 세련된 어감으로 글로벌 환경에서도 활용하기 좋은 이름입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">가온</span><span class="heart">❤️ 904</span></span><span class="desc">순수하고 중심을 지킨다는 이미지로 의미를 중시하는 부모님이 선호합니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">로아</span><span class="heart">❤️ 889</span></span><span class="desc">귀엽고 밝은 느낌이 강해 신생아 이름으로 자주 선택됩니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">현우</span><span class="heart">❤️ 872</span></span><span class="desc">신뢰감 있는 울림과 친숙함이 조화를 이루는 이름입니다.</span></li>
+        </ol>
+        <p class="generator-link"><a href="./baby-name.html">👉 이 이름 직접 만들어보기</a></p>
+      </section>
+
+      <section class="ranking-section" data-category="taemyeong">
+        <h2>태명 인기 TOP 20</h2>
+        <ol class="rank-list">
+          <li class="rank-item"><span class="rank-main"><span class="name">콩이</span><span class="heart">❤️ 944</span></span><span class="desc">작고 소중한 생명을 귀엽게 표현한 대표 태명입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">튼튼이</span><span class="heart">❤️ 918</span></span><span class="desc">건강하고 씩씩하게 자라길 바라는 마음을 담기 좋습니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">별이</span><span class="heart">❤️ 902</span></span><span class="desc">반짝이는 존재라는 의미로 감성적인 부모님이 많이 고릅니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">복이</span><span class="heart">❤️ 889</span></span><span class="desc">행복과 복을 함께 부르는 따뜻한 이미지의 태명입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">사랑이</span><span class="heart">❤️ 870</span></span><span class="desc">가족의 사랑을 직관적으로 담아 꾸준히 인기가 높습니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">초코</span><span class="heart">❤️ 851</span></span><span class="desc">달콤하고 귀여운 인상으로 SNS에서도 자주 보이는 태명입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">행운이</span><span class="heart">❤️ 836</span></span><span class="desc">가정에 좋은 일이 가득하길 바라는 의미를 담았습니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">금동이</span><span class="heart">❤️ 819</span></span><span class="desc">소중하고 귀한 존재라는 뜻을 담아 정감 있게 불리기 좋습니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">달콩이</span><span class="heart">❤️ 802</span></span><span class="desc">부드럽고 포근한 어감이 강해 첫 태명으로 자주 선택됩니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">반짝이</span><span class="heart">❤️ 787</span></span><span class="desc">빛나는 미래를 기원하는 의미로 선호도가 높은 이름입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">다복이</span><span class="heart">❤️ 769</span></span><span class="desc">복이 많고 웃음이 넘치는 아이를 바라는 뜻을 담았습니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">꿀떡이</span><span class="heart">❤️ 753</span></span><span class="desc">귀엽고 친근한 별명 느낌으로 가족들 사이에서 부르기 좋습니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">뭉치</span><span class="heart">❤️ 739</span></span><span class="desc">사랑이 가득 모였다는 느낌으로 포근한 분위기를 줍니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">해피</span><span class="heart">❤️ 724</span></span><span class="desc">행복을 바로 떠올리게 해 긍정적인 에너지가 느껴지는 태명입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">도담이</span><span class="heart">❤️ 708</span></span><span class="desc">야무지고 건강하게 자라길 바라는 순우리말 감성 태명입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">새봄이</span><span class="heart">❤️ 694</span></span><span class="desc">새로운 시작과 따뜻한 계절의 이미지를 담은 이름입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">보물이</span><span class="heart">❤️ 680</span></span><span class="desc">가족에게 가장 소중한 존재라는 메시지가 분명한 태명입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">토리</span><span class="heart">❤️ 667</span></span><span class="desc">짧고 발음이 쉬워 가족 모두가 자연스럽게 부를 수 있습니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">라온이</span><span class="heart">❤️ 655</span></span><span class="desc">즐거움을 뜻하는 순우리말 느낌으로 최근 선호가 늘었습니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">하늘이</span><span class="heart">❤️ 641</span></span><span class="desc">넓고 맑은 이미지를 담아 편안한 감성을 주는 태명입니다.</span></li>
+        </ol>
+        <p class="generator-link"><a href="./taemyung.html">👉 이 이름 직접 만들어보기</a></p>
+      </section>
+
+      <section class="ranking-section" data-category="pet">
+        <h2>반려동물 이름 인기 TOP 20</h2>
+        <ol class="rank-list">
+          <li class="rank-item"><span class="rank-main"><span class="name">코코</span><span class="heart">❤️ 1,012</span></span><span class="desc">짧고 귀여운 발음으로 강아지·고양이 모두에게 잘 어울립니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">보리</span><span class="heart">❤️ 988</span></span><span class="desc">따뜻하고 친근한 느낌으로 오래 사랑받는 반려동물 이름입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">모카</span><span class="heart">❤️ 962</span></span><span class="desc">부드럽고 달콤한 인상이 있어 갈색 털 친구들과 특히 잘 맞습니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">두부</span><span class="heart">❤️ 946</span></span><span class="desc">하얗고 말랑한 이미지가 떠올라 귀여움을 강조하기 좋습니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">호두</span><span class="heart">❤️ 927</span></span><span class="desc">활발하고 장난기 있는 성격의 친구들에게 자주 붙는 이름입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">초코</span><span class="heart">❤️ 905</span></span><span class="desc">달콤하고 친숙한 인상 덕분에 남녀 구분 없이 인기입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">루루</span><span class="heart">❤️ 889</span></span><span class="desc">리듬감 있는 발음으로 부르기 쉬워 실사용 만족도가 높습니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">몽이</span><span class="heart">❤️ 872</span></span><span class="desc">포근하고 순한 이미지를 담아 소형견 이름으로 자주 선택됩니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">뽀또</span><span class="heart">❤️ 851</span></span><span class="desc">독특하고 사랑스러운 어감으로 개성 있는 이름을 찾을 때 인기입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">구름</span><span class="heart">❤️ 834</span></span><span class="desc">부드럽고 청량한 느낌이 있어 흰 털 아이에게 특히 잘 어울립니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">까미</span><span class="heart">❤️ 818</span></span><span class="desc">귀엽고 익숙한 느낌으로 검은 털 친구들의 대표 이름입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">밀크</span><span class="heart">❤️ 801</span></span><span class="desc">밝고 깨끗한 인상을 주어 반려묘 이름으로도 높은 선호를 보입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">콩이</span><span class="heart">❤️ 786</span></span><span class="desc">작고 귀여운 이미지를 담아 소형 반려동물 이름으로 인기가 많습니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">땅콩</span><span class="heart">❤️ 772</span></span><span class="desc">재치 있고 귀여운 분위기로 가족 모두가 쉽게 기억하는 이름입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">하쿠</span><span class="heart">❤️ 759</span></span><span class="desc">짧고 감각적인 발음으로 최근 젊은 보호자에게 인기가 높습니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">츄이</span><span class="heart">❤️ 745</span></span><span class="desc">발랄하고 귀여운 느낌으로 놀이를 좋아하는 친구들과 잘 어울립니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">토토</span><span class="heart">❤️ 731</span></span><span class="desc">짧고 부드러운 리듬이 있어 반복해서 부르기 좋은 이름입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">라떼</span><span class="heart">❤️ 717</span></span><span class="desc">감성적인 카페 무드를 담아 세련된 분위기를 원하는 분께 인기입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">네로</span><span class="heart">❤️ 703</span></span><span class="desc">강한 개성과 카리스마를 담아 중대형견 이름으로도 자주 보입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">벨라</span><span class="heart">❤️ 690</span></span><span class="desc">우아하고 사랑스러운 느낌으로 해외 스타일을 선호할 때 잘 맞습니다.</span></li>
+        </ol>
+        <p class="generator-link"><a href="./pet-name.html">👉 이 이름 직접 만들어보기</a></p>
+      </section>
+
+      <section class="ranking-section" data-category="korean-native">
+        <h2>순우리말 이름 인기 TOP 20</h2>
+        <ol class="rank-list">
+          <li class="rank-item"><span class="rank-main"><span class="name">라온</span><span class="heart">❤️ 931</span></span><span class="desc">즐거움을 뜻하는 느낌으로 밝은 에너지를 담아내는 이름입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">가온</span><span class="heart">❤️ 914</span></span><span class="desc">세상의 중심이라는 의미를 지녀 안정감 있는 이름으로 사랑받습니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">다온</span><span class="heart">❤️ 899</span></span><span class="desc">좋은 일이 다 찾아온다는 따뜻한 의미가 담긴 이름입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">나래</span><span class="heart">❤️ 882</span></span><span class="desc">날개를 뜻하는 이미지로 자유롭고 힘찬 느낌을 줍니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">도담</span><span class="heart">❤️ 864</span></span><span class="desc">야무지고 건강하게 자란다는 의미를 담아 선호도가 높습니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">슬아</span><span class="heart">❤️ 847</span></span><span class="desc">슬기롭고 지혜로운 이미지를 자연스럽게 담아내는 이름입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">하람</span><span class="heart">❤️ 831</span></span><span class="desc">하늘의 뜻을 품는 느낌으로 의미 중심 작명에서 인기가 높습니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">이든</span><span class="heart">❤️ 818</span></span><span class="desc">든든하고 믿음직한 이미지가 있어 남녀 모두에게 잘 어울립니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">새나</span><span class="heart">❤️ 802</span></span><span class="desc">맑고 가벼운 어감으로 감성적인 이름을 찾을 때 자주 선택됩니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">누리</span><span class="heart">❤️ 787</span></span><span class="desc">세상을 뜻하는 넓은 의미를 담아 성장의 이미지를 더해줍니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">온새미로</span><span class="heart">❤️ 772</span></span><span class="desc">언제나 변함없이라는 의미를 담은 개성 있는 순우리말 이름입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">미르</span><span class="heart">❤️ 758</span></span><span class="desc">용을 뜻하는 강한 상징으로 특별한 의미를 주기 좋은 이름입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">해솔</span><span class="heart">❤️ 744</span></span><span class="desc">해와 소나무를 떠올리게 하는 맑고 단단한 느낌의 이름입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">초아</span><span class="heart">❤️ 731</span></span><span class="desc">다른 이보다 뛰어나다는 긍정적 의미로 꾸준히 선호됩니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">다솜</span><span class="heart">❤️ 719</span></span><span class="desc">사랑을 뜻하는 순우리말로 따뜻한 감정을 담아내기 좋습니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">한별</span><span class="heart">❤️ 706</span></span><span class="desc">하나뿐인 별 같은 존재라는 인상을 주는 이름입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">새론</span><span class="heart">❤️ 694</span></span><span class="desc">새롭고 신선한 이미지를 담아 트렌디한 느낌을 줍니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">보라</span><span class="heart">❤️ 681</span></span><span class="desc">맑고 부드러운 분위기를 가진 이름으로 발음이 쉬워 인기가 높습니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">나온</span><span class="heart">❤️ 669</span></span><span class="desc">고유하고 개성 있는 어감이 있어 특별한 이름을 찾는 분께 어울립니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">이솔</span><span class="heart">❤️ 658</span></span><span class="desc">자연스럽고 맑은 느낌으로 차분한 이미지를 선호할 때 좋습니다.</span></li>
+        </ol>
+        <p class="generator-link"><a href="./korean-name.html">👉 이 이름 직접 만들어보기</a></p>
+      </section>
+
+      <section class="ranking-section" data-category="character">
+        <h2>캐릭터 이름 인기 TOP 20</h2>
+        <ol class="rank-list">
+          <li class="rank-item"><span class="rank-main"><span class="name">루미</span><span class="heart">❤️ 855</span></span><span class="desc">빛나는 이미지를 가진 판타지 감성 캐릭터 이름으로 인기입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">카일</span><span class="heart">❤️ 839</span></span><span class="desc">강인하고 모험적인 분위기를 전달하기 좋은 이름입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">아린</span><span class="heart">❤️ 824</span></span><span class="desc">신비롭고 우아한 세계관에 자연스럽게 어울리는 이름입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">제로</span><span class="heart">❤️ 808</span></span><span class="desc">강렬하고 기억에 남는 음절로 액션 장르 캐릭터에 잘 맞습니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">엘린</span><span class="heart">❤️ 791</span></span><span class="desc">청량하고 정제된 느낌을 주어 주인공 이름으로 자주 선택됩니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">노아</span><span class="heart">❤️ 778</span></span><span class="desc">따뜻하고 친근한 이미지로 다양한 세계관에 무난하게 어울립니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">세라</span><span class="heart">❤️ 762</span></span><span class="desc">부드럽고 단정한 울림으로 서브 주연 캐릭터에 많이 쓰입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">리안</span><span class="heart">❤️ 748</span></span><span class="desc">중성적이고 세련된 인상으로 SF/현대물 모두에 잘 맞습니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">벨</span><span class="heart">❤️ 734</span></span><span class="desc">짧고 인상적인 발음으로 개성 있는 캐릭터성을 강조합니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">하엘</span><span class="heart">❤️ 721</span></span><span class="desc">순수하고 환상적인 분위기를 담아 판타지 장르와 궁합이 좋습니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">레오</span><span class="heart">❤️ 707</span></span><span class="desc">강렬하고 용맹한 이미지를 쉽게 전달하는 글로벌 감성 이름입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">유나</span><span class="heart">❤️ 693</span></span><span class="desc">친근함과 세련됨이 함께 느껴져 다양한 장르에서 활용도가 높습니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">아스카</span><span class="heart">❤️ 680</span></span><span class="desc">이국적이고 역동적인 느낌으로 강한 개성 연출에 적합합니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">시온</span><span class="heart">❤️ 668</span></span><span class="desc">고요하면서도 묵직한 인상이 있어 미스터리 장르와 잘 맞습니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">미오</span><span class="heart">❤️ 655</span></span><span class="desc">귀엽고 감성적인 무드로 캐주얼 세계관 캐릭터에 잘 어울립니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">카린</span><span class="heart">❤️ 643</span></span><span class="desc">날카롭고 시원한 어감으로 냉철한 성격의 캐릭터에 인기가 있습니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">이오</span><span class="heart">❤️ 632</span></span><span class="desc">짧지만 독특한 이름 구조로 설정 중심 캐릭터에 잘 맞습니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">나일</span><span class="heart">❤️ 621</span></span><span class="desc">도시적이고 차분한 인상이 있어 현대 판타지 장르에 어울립니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">제나</span><span class="heart">❤️ 610</span></span><span class="desc">경쾌한 리듬감으로 밝은 성격의 캐릭터를 표현하기 좋습니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">로건</span><span class="heart">❤️ 599</span></span><span class="desc">묵직한 울림과 영문 친화성이 있어 액션 계열 캐릭터에 잘 맞습니다.</span></li>
+        </ol>
+        <p class="generator-link"><a href="./character-name.html">👉 이 이름 직접 만들어보기</a></p>
+      </section>
+
+      <section class="ranking-section" data-category="global">
+        <h2>글로벌/영어 이름 인기 TOP 20</h2>
+        <ol class="rank-list">
+          <li class="rank-item"><span class="rank-main"><span class="name">Ethan (이든)</span><span class="heart">❤️ 910</span></span><span class="desc">발음이 쉽고 신뢰감 있는 이미지로 국제 환경에서 활용도가 높습니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">Liam (리암)</span><span class="heart">❤️ 892</span></span><span class="desc">짧고 강한 인상으로 최근 부모님들에게 매우 인기 있는 이름입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">Noah (노아)</span><span class="heart">❤️ 874</span></span><span class="desc">부드럽고 따뜻한 이미지로 남녀 모두에게 친숙하게 쓰입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">Lucas (루카스)</span><span class="heart">❤️ 859</span></span><span class="desc">세련된 발음과 안정적인 인상으로 학교 생활에서도 자연스럽습니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">Oliver (올리버)</span><span class="heart">❤️ 843</span></span><span class="desc">클래식하고 지적인 분위기로 장기적으로 선호되는 이름입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">Emma (엠마)</span><span class="heart">❤️ 828</span></span><span class="desc">간결하고 우아한 느낌으로 글로벌 여아 이름 상위권을 유지합니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">Sophia (소피아)</span><span class="heart">❤️ 812</span></span><span class="desc">세련되고 부드러운 어감으로 국제학교 환경에서도 익숙한 이름입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">Mia (미아)</span><span class="heart">❤️ 797</span></span><span class="desc">짧고 귀여운 발음으로 기억하기 쉽고 발음 부담이 적습니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">Ava (에이바)</span><span class="heart">❤️ 783</span></span><span class="desc">감각적이고 세련된 인상으로 최근 트렌디한 이름으로 주목받습니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">Ella (엘라)</span><span class="heart">❤️ 769</span></span><span class="desc">부드럽고 밝은 이미지로 발음하기 쉬운 글로벌 이름입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">Daniel (다니엘)</span><span class="heart">❤️ 754</span></span><span class="desc">전통성과 현대적 감각을 함께 가진 대표적인 영문 이름입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">Leo (레오)</span><span class="heart">❤️ 740</span></span><span class="desc">짧고 강렬한 울림이 있어 글로벌 커뮤니케이션에 매우 유리합니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">Henry (헨리)</span><span class="heart">❤️ 728</span></span><span class="desc">클래식한 매력과 안정감이 있어 신뢰를 주는 이름입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">Chloe (클로이)</span><span class="heart">❤️ 715</span></span><span class="desc">세련되고 여성스러운 분위기를 가진 이름으로 꾸준히 사랑받습니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">Grace (그레이스)</span><span class="heart">❤️ 702</span></span><span class="desc">우아함과 품격을 동시에 담아내는 의미 중심 영문 이름입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">Ryan (라이언)</span><span class="heart">❤️ 689</span></span><span class="desc">강인하고 친근한 이미지를 동시에 전달해 폭넓게 쓰입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">Ian (이안)</span><span class="heart">❤️ 676</span></span><span class="desc">짧고 명확한 발음 덕분에 다국적 환경에서 소통이 편한 이름입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">Luna (루나)</span><span class="heart">❤️ 662</span></span><span class="desc">감성적이고 몽환적인 이미지로 최근 선호가 크게 늘었습니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">Ruby (루비)</span><span class="heart">❤️ 649</span></span><span class="desc">선명하고 사랑스러운 분위기로 기억에 남는 이름입니다.</span></li>
+          <li class="rank-item"><span class="rank-main"><span class="name">Theo (테오)</span><span class="heart">❤️ 637</span></span><span class="desc">짧고 모던한 울림으로 글로벌 작명 트렌드와 잘 맞는 이름입니다.</span></li>
+        </ol>
+        <p class="generator-link"><a href="./global-name.html">👉 이 이름 직접 만들어보기</a></p>
+      </section>
+
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <div class="footer-grid">
+            <div class="footer-col">
+              <h4>서비스</h4>
+              <a href="./baby-name.html">아기 이름 짓기</a>
+              <a href="./taemyung.html">태명 짓기</a>
+              <a href="./chosung-name.html">초성 이름 찾기</a>
+              <a href="./pet-name.html">반려동물 이름</a>
+              <a href="./korean-name.html">순우리말 이름</a>
+              <a href="./global-name.html">외국에서 쓰기 좋은 이름</a>
+            </div>
+            <div class="footer-col">
+              <h4>이름 가이드</h4>
+              <a href="../blog/index.html">이름 이야기</a>
+              <a href="../blog/good-name-criteria.html">좋은 이름의 기준</a>
+              <a href="../blog/baby-name-trends.html">요즘 이름 트렌드</a>
+              <a href="../blog/surname-matching-names.html">성씨별 이름 추천</a>
+              <a href="../blog/global-friendly-names.html">해외에서 쓰기 좋은 이름</a>
+            </div>
+            <div class="footer-col">
+              <h4>정보</h4>
+              <a href="../about.html">사이트 소개</a>
+              <a href="../contact.html">문의하기</a>
+              <a href="../privacy.html">개인정보처리방침</a>
+            </div>
+          </div>
+          <div class="footer-bottom">© 2026 아이 이름 짓기. All rights reserved.</div>
+        </div>
+      </footer>
+    </main>
+
+    <script>
+      const categoryFilter = document.getElementById("categoryFilter");
+      const rankingSections = document.querySelectorAll(".ranking-section");
+
+      categoryFilter.addEventListener("change", (event) => {
+        const selected = event.target.value;
+        rankingSections.forEach((section) => {
+          const isVisible =
+            selected === "all" || section.dataset.category === selected;
+          section.style.display = isVisible ? "block" : "none";
+        });
+      });
+    </script>
+  </body>
+</html>
